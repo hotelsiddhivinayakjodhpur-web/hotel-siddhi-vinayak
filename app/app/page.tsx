@@ -1,0 +1,163 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Wifi, Car, Coffee, ShieldCheck, MapPin, Star, ArrowRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import SectionTitle from "@/components/SectionTitle";
+import InquiryForm from "@/components/InquiryForm";
+import MapEmbed from "@/components/MapEmbed";
+import { HotelSchema } from "@/components/Schema";
+import { site, whatsappLink } from "@/lib/config";
+import { rooms, attractions } from "@/lib/data";
+
+const features = [
+  { icon: Wifi, title: "Free Wi-Fi", desc: "High-speed internet in every room." },
+  { icon: Car, title: "Free Parking", desc: "Secure on-site parking for guests." },
+  { icon: Coffee, title: "Room Service", desc: "In-room dining and refreshments." },
+  { icon: ShieldCheck, title: "24×7 Front Desk", desc: "Round-the-clock assistance." },
+];
+
+export default function Home() {
+  return (
+    <>
+      <HotelSchema />
+
+      {/* Hero */}
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center text-center">
+        <Image
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
+          alt="Hotel Siddhi Vinayak Jodhpur"
+          fill priority className="object-cover"
+        />
+        <div className="absolute inset-0 hero-overlay" />
+        <Reveal className="relative z-10 px-6">
+          <p className="text-gold uppercase tracking-[0.35em] text-sm mb-4">Welcome to Jodhpur</p>
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight">
+            {site.name}
+          </h1>
+          <p className="mt-5 text-sand/85 text-lg max-w-xl mx-auto">{site.tagline}</p>
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
+              className="rounded-full bg-gold px-8 py-3.5 font-medium text-ink transition hover:bg-gold-light">
+              Book on WhatsApp
+            </a>
+            <Link href="/rooms"
+              className="rounded-full border border-sand/50 px-8 py-3.5 font-medium text-sand transition hover:bg-sand hover:text-ink">
+              View Rooms
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Features */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f, i) => (
+            <Reveal key={f.title} delay={i * 0.1} className="text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-sand text-gold-dark">
+                <f.icon size={28} />
+              </div>
+              <h3 className="font-serif text-xl text-ink">{f.title}</h3>
+              <p className="mt-2 text-sm text-ink/60">{f.desc}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Rooms preview */}
+      <section className="py-20 bg-sand">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionTitle eyebrow="Our Rooms" title="Stay in Comfort" subtitle="Clean, air-conditioned rooms designed for a restful stay in the Blue City." />
+          <div className="grid gap-8 md:grid-cols-3">
+            {rooms.map((r, i) => (
+              <Reveal key={r.slug} delay={i * 0.1}>
+                <div className="group overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl">
+                  <div className="relative h-60 overflow-hidden">
+                    <Image src={r.image} alt={r.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                    <span className="absolute top-4 right-4 rounded-full bg-gold px-3 py-1 text-xs font-medium text-ink">
+                      ₹{r.price}/night
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-serif text-2xl text-ink">{r.name}</h3>
+                    <p className="mt-2 text-sm text-ink/60 line-clamp-2">{r.description}</p>
+                    <Link href="/rooms" className="mt-4 inline-flex items-center gap-1 text-gold-dark font-medium hover:gap-2 transition-all">
+                      Details <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About strip */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
+          <Reveal>
+            <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg">
+              <Image src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80" alt="Hotel interior" fill className="object-cover" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="text-gold uppercase tracking-[0.3em] text-xs mb-3">About the Hotel</p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-ink">A Warm Welcome in the Heart of Jodhpur</h2>
+            <p className="mt-5 text-ink/70 leading-relaxed">
+              Located moments from the railway station and the old city, Hotel Siddhi Vinayak combines easy access,
+              friendly service and comfortable rooms. Whether you are here to explore Mehrangarh Fort or passing
+              through Marwar, we make sure your stay feels like home.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-ink">
+              <Star className="fill-gold text-gold" size={20} />
+              <span className="font-medium">{site.rating.value}</span>
+              <span className="text-ink/50 text-sm">from {site.rating.count} guest reviews</span>
+            </div>
+            <Link href="/about" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sand transition hover:bg-gold hover:text-ink">
+              Learn More <ArrowRight size={16} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Attractions preview */}
+      <section className="py-20 bg-sand">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionTitle eyebrow="Explore Jodhpur" title="Nearby Attractions" subtitle="The best of the Blue City, just minutes away." />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {attractions.slice(0, 3).map((a, i) => (
+              <Reveal key={a.name} delay={i * 0.1}>
+                <div className="group relative h-64 overflow-hidden rounded-2xl">
+                  <Image src={a.image} alt={a.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
+                  <div className="absolute bottom-0 p-5 text-sand">
+                    <p className="flex items-center gap-1 text-xs text-gold"><MapPin size={13} /> {a.distance}</p>
+                    <h3 className="font-serif text-xl">{a.name}</h3>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/nearby-attractions" className="inline-flex items-center gap-2 text-gold-dark font-medium hover:gap-3 transition-all">
+              View All Attractions <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Inquiry + Map */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 grid gap-10 lg:grid-cols-2">
+          <div>
+            <SectionTitle title="Book Your Stay" subtitle="Send us your dates and we'll confirm availability over WhatsApp." />
+            <InquiryForm />
+          </div>
+          <div>
+            <SectionTitle title="Find Us" subtitle="Conveniently located near Jodhpur Railway Station." />
+            <MapEmbed />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
