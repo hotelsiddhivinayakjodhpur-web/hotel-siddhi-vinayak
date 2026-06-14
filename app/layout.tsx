@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+
+// Self-hosted via next/font — no render-blocking Google Fonts request (CWV win),
+// no layout shift (size-adjust fallback), premium luxury pairing.
+const serif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import StickyMobileBar from "@/components/StickyMobileBar";
 import { LocalBusinessSchema } from "@/components/Schema";
 import { site } from "@/lib/config";
 
@@ -39,13 +55,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>
         <LocalBusinessSchema />
         <Navbar />
-        <main>{children}</main>
+        {/* pb on mobile reserves space for the sticky bottom action bar */}
+        <main className="pb-16 sm:pb-0">{children}</main>
         <Footer />
         <FloatingButtons />
+        <StickyMobileBar />
       </body>
     </html>
   );

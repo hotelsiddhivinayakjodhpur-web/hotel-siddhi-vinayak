@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FaqSchema } from "@/components/Schema";
+import { FaqSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -11,6 +11,7 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <FaqSchema />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]} />
       {children}
     </>
   );

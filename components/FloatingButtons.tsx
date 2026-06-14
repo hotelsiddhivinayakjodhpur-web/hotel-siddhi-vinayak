@@ -5,7 +5,7 @@ import { whatsappLink, callLink } from "@/lib/config";
 
 export default function FloatingButtons() {
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-5 right-5 z-50 hidden flex-col gap-3 sm:flex">
       <motion.a
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

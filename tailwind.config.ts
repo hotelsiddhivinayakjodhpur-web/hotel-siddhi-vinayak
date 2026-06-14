@@ -17,8 +17,8 @@ export default {
         sand: "#F7F2EA",
       },
       fontFamily: {
-        serif: ["Georgia", "Cambria", "serif"],
-        sans: ["system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "Cambria", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
     },
   },

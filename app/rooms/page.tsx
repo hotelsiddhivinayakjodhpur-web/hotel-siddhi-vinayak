@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { rooms } from "@/lib/data";
 import { whatsappLink } from "@/lib/config";
+import { RoomsSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Rooms & Tariff",
@@ -15,12 +16,14 @@ export const metadata: Metadata = {
 export default function RoomsPage() {
   return (
     <>
+      <RoomsSchema />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Rooms", path: "/rooms" }]} />
       <PageHero title="Rooms & Suites" subtitle="Comfortable, well-appointed rooms for every traveller." image="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1920&q=80" />
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-6xl px-6 space-y-12">
           {rooms.map((r, i) => (
             <Reveal key={r.slug} delay={i * 0.05}>
-              <article className={`grid gap-8 rounded-2xl bg-white p-5 shadow-md lg:grid-cols-2 ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
+              <article id={r.slug} className={`scroll-mt-28 grid gap-8 rounded-2xl bg-white p-5 shadow-md lg:grid-cols-2 ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
                 <div className="relative h-72 lg:h-full min-h-[280px] rounded-xl overflow-hidden">
                   <Image src={r.image} alt={r.name} fill className="object-cover" />
                 </div>

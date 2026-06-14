@@ -4,6 +4,7 @@ import { Heart, MapPin, Sparkles, HandHeart } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
+import { BreadcrumbSchema } from "@/components/Schema";
 import { site } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
       <PageHero title="About Hotel Siddhi Vinayak" subtitle="Comfort, convenience and care in the Blue City." image="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1920&q=80" />
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">

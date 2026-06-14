@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
+import { BreadcrumbSchema } from "@/components/Schema";
 import { site, whatsappLink, callLink } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function ContactPage() {
   ];
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <PageHero title="Contact Us" subtitle="We'd love to help plan your stay in Jodhpur." image="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1920&q=80" />
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2">

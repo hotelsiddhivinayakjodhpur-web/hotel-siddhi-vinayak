@@ -5,11 +5,15 @@ export const site = {
   tagline: "Comfort & Hospitality in the Blue City",
   description:
     "Hotel Siddhi Vinayak is a comfortable, well-located hotel in Jodhpur, Rajasthan offering clean rooms, warm hospitality and easy access to Mehrangarh Fort and the old city.",
-  url: "https://hotelsiddhivinayak.com",
+  // The ONE canonical domain for the entire brand. Drives all SEO: canonical
+  // tags, sitemap, robots, OG/Twitter URLs, and JSON-LD @id/url. No other domain
+  // is referenced anywhere in this codebase.
+  url: "https://hotelsiddhi-vinayak.com",
   phone: "+91 98290 00000",
   phoneRaw: "919829000000",
   whatsapp: "919829000000",
-  email: "stay@hotelsiddhivinayak.com",
+  // ⚠️ Verify this mailbox exists / forwards before launch (aligned to primary domain).
+  email: "stay@hotelsiddhi-vinayak.com",
   address: {
     street: "Near Railway Station, High Court Road",
     locality: "Jodhpur",

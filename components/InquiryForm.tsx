@@ -30,28 +30,44 @@ export default function InquiryForm() {
     >
       <h3 className="font-serif text-2xl text-ink">Send an Inquiry</h3>
       <div className="grid gap-4 sm:grid-cols-2">
-        <input required placeholder="Full Name" value={form.name} onChange={(e) => update("name", e.target.value)} className={field} />
-        <input required placeholder="Phone Number" value={form.phone} onChange={(e) => update("phone", e.target.value)} className={field} />
         <div>
-          <label className="block text-xs text-ink/60 mb-1">Check-in</label>
-          <input type="date" required value={form.checkin} onChange={(e) => update("checkin", e.target.value)} className={field} />
+          <label htmlFor="iq-name" className="block text-xs text-ink/60 mb-1">Full Name <span className="text-gold-dark">*</span></label>
+          <input id="iq-name" name="name" autoComplete="name" required placeholder="Your name" value={form.name} onChange={(e) => update("name", e.target.value)} className={field} />
         </div>
         <div>
-          <label className="block text-xs text-ink/60 mb-1">Check-out</label>
-          <input type="date" required value={form.checkout} onChange={(e) => update("checkout", e.target.value)} className={field} />
+          <label htmlFor="iq-phone" className="block text-xs text-ink/60 mb-1">Phone Number <span className="text-gold-dark">*</span></label>
+          <input id="iq-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder="+91 …" value={form.phone} onChange={(e) => update("phone", e.target.value)} className={field} />
         </div>
-        <select value={form.guests} onChange={(e) => update("guests", e.target.value)} className={field}>
-          {["1", "2", "3", "4", "5+"].map((g) => <option key={g}>{g}</option>)}
-        </select>
-        <select value={form.room} onChange={(e) => update("room", e.target.value)} className={field}>
-          {["Deluxe Room", "Super Deluxe Room", "Family Suite"].map((r) => <option key={r}>{r}</option>)}
-        </select>
+        <div>
+          <label htmlFor="iq-checkin" className="block text-xs text-ink/60 mb-1">Check-in <span className="text-gold-dark">*</span></label>
+          <input id="iq-checkin" name="checkin" type="date" required value={form.checkin} onChange={(e) => update("checkin", e.target.value)} className={field} />
+        </div>
+        <div>
+          <label htmlFor="iq-checkout" className="block text-xs text-ink/60 mb-1">Check-out <span className="text-gold-dark">*</span></label>
+          <input id="iq-checkout" name="checkout" type="date" required value={form.checkout} onChange={(e) => update("checkout", e.target.value)} className={field} />
+        </div>
+        <div>
+          <label htmlFor="iq-guests" className="block text-xs text-ink/60 mb-1">Guests</label>
+          <select id="iq-guests" name="guests" value={form.guests} onChange={(e) => update("guests", e.target.value)} className={field}>
+            {["1", "2", "3", "4", "5+"].map((g) => <option key={g}>{g}</option>)}
+          </select>
+        </div>
+        <div>
+          <label htmlFor="iq-room" className="block text-xs text-ink/60 mb-1">Room Type</label>
+          <select id="iq-room" name="room" value={form.room} onChange={(e) => update("room", e.target.value)} className={field}>
+            {["Deluxe Room", "Super Deluxe Room", "Family Suite"].map((r) => <option key={r}>{r}</option>)}
+          </select>
+        </div>
       </div>
-      <textarea placeholder="Any special requests?" rows={3} value={form.message} onChange={(e) => update("message", e.target.value)} className={field} />
+      <div>
+        <label htmlFor="iq-message" className="block text-xs text-ink/60 mb-1">Special requests</label>
+        <textarea id="iq-message" name="message" placeholder="Early check-in, airport pickup, extra bed…" rows={3} value={form.message} onChange={(e) => update("message", e.target.value)} className={field} />
+      </div>
       <button type="submit" className="rounded-full bg-gold px-6 py-3 font-medium text-ink transition hover:bg-gold-dark hover:text-white">
         Send via WhatsApp
       </button>
-      {sent && <p className="text-center text-sm text-green-700">Opening WhatsApp… If nothing happens, please call us directly.</p>}
+      <p className="text-center text-xs text-ink/55">Best rate guaranteed when you book direct · We usually reply within minutes</p>
+      {sent && <p role="status" aria-live="polite" className="text-center text-sm text-green-700">Opening WhatsApp… If nothing happens, please call us directly.</p>}
     </motion.form>
   );
 }

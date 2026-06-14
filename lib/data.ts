@@ -52,15 +52,19 @@ export const rooms: Room[] = [
   },
 ];
 
-export const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80", alt: "Hotel facade" },
-  { src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=80", alt: "Deluxe room interior" },
-  { src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80", alt: "Super deluxe room" },
-  { src: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=80", alt: "Hotel lobby" },
-  { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1000&q=80", alt: "Bathroom" },
-  { src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80", alt: "Hotel restaurant" },
-  { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80", alt: "Suite view" },
-  { src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=80", alt: "Dining area" },
+export type GalleryImage = { src: string; alt: string; category: "Rooms" | "Property" | "Dining" };
+
+export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
+
+export const galleryImages: GalleryImage[] = [
+  { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80", alt: "Hotel Siddhi Vinayak facade in Jodhpur", category: "Property" },
+  { src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=80", alt: "Deluxe room interior with queen bed", category: "Rooms" },
+  { src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80", alt: "Super Deluxe room with king bed", category: "Rooms" },
+  { src: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=80", alt: "Hotel lobby and reception", category: "Property" },
+  { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1000&q=80", alt: "Modern en-suite bathroom", category: "Rooms" },
+  { src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80", alt: "Hotel restaurant interior", category: "Dining" },
+  { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80", alt: "Family Suite with city view", category: "Rooms" },
+  { src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=80", alt: "Dining area with breakfast service", category: "Dining" },
 ];
 
 export type Faq = { q: string; a: string };
@@ -90,6 +94,42 @@ export const attractions: Attraction[] = [
   { name: "Clock Tower & Sardar Market", distance: "3 km", image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1000&q=80", description: "The bustling heart of the old city — spices, textiles, handicrafts and authentic street food." },
   { name: "Toorji Ka Jhalra Stepwell", distance: "3.2 km", image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80", description: "A beautifully restored 18th-century stepwell surrounded by cafés and boutique shops." },
   { name: "Mandore Gardens", distance: "9 km", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1000&q=80", description: "Historic gardens with cenotaphs, temples and the ancient capital of Marwar." },
+];
+
+export type Review = {
+  author: string;
+  rating: number; // 1–5
+  date: string; // ISO yyyy-mm-dd
+  text: string;
+  source?: string; // e.g. "Google", "Booking.com"
+};
+
+// ⚠️ IMPORTANT: Replace these with REAL, verified guest reviews before launch.
+// Google's policy forbids fabricated reviews and self-serving aggregateRating
+// that isn't backed by genuine reviews shown on the site. The easiest source
+// is your Google Business Profile. Keep author/date/source accurate.
+export const reviews: Review[] = [
+  {
+    author: "Rahul Sharma",
+    rating: 5,
+    date: "2025-02-18",
+    text: "Spotless rooms and very helpful staff. Walking distance from the railway station made our late-night arrival easy. Great value for the price.",
+    source: "Google",
+  },
+  {
+    author: "Priya Menon",
+    rating: 5,
+    date: "2025-01-09",
+    text: "Comfortable AC room, hot water, and friendly front desk who arranged our Mehrangarh Fort cab. Would happily stay again.",
+    source: "Google",
+  },
+  {
+    author: "Aamir Khan",
+    rating: 4,
+    date: "2024-12-22",
+    text: "Clean, well-located and quiet. Free parking was a big plus for our road trip. Breakfast options nearby. Recommended.",
+    source: "Booking.com",
+  },
 ];
 
 export type Post = {

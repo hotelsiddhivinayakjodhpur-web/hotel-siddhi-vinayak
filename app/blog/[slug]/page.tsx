@@ -33,14 +33,34 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     headline: post.title,
     image: post.image,
     datePublished: post.date,
-    author: { "@type": "Organization", name: site.name },
-    publisher: { "@type": "Organization", name: site.name },
+    dateModified: post.date,
+    inLanguage: "en-IN",
+    url: `${site.url}/blog/${post.slug}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${site.url}/blog/${post.slug}` },
+    author: { "@type": "Organization", name: site.name, url: site.url },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+      logo: { "@type": "ImageObject", url: `${site.url}/og-image.jpg` },
+    },
     description: post.excerpt,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site.url}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${site.url}/blog/${post.slug}` },
+    ],
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <article className="pt-28 pb-20 bg-white">
         <div className="mx-auto max-w-3xl px-6">
           <Link href="/blog" className="inline-flex items-center gap-1 text-gold-dark hover:gap-2 transition-all mb-6">

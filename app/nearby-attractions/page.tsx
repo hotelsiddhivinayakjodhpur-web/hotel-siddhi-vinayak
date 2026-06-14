@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
+import { BreadcrumbSchema } from "@/components/Schema";
 import { attractions } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -12,9 +13,28 @@ export const metadata: Metadata = {
   alternates: { canonical: "/nearby-attractions" },
 };
 
+const attractionsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Tourist attractions near Hotel Siddhi Vinayak, Jodhpur",
+  itemListElement: attractions.map((a, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "TouristAttraction",
+      name: a.name,
+      description: a.description,
+      image: a.image,
+      address: { "@type": "PostalAddress", addressLocality: "Jodhpur", addressRegion: "Rajasthan", addressCountry: "IN" },
+    },
+  })),
+};
+
 export default function AttractionsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Nearby Attractions", path: "/nearby-attractions" }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(attractionsSchema) }} />
       <PageHero title="Nearby Attractions" subtitle="Explore the best of the Blue City from our doorstep." image="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1920&q=80" />
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-7xl px-6">

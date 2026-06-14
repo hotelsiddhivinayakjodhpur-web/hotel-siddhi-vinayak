@@ -5,6 +5,8 @@ import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
+import TrustStrip from "@/components/TrustStrip";
+import Reviews from "@/components/Reviews";
 import { HotelSchema } from "@/components/Schema";
 import { site, whatsappLink } from "@/lib/config";
 import { rooms, attractions } from "@/lib/data";
@@ -35,18 +37,33 @@ export default function Home() {
             {site.name}
           </h1>
           <p className="mt-5 text-sand/85 text-lg max-w-xl mx-auto">{site.tagline}</p>
-          <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Above-the-fold social proof */}
+          <div className="mt-6 flex items-center justify-center gap-2 text-sand">
+            <span className="flex gap-0.5" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={16} className="fill-gold text-gold" />
+              ))}
+            </span>
+            <span className="text-sm">
+              <strong className="font-semibold">{site.rating.value}</strong>/5 · {site.rating.count} guest reviews
+            </span>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
               className="rounded-full bg-gold px-8 py-3.5 font-medium text-ink transition hover:bg-gold-light">
-              Book on WhatsApp
+              Book Direct on WhatsApp
             </a>
             <Link href="/rooms"
               className="rounded-full border border-sand/50 px-8 py-3.5 font-medium text-sand transition hover:bg-sand hover:text-ink">
-              View Rooms
+              View Rooms &amp; Rates
             </Link>
           </div>
+          <p className="mt-4 text-xs text-sand/70">Best rate guaranteed · No booking fees · Instant confirmation on WhatsApp</p>
         </Reveal>
       </section>
+
+      {/* Trust strip — why book direct */}
+      <TrustStrip />
 
       {/* Features */}
       <section className="py-20 bg-white">
@@ -144,6 +161,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Guest reviews — social proof before the booking ask */}
+      <Reviews />
 
       {/* Inquiry + Map */}
       <section className="py-20 bg-white">
