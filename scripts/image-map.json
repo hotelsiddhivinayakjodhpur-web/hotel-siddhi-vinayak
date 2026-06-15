@@ -1,0 +1,31 @@
+[
+  { "id": "og",              "src": "exterior/HOTEL OUTSIDE.png",          "out": "/og-image.jpg",                                              "role": "og" },
+  { "id": "hero-home",       "src": "exterior/HOTEL OUTSIDE.png",          "out": "/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp",    "role": "hero" },
+  { "id": "hero-rooms",      "src": "203/203.1.jpeg",                      "out": "/images/hero/hotel-siddhi-vinayak-deluxe-room.webp",         "role": "hero" },
+  { "id": "prop-facade",     "src": "exterior/hotel OUTSIDE PIC.png",      "out": "/images/property/hotel-siddhi-vinayak-facade.webp",          "role": "hero" },
+  { "id": "prop-lobby",      "src": "gallery/IMG_1536.JPG",                "out": "/images/property/hotel-siddhi-vinayak-lobby.webp",           "role": "hero" },
+  { "id": "prop-entrance",   "src": "exterior/106.jpg",                    "out": "/images/property/hotel-siddhi-vinayak-entrance.webp",        "role": "hero" },
+
+  { "id": "deluxe-1",        "src": "201/201.2.jpg",                       "out": "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",      "role": "room" },
+  { "id": "deluxe-2",        "src": "201/BATHROOM PIC 201 B 3.jpg",        "out": "/images/rooms/deluxe-room/deluxe-room-jodhpur-02.webp",      "role": "room" },
+  { "id": "deluxe-3",        "src": "201/BATHROOM PIC 201 B 4.jpg",        "out": "/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp",      "role": "room" },
+
+  { "id": "superdeluxe-1",   "src": "203/203.1.jpeg",                      "out": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp", "role": "room" },
+  { "id": "superdeluxe-2",   "src": "203/203.2.jpeg",                      "out": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp", "role": "room" },
+  { "id": "superdeluxe-3",   "src": "203/203.4.jpeg",                      "out": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-03.webp", "role": "room" },
+
+  { "id": "family-1",        "src": "301/AA.jpeg",                         "out": "/images/rooms/family-suite/family-suite-jodhpur-01.webp",    "role": "room" },
+  { "id": "family-2",        "src": "301/A.jpeg",                          "out": "/images/rooms/family-suite/family-suite-jodhpur-02.webp",    "role": "room" },
+  { "id": "family-3",        "src": "301/AAA.jpeg",                        "out": "/images/rooms/family-suite/family-suite-jodhpur-03.webp",    "role": "room" },
+
+  { "id": "gal-rooms-1",     "src": "210/210 (4).jpeg",                    "out": "/images/gallery/rooms/deluxe-room-interior.webp",            "role": "gallery" },
+  { "id": "gal-rooms-2",     "src": "203/203.5.jpeg",                      "out": "/images/gallery/rooms/super-deluxe-room-king-bed.webp",      "role": "gallery" },
+  { "id": "gal-rooms-3",     "src": "301/IMG_0654.JPG",                    "out": "/images/gallery/rooms/family-suite-city-view.webp",          "role": "gallery" },
+  { "id": "gal-rooms-4",     "src": "209/BATHROOM .jpg",                   "out": "/images/gallery/rooms/room-bathroom.webp",                   "role": "gallery" },
+
+  { "id": "gal-prop-1",      "src": "exterior/HOTEL OUTSIDE.png",          "out": "/images/gallery/property/hotel-facade-jodhpur.webp",          "role": "gallery" },
+  { "id": "gal-prop-2",      "src": "gallery/IMG_1537.JPG",                "out": "/images/gallery/property/lobby-reception.webp",               "role": "gallery" },
+  { "id": "gal-prop-3",      "src": "exterior/112.jpg",                    "out": "/images/gallery/property/hotel-rooftop-view.webp",            "role": "gallery" },
+
+  { "id": "logo",            "src": "brand/hotel logo.jpg",                "out": "/images/brand/hotel-siddhi-vinayak-logo.png",                "role": "logo" }
+]

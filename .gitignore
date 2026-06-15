@@ -9,3 +9,7 @@ npm-debug.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw image/video originals (processed into public/images)
+_raw/
+IMAGE-INVENTORY.csv
