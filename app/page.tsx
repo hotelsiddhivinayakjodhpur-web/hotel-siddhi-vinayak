@@ -26,18 +26,21 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-center">
-        {VIDEO_READY ? (
-          <HeroVideo
-            src="/videos/hero.mp4"
-            poster="/videos/hero-poster.jpg"
-            alt="Hotel Siddhi Vinayak, Jodhpur — walkthrough"
-          />
-        ) : (
-          <Image
-            src="/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp"
-            alt="Hotel Siddhi Vinayak exterior in Jodhpur, Rajasthan"
-            fill priority className="object-cover"
-          />
+        {/* Mobile: static image = fast LCP. Desktop: ambient hero video. */}
+        <Image
+          src="/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp"
+          alt="Hotel Siddhi Vinayak exterior in Jodhpur, Rajasthan"
+          fill priority sizes="100vw"
+          className={`object-cover ${VIDEO_READY ? "md:hidden" : ""}`}
+        />
+        {VIDEO_READY && (
+          <div className="absolute inset-0 hidden md:block">
+            <HeroVideo
+              src="/videos/hero.mp4"
+              poster="/videos/hero-poster.jpg"
+              alt="Hotel Siddhi Vinayak, Jodhpur — walkthrough"
+            />
+          </div>
         )}
         <div className="absolute inset-0 hero-overlay" />
         <Reveal className="relative z-10 px-6">
