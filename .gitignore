@@ -13,3 +13,7 @@ next-env.d.ts
 # Raw image/video originals (processed into public/images)
 _raw/
 IMAGE-INVENTORY.csv
+
+# Lighthouse / PSI run artifacts
+lh-*.json
+psi-*.json

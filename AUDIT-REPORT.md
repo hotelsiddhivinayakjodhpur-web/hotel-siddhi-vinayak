@@ -1,7 +1,14 @@
-# Hotel Siddhi Vinayak — Pre-Deployment Audit Report
+# Hotel Siddhi Vinayak — Audit Report
 
-Domain: **https://hotelsiddhi-vinayak.com** · Stack: Next.js 15 (App Router) + Tailwind on Vercel
-Repo: `hotelsiddhivinayakjodhpur-web/hotel-siddhi-vinayak` · Build: ✅ 20 pages
+Canonical domain: **https://hotelsiddhi-vinayak.com** · Stack: Next.js 15 (App Router) + Tailwind on Vercel
+Repo: `hotelsiddhivinayakjodhpur-web/hotel-siddhi-vinayak` · Build: ✅ 21 pages
+
+## 🟢 LIVE STATUS (2026-06-15)
+- **Live preview URL:** https://hotel-siddhi-vinayak.vercel.app (Vercel, deployment `f8b5219`)
+- **Real photos:** 24 WebP from actual hotel folders, 36 MB → 2.1 MB (94% smaller)
+- **Hero video:** ffmpeg H.264 1080p, 6.8 MB → 4.4 MB (desktop only; mobile uses image for LCP)
+- **Lighthouse (live):** Mobile — Perf **88**, A11y **95**, Best-Practices **96**, SEO **92** (LCP 3.2s, CLS 0). Desktop — Perf **91**, LCP 1.6s, CLS 0.001.
+- **Resolved blockers:** ✅ ffmpeg installed · ✅ Vercel connected · ✅ photos processed · ✅ video processed · ✅ deployed · ✅ Lighthouse run.
 
 ## 1. Website structure (complete)
 Home · Rooms (list) · **4 room category pages** (`/rooms/deluxe-room`,
@@ -70,17 +77,19 @@ lazy-load; ~102 kB shared JS; static/SSG pages; faststart hero video.
 
 ---
 
-## ⛔ Blocking before deploy (need you / the originals)
-1. **Photos** → download Drive folders into `_raw/` (per IMAGE-PIPELINE.md), then
-   `node scripts/process-images.mjs`; I view + finalize curation, set
-   `PHOTOS_READY=true`, remove all stock.
-2. **Videos** → download `VIDEOS` into `_raw/VIDEOS/`, `node scripts/process-videos.mjs`,
-   set `VIDEO_READY=true`.
-3. **og-image.jpg** → produced by the photo pipeline (from exterior) or supply one.
-4. **Prices** → when finalized, add to `lib/data.ts` and set `priceConfirmed=true`.
-5. **GBP + OTA links**, exact geo pin, confirm email mailbox.
+## ✅ Resolved
+- Photos processed & wired · video processed & wired · og-image generated ·
+  prices live (EP) · deployed to Vercel · Lighthouse run.
 
-## Environment note
-The Drive connector returns files as inline base64 (verified), so multi-MB
-originals and videos can't be processed through it — hence the local `_raw/`
-pipeline. Everything else is complete, builds clean, and is pushed to `main`.
+## Remaining (optional polish, not blocking)
+1. **Deeper room galleries** — representative folders pulled per category; pull
+   the remaining room-number folders for more photos per room.
+2. **Real Google reviews** → paste into `lib/data.ts reviews[]` (schema then emits them).
+3. **GBP profile URL** → `site.social.google` (schema `sameAs`); **exact geo pin**; confirm email mailbox.
+4. **Attraction/blog landmark photos** — licensed Jodhpur landmark images (not hotel media).
+5. **Production domain** — point `hotelsiddhi-vinayak.com` at the Vercel project; set production branch policy for preview-first if desired.
+
+## Note on deploys
+The GitHub repo is git-connected to Vercel and auto-deploys `main` → production.
+To enforce preview-first, change the Vercel Production Branch or work on a release
+branch. Pipeline scripts (images/videos) re-run anytime from `_raw/`.
