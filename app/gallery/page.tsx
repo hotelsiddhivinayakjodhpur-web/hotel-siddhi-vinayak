@@ -13,7 +13,7 @@ export default function GalleryPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Gallery", path: "/gallery" }]} />
-      <PageHero title="Gallery" subtitle="A glimpse of your stay with us." image="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1920&q=80" />
+      <PageHero title="Gallery" subtitle="A glimpse of your stay with us." image="/images/gallery/property/hotel-01.webp" />
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-7xl px-6">
           <GalleryGrid />

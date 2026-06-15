@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { galleryByCategory } from "@/lib/images";
-import { whatsappLink, callLink, PHOTOS_READY } from "@/lib/config";
+import { whatsappLink, callLink } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Restaurant & Dining",
@@ -15,12 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/restaurant" },
 };
 
-// Real dining photos once processed; until then a tasteful temporary cover.
-const diningStock = [
-  { src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1280&q=80", alt: "Restaurant interior at Hotel Siddhi Vinayak, Jodhpur", width: 1280, height: 853 },
-  { src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1280&q=80", alt: "Dining and seating area", width: 1280, height: 853 },
-];
-const photos = PHOTOS_READY && galleryByCategory.Dining.length ? galleryByCategory.Dining : diningStock;
+const photos = galleryByCategory.Dining;
 
 const features = [
   { icon: Utensils, title: "Vegetarian Cuisine", desc: "Freshly prepared Indian vegetarian meals." },

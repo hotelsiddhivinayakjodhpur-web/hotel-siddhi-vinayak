@@ -34,8 +34,8 @@ export default function Home() {
           />
         ) : (
           <Image
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
-            alt="Hotel Siddhi Vinayak Jodhpur"
+            src="/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp"
+            alt="Hotel Siddhi Vinayak exterior in Jodhpur, Rajasthan"
             fill priority className="object-cover"
           />
         )}
@@ -118,7 +118,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
           <Reveal>
             <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80" alt="Hotel interior" fill className="object-cover" />
+              <Image src="/images/gallery/property/hotel-02.webp" alt="Hotel Siddhi Vinayak building in Jodhpur" fill className="object-cover" />
             </div>
           </Reveal>
           <Reveal delay={0.15}>

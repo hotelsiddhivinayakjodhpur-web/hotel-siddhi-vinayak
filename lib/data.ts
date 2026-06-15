@@ -28,8 +28,7 @@ export const rooms: Room[] = [
     size: "220 sq ft",
     occupancy: "2 Guests",
     bed: "1 Double Bed",
-    image:
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",
     description:
       "A cosy, air-conditioned room with a comfortable double bed, modern bathroom and all essentials for a restful stay in the heart of Jodhpur.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "LED TV", "Hot Water", "Daily Housekeeping", "Room Service"],
@@ -46,8 +45,7 @@ export const rooms: Room[] = [
     size: "300 sq ft",
     occupancy: "2-3 Guests",
     bed: "1 King Bed",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp",
     description:
       "A spacious, premium room with upgraded furnishings and a private sitting area — our best value for couples and business travellers.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Work Desk", "Hot Water"],
@@ -64,8 +62,7 @@ export const rooms: Room[] = [
     size: "320 sq ft",
     occupancy: "3 Guests",
     bed: "3 Single Beds / 1 Double + 1 Single",
-    image:
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp",
     description:
       "A roomy, air-conditioned room comfortably sleeping three — ideal for friends and small families travelling together.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Hot Water", "Room Service", "Extra Bedding"],
@@ -82,8 +79,7 @@ export const rooms: Room[] = [
     size: "450 sq ft",
     occupancy: "4 Guests",
     bed: "2 Double Beds",
-    image:
-      "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp",
     description:
       "Our largest room with four-bed comfort and extra space — the perfect choice for families exploring the Blue City together.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Family Friendly", "Hot Water"],
@@ -97,14 +93,16 @@ export type GalleryImage = { src: string; alt: string; category: "Rooms" | "Prop
 export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
 
 export const galleryImages: GalleryImage[] = [
-  { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80", alt: "Hotel Siddhi Vinayak facade in Jodhpur", category: "Property" },
-  { src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=80", alt: "Deluxe room interior with queen bed", category: "Rooms" },
-  { src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80", alt: "Super Deluxe room with king bed", category: "Rooms" },
-  { src: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=80", alt: "Hotel lobby and reception", category: "Property" },
-  { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1000&q=80", alt: "Modern en-suite bathroom", category: "Rooms" },
-  { src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80", alt: "Hotel restaurant interior", category: "Dining" },
-  { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80", alt: "Family Suite with city view", category: "Rooms" },
-  { src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=80", alt: "Dining area with breakfast service", category: "Dining" },
+  { src: "/images/gallery/property/hotel-01.webp", alt: "Hotel Siddhi Vinayak exterior in Jodhpur", category: "Property" },
+  { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp", alt: "Deluxe Room at Hotel Siddhi Vinayak", category: "Rooms" },
+  { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp", alt: "Super Deluxe Room with king bed", category: "Rooms" },
+  { src: "/images/gallery/property/hotel-02.webp", alt: "Hotel Siddhi Vinayak building, Jodhpur", category: "Property" },
+  { src: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp", alt: "Triple Deluxe Room sleeping three", category: "Rooms" },
+  { src: "/images/gallery/dining/restaurant-01.webp", alt: "In-house restaurant at Hotel Siddhi Vinayak", category: "Dining" },
+  { src: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp", alt: "Family Four Bed Room", category: "Rooms" },
+  { src: "/images/gallery/dining/restaurant-02.webp", alt: "Restaurant dining area, Hotel Siddhi Vinayak", category: "Dining" },
+  { src: "/images/gallery/property/hotel-03.webp", alt: "Hotel Siddhi Vinayak, opposite M.G. Hospital", category: "Property" },
+  { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp", alt: "Super Deluxe Room interior", category: "Rooms" },
 ];
 
 export type Faq = { q: string; a: string };

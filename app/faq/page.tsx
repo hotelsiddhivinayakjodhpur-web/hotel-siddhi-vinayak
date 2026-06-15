@@ -10,7 +10,7 @@ export default function FaqPage() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <>
-      <PageHero title="Frequently Asked Questions" subtitle="Everything you need to know before you stay." image="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80" />
+      <PageHero title="Frequently Asked Questions" subtitle="Everything you need to know before you stay." image="/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp" />
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-3xl px-6 space-y-4">
           {faqs.map((f, i) => (

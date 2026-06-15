@@ -25,7 +25,7 @@ export default function ContactPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
-      <PageHero title="Contact Us" subtitle="We'd love to help plan your stay in Jodhpur." image="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1920&q=80" />
+      <PageHero title="Contact Us" subtitle="We'd love to help plan your stay in Jodhpur." image="/images/gallery/property/hotel-03.webp" />
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2">
           <Reveal>

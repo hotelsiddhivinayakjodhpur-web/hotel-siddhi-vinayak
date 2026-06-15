@@ -24,12 +24,12 @@ export default function AboutPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
-      <PageHero title="About Hotel Siddhi Vinayak" subtitle="Comfort, convenience and care in the Blue City." image="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1920&q=80" />
+      <PageHero title="About Hotel Siddhi Vinayak" subtitle="Comfort, convenience and care in the Blue City." image="/images/gallery/property/hotel-02.webp" />
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
           <Reveal>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80" alt="Hotel detail" fill className="object-cover" />
+              <Image src="/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp" alt="Room detail at Hotel Siddhi Vinayak, Jodhpur" fill className="object-cover" />
             </div>
           </Reveal>
           <Reveal delay={0.15}>
