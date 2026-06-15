@@ -53,3 +53,14 @@ export const whatsappLink = (msg?: string) =>
   )}`;
 
 export const callLink = `tel:${site.phoneRaw}`;
+
+// Rates are not published — every room shows this until prices are finalized.
+export const RATE_LABEL = "Contact for Best Available Rate";
+
+// Flip to true once real photos are processed into public/images (then room/
+// gallery pages render the local WebP galleries instead of the temporary cover).
+export const PHOTOS_READY = false;
+
+// Flip to true once the hero video is transcoded into public/videos/ (then the
+// homepage hero plays the muted background video instead of the static image).
+export const VIDEO_READY = false;

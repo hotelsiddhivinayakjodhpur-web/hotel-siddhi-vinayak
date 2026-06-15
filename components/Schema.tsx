@@ -68,7 +68,7 @@ export function RoomsSchema() {
         "@type": "HotelRoom",
         name: r.name,
         description: r.description,
-        url: `${site.url}/rooms#${r.slug}`,
+        url: `${site.url}/rooms/${r.slug}`,
         image: r.image,
         occupancy: {
           "@type": "QuantitativeValue",
@@ -81,18 +81,12 @@ export function RoomsSchema() {
           name: a,
           value: true,
         })),
-        offers: {
-          "@type": "Offer",
-          price: r.price,
-          priceCurrency: site.currency,
-          availability: "https://schema.org/InStock",
-          url: `${site.url}/rooms#${r.slug}`,
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: r.price,
-            priceCurrency: site.currency,
-            unitText: "per night",
-          },
+        // No numeric Offer until rates are finalized — advertising a price we
+        // don't honour risks a Google price-mismatch penalty. priceRange on the
+        // LodgingBusiness conveys the general tier instead.
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: `${site.url}/rooms/${r.slug}`,
         },
       },
     })),

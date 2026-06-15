@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/config";
-import { posts } from "@/lib/data";
+import { posts, rooms } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -10,7 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : 0.8,
+    priority: path === "" ? 1 : path === "/rooms" ? 0.9 : 0.8,
+  }));
+
+  const roomRoutes = rooms.map((r) => ({
+    url: `${base}/rooms/${r.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
   }));
 
   const blogRoutes = posts.map((p) => ({
@@ -20,5 +27,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...roomRoutes, ...blogRoutes];
 }

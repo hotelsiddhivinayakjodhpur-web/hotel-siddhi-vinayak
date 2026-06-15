@@ -7,8 +7,9 @@ import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import TrustStrip from "@/components/TrustStrip";
 import Reviews from "@/components/Reviews";
+import HeroVideo from "@/components/HeroVideo";
 import { HotelSchema } from "@/components/Schema";
-import { site, whatsappLink } from "@/lib/config";
+import { site, whatsappLink, VIDEO_READY } from "@/lib/config";
 import { rooms, attractions } from "@/lib/data";
 
 const features = [
@@ -25,11 +26,19 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-center">
-        <Image
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
-          alt="Hotel Siddhi Vinayak Jodhpur"
-          fill priority className="object-cover"
-        />
+        {VIDEO_READY ? (
+          <HeroVideo
+            src="/videos/hero.mp4"
+            poster="/videos/hero-poster.jpg"
+            alt="Hotel Siddhi Vinayak, Jodhpur — walkthrough"
+          />
+        ) : (
+          <Image
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
+            alt="Hotel Siddhi Vinayak Jodhpur"
+            fill priority className="object-cover"
+          />
+        )}
         <div className="absolute inset-0 hero-overlay" />
         <Reveal className="relative z-10 px-6">
           <p className="text-gold uppercase tracking-[0.35em] text-sm mb-4">Welcome to Jodhpur</p>
@@ -87,21 +96,21 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {rooms.map((r, i) => (
               <Reveal key={r.slug} delay={i * 0.1}>
-                <div className="group overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl">
+                <Link href={`/rooms/${r.slug}`} className="group block overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl">
                   <div className="relative h-60 overflow-hidden">
-                    <Image src={r.image} alt={r.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                    <Image src={r.image} alt={`${r.name} at Hotel Siddhi Vinayak, Jodhpur`} fill className="object-cover transition duration-500 group-hover:scale-105" />
                     <span className="absolute top-4 right-4 rounded-full bg-gold px-3 py-1 text-xs font-medium text-ink">
-                      ₹{r.price}/night
+                      {r.occupancy}
                     </span>
                   </div>
                   <div className="p-6">
                     <h3 className="font-serif text-2xl text-ink">{r.name}</h3>
                     <p className="mt-2 text-sm text-ink/60 line-clamp-2">{r.description}</p>
-                    <Link href="/rooms" className="mt-4 inline-flex items-center gap-1 text-gold-dark font-medium hover:gap-2 transition-all">
-                      Details <ArrowRight size={16} />
-                    </Link>
+                    <span className="mt-4 inline-flex items-center gap-1 text-gold-dark font-medium group-hover:gap-2 transition-all">
+                      View room <ArrowRight size={16} />
+                    </span>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
