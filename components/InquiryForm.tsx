@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { whatsappLink } from "@/lib/config";
+import { rooms } from "@/lib/data";
 
 export default function InquiryForm() {
   const [form, setForm] = useState({
@@ -55,7 +56,7 @@ export default function InquiryForm() {
         <div>
           <label htmlFor="iq-room" className="block text-xs text-ink/60 mb-1">Room Type</label>
           <select id="iq-room" name="room" value={form.room} onChange={(e) => update("room", e.target.value)} className={field}>
-            {["Deluxe Room", "Super Deluxe Room", "Family Suite"].map((r) => <option key={r}>{r}</option>)}
+            {rooms.map((r) => <option key={r.slug}>{r.name}</option>)}
           </select>
         </div>
       </div>

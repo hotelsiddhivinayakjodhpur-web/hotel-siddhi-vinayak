@@ -83,8 +83,8 @@ export default function Home() {
       {/* Rooms preview */}
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionTitle eyebrow="Our Rooms" title="Stay in Comfort" subtitle="Clean, air-conditioned rooms designed for a restful stay in the Blue City." />
-          <div className="grid gap-8 md:grid-cols-3">
+          <SectionTitle eyebrow="Our Rooms" title="Stay in Comfort" subtitle="Four room categories — from Deluxe to Family Four Bed — for a restful stay in the Blue City." />
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {rooms.map((r, i) => (
               <Reveal key={r.slug} delay={i * 0.1}>
                 <div className="group overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl">

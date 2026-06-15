@@ -1,54 +1,84 @@
 export type Room = {
   slug: string;
   name: string;
-  price: number;
+  price: number;          // ⚠️ PROVISIONAL — confirm against OCT-JAN PRICE CHART.jpg
+  priceConfirmed: boolean;
+  roomNumbers: number[];  // real room folders in Drive that belong to this category
+  count: number;          // number of rooms of this type
   size: string;
   occupancy: string;
   bed: string;
-  image: string;
+  image: string;          // cover (temporary stock until real photos are processed)
   description: string;
   amenities: string[];
 };
 
+// Room taxonomy from the property's real inventory (Drive folders by room number).
+// Categories must never be mixed (see image-map.json srcDirs).
 export const rooms: Room[] = [
   {
     slug: "deluxe-room",
     name: "Deluxe Room",
     price: 1499,
+    priceConfirmed: false,
+    roomNumbers: [202, 203, 204, 205, 207, 208, 210],
+    count: 7,
     size: "220 sq ft",
     occupancy: "2 Guests",
-    bed: "1 Queen Bed",
+    bed: "1 Double Bed",
     image:
       "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
     description:
-      "A cosy, air-conditioned room with a comfortable queen bed, modern bathroom and all essentials for a restful stay in Jodhpur.",
-    amenities: ["Air Conditioning", "Free Wi-Fi", "LED TV", "Hot Water", "Daily Housekeeping", "Tea/Coffee Maker"],
+      "A cosy, air-conditioned room with a comfortable double bed, modern bathroom and all essentials for a restful stay in the heart of Jodhpur.",
+    amenities: ["Air Conditioning", "Free Wi-Fi", "LED TV", "Hot Water", "Daily Housekeeping", "Room Service"],
   },
   {
     slug: "super-deluxe-room",
     name: "Super Deluxe Room",
     price: 1999,
+    priceConfirmed: false,
+    roomNumbers: [301, 302, 303, 304, 305, 307, 308, 309, 310],
+    count: 9,
     size: "300 sq ft",
     occupancy: "2-3 Guests",
     bed: "1 King Bed",
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
     description:
-      "A spacious room with premium furnishings, a king-size bed and a private sitting area — perfect for couples and small families.",
+      "A spacious, premium room with upgraded furnishings and a private sitting area — perfect for couples and business travellers.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Work Desk", "Hot Water"],
   },
   {
-    slug: "family-suite",
-    name: "Family Suite",
+    slug: "triple-deluxe-room",
+    name: "Triple Deluxe Room",
+    price: 2499,
+    priceConfirmed: false,
+    roomNumbers: [201, 206, 209],
+    count: 3,
+    size: "320 sq ft",
+    occupancy: "3 Guests",
+    bed: "3 Single Beds / 1 Double + 1 Single",
+    image:
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    description:
+      "A roomy, air-conditioned room comfortably sleeping three — ideal for friends and small families travelling together.",
+    amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Hot Water", "Room Service", "Extra Bedding"],
+  },
+  {
+    slug: "family-four-bed-room",
+    name: "Family Four Bed Room",
     price: 2999,
+    priceConfirmed: false,
+    roomNumbers: [306],
+    count: 1,
     size: "450 sq ft",
     occupancy: "4 Guests",
-    bed: "1 King + 1 Twin",
+    bed: "2 Double Beds",
     image:
       "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80",
     description:
-      "Our largest accommodation with two sleeping areas, ideal for families. Enjoy extra space, a lounge corner and city views.",
-    amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Sofa Lounge", "Room Service", "City View", "Hot Water"],
+      "Our largest room with four-bed comfort and extra space — the perfect choice for families exploring the Blue City together.",
+    amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Family Friendly", "Hot Water"],
   },
 ];
 

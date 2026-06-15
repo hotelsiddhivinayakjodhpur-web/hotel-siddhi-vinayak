@@ -60,41 +60,55 @@ export const hero = {
   } satisfies Img,
 };
 
-/** Per-room galleries (first image is the room card/cover). */
+/** Per-room-category galleries (first image is the room card/cover). Keys match
+ *  the room slugs in lib/data.ts. Photos are auto-selected from the room-number
+ *  folders in Drive per the category mapping in scripts/image-map.json. */
 export const roomImages: Record<string, Img[]> = {
   "deluxe-room": [
-    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp", alt: "Deluxe room with queen bed and AC at Hotel Siddhi Vinayak, Jodhpur", width: 1200, height: 800 },
-    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-02.webp", alt: "Deluxe room seating and work area, Hotel Siddhi Vinayak", width: 1200, height: 800 },
-    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp", alt: "Modern en-suite bathroom in the Deluxe room", width: 1200, height: 800 },
+    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp", alt: "Deluxe Room with double bed and AC at Hotel Siddhi Vinayak, Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-02.webp", alt: "Deluxe Room interior, Hotel Siddhi Vinayak Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp", alt: "Modern en-suite bathroom in the Deluxe Room", width: 1400, height: 933 },
+    { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-04.webp", alt: "Deluxe Room detail at Hotel Siddhi Vinayak", width: 1400, height: 933 },
   ],
   "super-deluxe-room": [
-    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp", alt: "Super Deluxe room with king bed at Hotel Siddhi Vinayak, Jodhpur", width: 1200, height: 800 },
-    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp", alt: "Super Deluxe room sitting area and smart TV", width: 1200, height: 800 },
-    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-03.webp", alt: "Super Deluxe room bathroom with hot water", width: 1200, height: 800 },
+    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp", alt: "Super Deluxe Room with king bed at Hotel Siddhi Vinayak, Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp", alt: "Super Deluxe Room sitting area and smart TV", width: 1400, height: 933 },
+    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-03.webp", alt: "Super Deluxe Room en-suite bathroom", width: 1400, height: 933 },
+    { src: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-04.webp", alt: "Super Deluxe Room detail, Hotel Siddhi Vinayak Jodhpur", width: 1400, height: 933 },
   ],
-  "family-suite": [
-    { src: "/images/rooms/family-suite/family-suite-jodhpur-01.webp", alt: "Family Suite with king and twin beds at Hotel Siddhi Vinayak, Jodhpur", width: 1200, height: 800 },
-    { src: "/images/rooms/family-suite/family-suite-jodhpur-02.webp", alt: "Family Suite lounge corner with city view", width: 1200, height: 800 },
-    { src: "/images/rooms/family-suite/family-suite-jodhpur-03.webp", alt: "Family Suite second sleeping area", width: 1200, height: 800 },
+  "triple-deluxe-room": [
+    { src: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp", alt: "Triple Deluxe Room sleeping three at Hotel Siddhi Vinayak, Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-02.webp", alt: "Triple Deluxe Room interior, Hotel Siddhi Vinayak Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-03.webp", alt: "Triple Deluxe Room en-suite bathroom", width: 1400, height: 933 },
+  ],
+  "family-four-bed-room": [
+    { src: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp", alt: "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur", width: 1400, height: 933 },
+    { src: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-02.webp", alt: "Family Four Bed Room with two double beds", width: 1400, height: 933 },
+    { src: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-03.webp", alt: "Family Four Bed Room en-suite bathroom", width: 1400, height: 933 },
   ],
 };
 
-/** Gallery page, grouped by the existing categories (Rooms / Property / Dining). */
-export const galleryByCategory: Record<"Rooms" | "Property" | "Dining", Img[]> = {
+/** Gallery page, grouped by category (Rooms / Property / Dining / Amenities). */
+export type GalleryCat = "Rooms" | "Property" | "Dining" | "Amenities";
+export const galleryByCategory: Record<GalleryCat, Img[]> = {
   Rooms: [
-    { src: "/images/gallery/rooms/deluxe-room-interior.webp", alt: "Deluxe room interior at Hotel Siddhi Vinayak, Jodhpur", width: 1000, height: 750 },
-    { src: "/images/gallery/rooms/super-deluxe-room-king-bed.webp", alt: "Super Deluxe room with king bed", width: 1000, height: 1333 },
-    { src: "/images/gallery/rooms/family-suite-city-view.webp", alt: "Family Suite with city view", width: 1000, height: 750 },
-    { src: "/images/gallery/rooms/room-bathroom.webp", alt: "Clean modern bathroom", width: 1000, height: 1333 },
+    { src: "/images/gallery/rooms/deluxe-room-interior.webp", alt: "Deluxe Room interior at Hotel Siddhi Vinayak, Jodhpur", width: 1280, height: 853 },
+    { src: "/images/gallery/rooms/super-deluxe-room-king-bed.webp", alt: "Super Deluxe Room with king bed", width: 1280, height: 853 },
+    { src: "/images/gallery/rooms/triple-deluxe-room.webp", alt: "Triple Deluxe Room sleeping three", width: 1280, height: 853 },
+    { src: "/images/gallery/rooms/family-four-bed-room.webp", alt: "Family Four Bed Room", width: 1280, height: 853 },
   ],
   Property: [
-    { src: "/images/gallery/property/hotel-facade-jodhpur.webp", alt: "Hotel Siddhi Vinayak facade in Jodhpur", width: 1000, height: 750 },
-    { src: "/images/gallery/property/lobby-reception.webp", alt: "Lobby and reception area", width: 1000, height: 750 },
-    { src: "/images/gallery/property/hotel-rooftop-view.webp", alt: "Rooftop view of the Blue City", width: 1000, height: 1333 },
+    { src: "/images/gallery/property/hotel-facade-jodhpur.webp", alt: "Hotel Siddhi Vinayak facade in Jodhpur", width: 1280, height: 853 },
+    { src: "/images/gallery/property/lobby-reception.webp", alt: "Lobby and reception area", width: 1280, height: 853 },
+    { src: "/images/gallery/property/hotel-corridor.webp", alt: "Hotel corridor and common area", width: 1280, height: 853 },
   ],
   Dining: [
-    { src: "/images/gallery/dining/restaurant-interior.webp", alt: "In-house restaurant interior", width: 1000, height: 750 },
-    { src: "/images/gallery/dining/breakfast-spread.webp", alt: "Breakfast service at Hotel Siddhi Vinayak", width: 1000, height: 750 },
+    { src: "/images/gallery/dining/restaurant-interior.webp", alt: "In-house restaurant at Hotel Siddhi Vinayak, Jodhpur", width: 1280, height: 853 },
+    { src: "/images/gallery/dining/restaurant-seating.webp", alt: "Restaurant dining and seating area", width: 1280, height: 853 },
+  ],
+  Amenities: [
+    { src: "/images/gallery/amenities/reception.webp", alt: "24-hour reception desk", width: 1280, height: 853 },
+    { src: "/images/gallery/amenities/parking.webp", alt: "Free on-site parking", width: 1280, height: 853 },
   ],
 };
 
