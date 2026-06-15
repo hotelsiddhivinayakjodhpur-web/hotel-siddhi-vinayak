@@ -5,7 +5,7 @@ import { posts, rooms } from "@/lib/data";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
   const staticRoutes = [
-    "", "/rooms", "/gallery", "/about", "/contact", "/faq", "/blog", "/nearby-attractions",
+    "", "/rooms", "/restaurant", "/gallery", "/about", "/contact", "/faq", "/blog", "/nearby-attractions",
   ].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),

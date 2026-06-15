@@ -40,14 +40,19 @@ export function HotelSchema() {
       ratingValue: site.rating.value,
       reviewCount: site.rating.count,
     },
-    // Individual reviews back the aggregateRating (required by Google policy).
-    review: reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.author },
-      datePublished: r.date,
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-    })),
+    // Only emit individual Review objects when REAL reviews are present — never
+    // fabricated. The aggregateRating above mirrors the live Google rating.
+    ...(reviews.length
+      ? {
+          review: reviews.map((r) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: r.author },
+            datePublished: r.date,
+            reviewBody: r.text,
+            reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+          })),
+        }
+      : {}),
     amenityFeature: [
       "Free Wi-Fi", "Air Conditioning", "Free Parking", "Room Service", "24-hour Front Desk",
     ].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
@@ -81,12 +86,18 @@ export function RoomsSchema() {
           name: a,
           value: true,
         })),
-        // No numeric Offer until rates are finalized — advertising a price we
-        // don't honour risks a Google price-mismatch penalty. priceRange on the
-        // LodgingBusiness conveys the general tier instead.
-        potentialAction: {
-          "@type": "ReserveAction",
-          target: `${site.url}/rooms/${r.slug}`,
+        offers: {
+          "@type": "Offer",
+          price: r.price,
+          priceCurrency: site.currency,
+          availability: "https://schema.org/InStock",
+          url: `${site.url}/rooms/${r.slug}`,
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: r.price,
+            priceCurrency: site.currency,
+            unitText: "per night (room only / EP plan)",
+          },
         },
       },
     })),
@@ -127,7 +138,7 @@ export function LocalBusinessSchema() {
       opens: "00:00",
       closes: "23:59",
     },
-    sameAs: [site.social.instagram, site.social.facebook],
+    sameAs: [site.social.instagram, site.social.facebook, site.social.google].filter(Boolean),
   };
   return <JsonLd data={data} />;
 }

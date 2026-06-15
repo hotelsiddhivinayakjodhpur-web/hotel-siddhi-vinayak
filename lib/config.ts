@@ -4,7 +4,7 @@ export const site = {
   legalName: "Hotel Siddhi Vinayak",
   tagline: "Comfort & Hospitality in the Blue City",
   description:
-    "Hotel Siddhi Vinayak is a comfortable, well-located hotel in Jodhpur, Rajasthan offering clean rooms, warm hospitality and easy access to Mehrangarh Fort and the old city.",
+    "Hotel Siddhi Vinayak is a comfortable, well-located hotel in Jodhpur, Rajasthan — opposite M.G. Hospital near Jalori Gate — offering clean air-conditioned rooms, warm hospitality and easy access to Mehrangarh Fort and the old city.",
   // The ONE canonical domain for the entire brand. Drives all SEO: canonical
   // tags, sitemap, robots, OG/Twitter URLs, and JSON-LD @id/url. No other domain
   // is referenced anywhere in this codebase.
@@ -14,31 +14,38 @@ export const site = {
   whatsapp: "919829000000",
   // ⚠️ Verify this mailbox exists / forwards before launch (aligned to primary domain).
   email: "stay@hotelsiddhi-vinayak.com",
+  // Real Google Business Profile address.
   address: {
-    street: "Near Railway Station, High Court Road",
+    street: "MG Hospital Road, Medical Market, Opposite M.G. Hospital, Jalori Gate, Rawaton Ka Bass",
     locality: "Jodhpur",
     region: "Rajasthan",
     postalCode: "342001",
     country: "IN",
   },
-  geo: { lat: 26.2967, lng: 73.0351 },
+  // ⚠️ Approx Jalori Gate coords — replace with the exact GBP pin lat/lng.
+  geo: { lat: 26.2742, lng: 73.0227 },
+  // ⚠️ Replace with the real GBP "Embed a map" iframe src for the exact pin.
   mapsEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.0!2d73.0351!3d26.2967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sJodhpur!5e0!3m2!1sen!2sin!4v1700000000000",
+    "https://www.google.com/maps?q=Hotel%20Siddhi%20Vinayak%2C%20Jalori%20Gate%2C%20Jodhpur&output=embed",
   priceRange: "₹₹",
-  startingPrice: 1499,
+  startingPrice: 1200,
   currency: "INR",
-  rating: { value: 4.6, count: 248 },
+  // Live Google Business Profile rating (Jan–Jun 2026): 3.7★ from 791+ reviews.
+  rating: { value: 3.7, count: 791 },
   checkIn: "12:00",
   checkOut: "11:00",
   social: {
     instagram: "https://instagram.com/hotelsiddhivinayak",
     facebook: "https://facebook.com/hotelsiddhivinayak",
+    // ⚠️ Add the real Google Business Profile URL here for schema sameAs / GBP integration.
+    google: "",
   },
 };
 
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Rooms", href: "/rooms" },
+  { label: "Restaurant", href: "/restaurant" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Attractions", href: "/nearby-attractions" },

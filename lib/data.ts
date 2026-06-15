@@ -1,7 +1,7 @@
 export type Room = {
   slug: string;
   name: string;
-  price: number;          // ⚠️ PROVISIONAL — confirm against OCT-JAN PRICE CHART.jpg
+  price: number;          // EP plan, ₹ per night (room only)
   priceConfirmed: boolean;
   roomNumbers: number[];  // real room folders in Drive that belong to this category
   count: number;          // number of rooms of this type
@@ -11,16 +11,18 @@ export type Room = {
   image: string;          // cover (temporary stock until real photos are processed)
   description: string;
   amenities: string[];
+  highlight: string;      // positioning badge shown on cards
+  bestFor: string;        // short "best for" line for the comparison section
 };
 
-// Room taxonomy from the property's real inventory (Drive folders by room number).
+// Room taxonomy + EP-plan tariff from the property's real inventory.
 // Categories must never be mixed (see image-map.json srcDirs).
 export const rooms: Room[] = [
   {
     slug: "deluxe-room",
     name: "Deluxe Room",
-    price: 1499,
-    priceConfirmed: false,
+    price: 1200,
+    priceConfirmed: true,
     roomNumbers: [202, 203, 204, 205, 207, 208, 210],
     count: 7,
     size: "220 sq ft",
@@ -31,12 +33,14 @@ export const rooms: Room[] = [
     description:
       "A cosy, air-conditioned room with a comfortable double bed, modern bathroom and all essentials for a restful stay in the heart of Jodhpur.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "LED TV", "Hot Water", "Daily Housekeeping", "Room Service"],
+    highlight: "Budget-Friendly",
+    bestFor: "Solo travellers & couples on a budget",
   },
   {
     slug: "super-deluxe-room",
     name: "Super Deluxe Room",
-    price: 1999,
-    priceConfirmed: false,
+    price: 1350,
+    priceConfirmed: true,
     roomNumbers: [301, 302, 303, 304, 305, 307, 308, 309, 310],
     count: 9,
     size: "300 sq ft",
@@ -45,14 +49,16 @@ export const rooms: Room[] = [
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
     description:
-      "A spacious, premium room with upgraded furnishings and a private sitting area — perfect for couples and business travellers.",
+      "A spacious, premium room with upgraded furnishings and a private sitting area — our best value for couples and business travellers.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Work Desk", "Hot Water"],
+    highlight: "Premium Value",
+    bestFor: "Couples & business travellers wanting more space",
   },
   {
     slug: "triple-deluxe-room",
     name: "Triple Deluxe Room",
-    price: 2499,
-    priceConfirmed: false,
+    price: 1400,
+    priceConfirmed: true,
     roomNumbers: [201, 206, 209],
     count: 3,
     size: "320 sq ft",
@@ -63,12 +69,14 @@ export const rooms: Room[] = [
     description:
       "A roomy, air-conditioned room comfortably sleeping three — ideal for friends and small families travelling together.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Hot Water", "Room Service", "Extra Bedding"],
+    highlight: "Ideal for 3 Guests",
+    bestFor: "Three friends or a small family",
   },
   {
     slug: "family-four-bed-room",
     name: "Family Four Bed Room",
-    price: 2999,
-    priceConfirmed: false,
+    price: 1800,
+    priceConfirmed: true,
     roomNumbers: [306],
     count: 1,
     size: "450 sq ft",
@@ -79,6 +87,8 @@ export const rooms: Room[] = [
     description:
       "Our largest room with four-bed comfort and extra space — the perfect choice for families exploring the Blue City together.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Room Service", "Family Friendly", "Hot Water"],
+    highlight: "Best for Families",
+    bestFor: "Families of four needing room to spread out",
   },
 ];
 
@@ -100,14 +110,16 @@ export const galleryImages: GalleryImage[] = [
 export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
+  { q: "Where is Hotel Siddhi Vinayak located in Jodhpur?", a: "We are on MG Hospital Road, Medical Market, opposite M.G. Hospital near Jalori Gate (Rawaton Ka Bass), Jodhpur — a central location close to the railway station, bus stand and the old city." },
   { q: "What are the check-in and check-out times?", a: "Check-in is from 12:00 PM and check-out is by 11:00 AM. Early check-in and late check-out can be arranged on request, subject to availability." },
-  { q: "Is the hotel close to Jodhpur Railway Station?", a: "Yes. Hotel Siddhi Vinayak is located very close to the Jodhpur Railway Station and is well connected to the bus stand and airport." },
-  { q: "Do you provide free Wi-Fi?", a: "Yes, complimentary high-speed Wi-Fi is available in all rooms and common areas." },
-  { q: "Is parking available?", a: "Yes, we offer free on-site parking for guests travelling by car." },
-  { q: "How far is Mehrangarh Fort from the hotel?", a: "Mehrangarh Fort is approximately 4-5 km from the hotel, about a 15-minute drive." },
-  { q: "Do you offer airport or station pickup?", a: "Yes, we can arrange paid pickup and drop services. Please share your arrival details via WhatsApp or call us in advance." },
-  { q: "Is breakfast included?", a: "Breakfast availability depends on the rate plan you book. Contact us on WhatsApp for current packages and pricing." },
-  { q: "How can I book a room?", a: "You can book instantly via the WhatsApp button, call us directly, or fill out the inquiry form on our Contact page." },
+  { q: "What room types and tariffs do you offer?", a: "We offer four room categories on an EP (room-only) plan: Deluxe Room from ₹1200/night, Super Deluxe Room from ₹1350/night, Triple Deluxe Room from ₹1400/night, and Family Four Bed Room from ₹1800/night. Contact us for the best available rate on your dates." },
+  { q: "How do I get the best price?", a: "Always book direct with us by Call or WhatsApp — you get our best available rate with no third-party commission or booking fees, which is usually better than online travel agency (OTA) prices." },
+  { q: "Do you have a restaurant?", a: "Yes, the hotel has an in-house restaurant serving vegetarian Indian meals, plus room service to your door." },
+  { q: "Do you provide free Wi-Fi and parking?", a: "Yes — complimentary high-speed Wi-Fi in all rooms and common areas, and free on-site parking for guests travelling by car." },
+  { q: "How far is Mehrangarh Fort from the hotel?", a: "Mehrangarh Fort is roughly 3-4 km away, about a 10-15 minute drive. The Clock Tower and Sardar Market are even closer." },
+  { q: "Do you offer airport or station pickup?", a: "Yes, we can arrange paid pickup and drop. Please share your arrival details via WhatsApp or call us in advance." },
+  { q: "Is the room rate inclusive of breakfast?", a: "Our standard tariff is EP (room only). Breakfast and meal packages can be added — ask us on WhatsApp for current options." },
+  { q: "How can I book a room?", a: "Book instantly via WhatsApp, call us directly, or send an enquiry from the Contact page. We usually reply within minutes." },
 ];
 
 export type Attraction = {
@@ -134,33 +146,18 @@ export type Review = {
   source?: string; // e.g. "Google", "Booking.com"
 };
 
-// ⚠️ IMPORTANT: Replace these with REAL, verified guest reviews before launch.
-// Google's policy forbids fabricated reviews and self-serving aggregateRating
-// that isn't backed by genuine reviews shown on the site. The easiest source
-// is your Google Business Profile. Keep author/date/source accurate.
-export const reviews: Review[] = [
-  {
-    author: "Rahul Sharma",
-    rating: 5,
-    date: "2025-02-18",
-    text: "Spotless rooms and very helpful staff. Walking distance from the railway station made our late-night arrival easy. Great value for the price.",
-    source: "Google",
-  },
-  {
-    author: "Priya Menon",
-    rating: 5,
-    date: "2025-01-09",
-    text: "Comfortable AC room, hot water, and friendly front desk who arranged our Mehrangarh Fort cab. Would happily stay again.",
-    source: "Google",
-  },
-  {
-    author: "Aamir Khan",
-    rating: 4,
-    date: "2024-12-22",
-    text: "Clean, well-located and quiet. Free parking was a big plus for our road trip. Breakfast options nearby. Recommended.",
-    source: "Booking.com",
-  },
-];
+// Paste REAL, verified Google reviews here (author/date/text/rating exactly as on
+// Google). Until then this stays EMPTY — we never fabricate reviews, and the
+// schema only emits individual Review objects when real ones are present. The
+// site shows the real aggregate (3.7★, 791+ reviews) and links to Google instead.
+export const reviews: Review[] = [];
+
+// Live Google Business Profile signals (Jan–Jun 2026) used for social proof.
+export const gbpStats = {
+  ratingValue: 3.7,
+  reviewCount: 791,
+  interactions: 4055, // profile interactions in the period
+};
 
 export type Post = {
   slug: string;

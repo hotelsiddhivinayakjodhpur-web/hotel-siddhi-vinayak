@@ -6,7 +6,7 @@ import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowLeft } fr
 import Reveal from "@/components/Reveal";
 import { rooms } from "@/lib/data";
 import { roomImages } from "@/lib/images";
-import { site, whatsappLink, callLink, RATE_LABEL, PHOTOS_READY } from "@/lib/config";
+import { site, whatsappLink, callLink, PHOTOS_READY } from "@/lib/config";
 
 export function generateStaticParams() {
   return rooms.map((r) => ({ slug: r.slug }));
@@ -44,6 +44,19 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
     bed: r.bed,
     amenityFeature: r.amenities.map((a) => ({ "@type": "LocationFeatureSpecification", name: a, value: true })),
     isPartOf: { "@type": "Hotel", name: site.name, url: site.url },
+    offers: {
+      "@type": "Offer",
+      price: r.price,
+      priceCurrency: site.currency,
+      availability: "https://schema.org/InStock",
+      url: `${site.url}/rooms/${r.slug}`,
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: r.price,
+        priceCurrency: site.currency,
+        unitText: "per night (room only / EP plan)",
+      },
+    },
   };
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -83,8 +96,14 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
           {/* Details */}
           <div className="mt-10 grid gap-10 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h1 className="font-serif text-4xl text-ink">{r.name}</h1>
-              <p className="mt-1 text-gold-dark font-medium">{RATE_LABEL}</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="font-serif text-4xl text-ink">{r.name}</h1>
+                <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-medium text-gold-dark">{r.highlight}</span>
+              </div>
+              <p className="mt-2 text-ink">
+                <span className="font-serif text-3xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
+                <span className="text-sm text-ink/55"> / night · room only (EP)</span>
+              </p>
               <p className="mt-4 text-ink/75 leading-relaxed text-lg">{r.description}</p>
               <div className="mt-6 flex flex-wrap gap-6 text-ink/70">
                 <span className="flex items-center gap-2"><Maximize size={18} className="text-gold" /> {r.size}</span>
@@ -104,8 +123,8 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
               <div className="sticky top-28 rounded-2xl bg-white p-6 shadow-lg">
                 <p className="font-serif text-2xl text-ink">{r.name}</p>
                 <p className="mt-1 text-sm text-ink/60">{r.count} {r.count > 1 ? "rooms" : "room"} of this type</p>
-                <p className="mt-4 text-gold-dark font-semibold">{RATE_LABEL}</p>
-                <p className="mt-1 text-xs text-ink/55">Best rate guaranteed when you book direct.</p>
+                <p className="mt-4"><span className="font-serif text-3xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span><span className="text-sm text-ink/55">/night</span></p>
+                <p className="mt-1 text-xs text-ink/55">Best rate guaranteed when you book direct — no OTA commission.</p>
                 <a href={enquiry} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition hover:opacity-90">
                   <MessageCircle size={18} /> Enquire on WhatsApp
                 </a>

@@ -5,8 +5,9 @@ import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowRight } f
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { rooms } from "@/lib/data";
-import { whatsappLink, callLink, RATE_LABEL } from "@/lib/config";
+import { whatsappLink, callLink } from "@/lib/config";
 import { RoomsSchema, BreadcrumbSchema } from "@/components/Schema";
+import RoomComparison from "@/components/RoomComparison";
 
 export const metadata: Metadata = {
   title: "Rooms & Suites",
@@ -31,8 +32,15 @@ export default function RoomsPage() {
                   <span className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-sand">{r.count} {r.count > 1 ? "rooms" : "room"} available</span>
                 </Link>
                 <div className="p-3 lg:p-6">
-                  <h2 className="font-serif text-3xl text-ink">{r.name}</h2>
-                  <p className="mt-1 text-gold-dark font-medium">{RATE_LABEL}</p>
+                  <div className="flex items-center gap-3">
+                    <h2 className="font-serif text-3xl text-ink">{r.name}</h2>
+                    <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-medium text-gold-dark">{r.highlight}</span>
+                  </div>
+                  <p className="mt-1 text-ink">
+                    <span className="text-sm text-ink/55">Starting from </span>
+                    <span className="font-serif text-2xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
+                    <span className="text-sm text-ink/55">/night</span>
+                  </p>
                   <p className="mt-3 text-ink/70 leading-relaxed">{r.description}</p>
                   <div className="mt-5 flex flex-wrap gap-5 text-sm text-ink/70">
                     <span className="flex items-center gap-2"><Maximize size={16} className="text-gold" /> {r.size}</span>
@@ -63,6 +71,7 @@ export default function RoomsPage() {
           ))}
         </div>
       </section>
+      <RoomComparison />
     </>
   );
 }

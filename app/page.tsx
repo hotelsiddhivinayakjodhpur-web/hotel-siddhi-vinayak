@@ -46,15 +46,11 @@ export default function Home() {
             {site.name}
           </h1>
           <p className="mt-5 text-sand/85 text-lg max-w-xl mx-auto">{site.tagline}</p>
-          {/* Above-the-fold social proof */}
+          {/* Above-the-fold social proof — real Google numbers */}
           <div className="mt-6 flex items-center justify-center gap-2 text-sand">
-            <span className="flex gap-0.5" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={16} className="fill-gold text-gold" />
-              ))}
-            </span>
+            <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
             <span className="text-sm">
-              <strong className="font-semibold">{site.rating.value}</strong>/5 · {site.rating.count} guest reviews
+              <strong className="font-semibold">{site.rating.value}</strong>/5 · <strong className="font-semibold">{site.rating.count}+</strong> Google reviews
             </span>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
