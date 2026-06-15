@@ -68,6 +68,6 @@ export const RATE_LABEL = "Contact for Best Available Rate";
 // local WebP galleries.
 export const PHOTOS_READY = true;
 
-// Flip to true once the hero video is transcoded into public/videos/ (then the
-// homepage hero plays the muted background video instead of the static image).
-export const VIDEO_READY = false;
+// Hero video transcoded into public/videos/ — homepage hero plays the muted
+// background video (with image poster + reduced-motion fallback).
+export const VIDEO_READY = true;
