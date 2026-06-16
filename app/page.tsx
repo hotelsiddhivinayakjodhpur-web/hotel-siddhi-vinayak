@@ -121,7 +121,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
           <Reveal>
             <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/gallery/property/hotel-02.webp" alt="Hotel Siddhi Vinayak building in Jodhpur" fill className="object-cover" />
+              <Image src="/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp" alt="Super Deluxe room at Hotel Siddhi Vinayak, Jodhpur" fill className="object-cover" />
             </div>
           </Reveal>
           <Reveal delay={0.15}>

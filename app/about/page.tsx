@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
-      <PageHero title="About Hotel Siddhi Vinayak" subtitle="Comfort, convenience and care in the Blue City." image="/images/gallery/property/hotel-02.webp" />
+      <PageHero title="About Hotel Siddhi Vinayak" subtitle="Comfort, convenience and care in the Blue City." image="/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp" />
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
           <Reveal>
