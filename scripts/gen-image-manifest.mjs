@@ -58,6 +58,22 @@ export const roomImages: Record<string, Img[]> = ${j(roomImages)};
 
 export type GalleryCat = "Rooms" | "Property" | "Dining";
 export const galleryByCategory: Record<GalleryCat, Img[]> = ${j({ Rooms: galleryRooms, Property: property, Dining: dining })};
+
+export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
+export type GalleryImage = Img & { category: "Rooms" | "Property" | "Dining" };
+export const galleryImages: GalleryImage[] = ${j(
+  (() => {
+    const interleave = ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 4).map((im) => ({ ...im, category: "Rooms" })));
+    const prop = property.map((im) => ({ ...im, category: "Property" }));
+    const din = dining.map((im) => ({ ...im, category: "Dining" }));
+    // weave categories for a balanced grid
+    const out = [];
+    const lists = [interleave, prop, din];
+    let n = Math.max(...lists.map((l) => l.length));
+    for (let i = 0; i < n; i++) for (const l of lists) if (l[i]) out.push(l[i]);
+    return out;
+  })()
+)};
 `;
 writeFileSync(join(ROOT, "lib", "images.ts"), out);
 const counts = ROOMS.map((r) => `${r.slug}=${roomImages[r.slug].length}`).join(" ");

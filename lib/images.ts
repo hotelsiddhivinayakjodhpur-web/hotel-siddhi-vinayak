@@ -22,8 +22,8 @@ export const hero = {
   "height": 1000
 },
   about: {
-  "src": "/images/gallery/property/hotel-02.webp",
-  "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur 2",
+  "src": "/images/gallery/property/hotel-01.webp",
+  "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
   "width": 1500,
   "height": 1000
 },
@@ -84,6 +84,18 @@ export const roomImages: Record<string, Img[]> = {
       "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 8",
       "width": 1500,
       "height": 1000
+    },
+    {
+      "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-09.webp",
+      "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 9",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-10.webp",
+      "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 10",
+      "width": 1500,
+      "height": 1000
     }
   ],
   "super-deluxe-room": [
@@ -134,6 +146,54 @@ export const roomImages: Record<string, Img[]> = {
       "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 8",
       "width": 1500,
       "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-09.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 9",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-10.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 10",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-11.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 11",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-12.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 12",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-13.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 13",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-14.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 14",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-15.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 15",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-16.webp",
+      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 16",
+      "width": 1500,
+      "height": 1000
     }
   ],
   "triple-deluxe-room": [
@@ -170,6 +230,36 @@ export const roomImages: Record<string, Img[]> = {
     {
       "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-06.webp",
       "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 6",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-07.webp",
+      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 7",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-08.webp",
+      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 8",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-09.webp",
+      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 9",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-10.webp",
+      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 10",
+      "width": 1500,
+      "height": 1000
+    },
+    {
+      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-11.webp",
+      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 11",
       "width": 1500,
       "height": 1000
     }
@@ -260,18 +350,6 @@ export const galleryByCategory: Record<GalleryCat, Img[]> = {
       "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
       "width": 1500,
       "height": 1000
-    },
-    {
-      "src": "/images/gallery/property/hotel-02.webp",
-      "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur 2",
-      "width": 1500,
-      "height": 1000
-    },
-    {
-      "src": "/images/gallery/property/hotel-03.webp",
-      "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur 3",
-      "width": 1500,
-      "height": 1000
     }
   ],
   "Dining": [
@@ -289,3 +367,141 @@ export const galleryByCategory: Record<GalleryCat, Img[]> = {
     }
   ]
 };
+
+export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
+export type GalleryImage = Img & { category: "Rooms" | "Property" | "Dining" };
+export const galleryImages: GalleryImage[] = [
+  {
+    "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",
+    "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/gallery/property/hotel-01.webp",
+    "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Property"
+  },
+  {
+    "src": "/images/gallery/dining/restaurant-01.webp",
+    "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Dining"
+  },
+  {
+    "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-02.webp",
+    "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 2",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/gallery/dining/restaurant-02.webp",
+    "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur 2",
+    "width": 1500,
+    "height": 1000,
+    "category": "Dining"
+  },
+  {
+    "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp",
+    "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 3",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-04.webp",
+    "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 4",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp",
+    "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp",
+    "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 2",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-03.webp",
+    "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 3",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-04.webp",
+    "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 4",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp",
+    "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-02.webp",
+    "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 2",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-03.webp",
+    "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 3",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-04.webp",
+    "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 4",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp",
+    "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-02.webp",
+    "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 2",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-03.webp",
+    "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 3",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  },
+  {
+    "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-04.webp",
+    "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 4",
+    "width": 1500,
+    "height": 1000,
+    "category": "Rooms"
+  }
+];

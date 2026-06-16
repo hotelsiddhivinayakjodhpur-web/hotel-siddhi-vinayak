@@ -17,3 +17,6 @@ IMAGE-INVENTORY.csv
 # Lighthouse / PSI run artifacts
 lh-*.json
 psi-*.json
+
+# Contact-sheet review montages
+_review/

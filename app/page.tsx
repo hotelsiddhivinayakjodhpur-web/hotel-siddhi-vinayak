@@ -29,7 +29,7 @@ export default function Home() {
         {/* Mobile: static image = fast LCP. Desktop: ambient hero video. */}
         <Image
           src="/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp"
-          alt="Hotel Siddhi Vinayak exterior in Jodhpur, Rajasthan"
+          alt="Premium guest room at Hotel Siddhi Vinayak, Jodhpur"
           fill priority sizes="100vw"
           className={`object-cover ${VIDEO_READY ? "md:hidden" : ""}`}
         />

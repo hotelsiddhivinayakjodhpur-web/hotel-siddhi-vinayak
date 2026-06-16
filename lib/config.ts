@@ -68,6 +68,7 @@ export const RATE_LABEL = "Contact for Best Available Rate";
 // local WebP galleries.
 export const PHOTOS_READY = true;
 
-// Hero video transcoded into public/videos/ — homepage hero plays the muted
-// background video (with image poster + reduced-motion fallback).
-export const VIDEO_READY = true;
+// The only available walkthrough clip is a low-quality phone video (TV-on-wall),
+// not premium enough for a hero. Disabled in favour of a luxury hero image until
+// professional video footage is available.
+export const VIDEO_READY = false;

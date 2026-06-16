@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { galleryImages, galleryCategories } from "@/lib/data";
+import { galleryImages, galleryCategories } from "@/lib/images";
 
 export default function GalleryGrid() {
   const [filter, setFilter] = useState<(typeof galleryCategories)[number]>("All");
