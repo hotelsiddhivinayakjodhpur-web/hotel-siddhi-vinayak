@@ -54,7 +54,8 @@ export function HotelSchema() {
         }
       : {}),
     amenityFeature: [
-      "Free Wi-Fi", "Air Conditioning", "Free Parking", "Room Service", "24-hour Front Desk",
+      "Free Wi-Fi", "Air Conditioning", "Free Parking", "EV Charging", "Room Service",
+      "24-hour Front Desk", "Sun Terrace", "Travel Desk", "In-house Restaurant", "Airport/Railway Pickup",
     ].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
   };
   return <JsonLd data={data} />;

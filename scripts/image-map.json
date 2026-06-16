@@ -1,40 +1,120 @@
 {
   "note": "Folder-based map. The pipeline scans each srcDir under _raw/, auto-selects the highest-resolution images (count), and writes sequential WebP masters. Room categories follow the property's real inventory and must never be mixed.",
   "entries": [
-    { "id": "deluxe",        "role": "room", "category": "Deluxe Room",
-      "srcDirs": ["202","203","204","205","207","208","210"],
-      "outDir": "/images/rooms/deluxe-room", "outBase": "deluxe-room-jodhpur", "count": 6 },
-
-    { "id": "super-deluxe",  "role": "room", "category": "Super Deluxe Room",
-      "srcDirs": ["301","302","303","304","305","307","308","309","310"],
-      "outDir": "/images/rooms/super-deluxe-room", "outBase": "super-deluxe-room-jodhpur", "count": 6 },
-
-    { "id": "triple-deluxe", "role": "room", "category": "Triple Deluxe Room",
-      "srcDirs": ["201","206","209"],
-      "outDir": "/images/rooms/triple-deluxe-room", "outBase": "triple-deluxe-room-jodhpur", "count": 5 },
-
-    { "id": "family-four-bed", "role": "room", "category": "Family Four Bed Room",
-      "srcDirs": ["306"],
-      "outDir": "/images/rooms/family-four-bed-room", "outBase": "family-four-bed-room-jodhpur", "count": 4 },
-
-    { "id": "restaurant",    "role": "gallery", "category": "Dining",
-      "srcDirs": ["RESTORENT PIC"],
-      "outDir": "/images/gallery/dining", "outBase": "restaurant", "count": 6 },
-
-    { "id": "property",      "role": "gallery", "category": "Property / Amenities",
-      "srcDirs": ["HOTEL OTHORS"],
-      "outDir": "/images/gallery/property", "outBase": "hotel", "count": 10 },
-
-    { "id": "hero-home",     "role": "hero",
-      "srcDirs": ["HOTEL OTHORS"], "match": "OUTSIDE",
-      "outDir": "/images/hero", "outBase": "hotel-siddhi-vinayak-exterior-jodhpur", "count": 1 },
-
-    { "id": "og",            "role": "og",
-      "srcDirs": ["HOTEL OTHORS"], "match": "OUTSIDE",
-      "outDir": "/", "outBase": "og-image", "count": 1 },
-
-    { "id": "logo",          "role": "logo",
-      "srcDirs": ["LOGO FILES"], "match": "logo",
-      "outDir": "/images/brand", "outBase": "hotel-siddhi-vinayak-logo", "count": 1 }
+    {
+      "id": "deluxe",
+      "role": "room",
+      "category": "Deluxe Room",
+      "srcDirs": [
+        "202",
+        "203",
+        "204",
+        "205",
+        "207",
+        "208",
+        "210"
+      ],
+      "outDir": "/images/rooms/deluxe-room",
+      "outBase": "deluxe-room-jodhpur",
+      "count": 8
+    },
+    {
+      "id": "super-deluxe",
+      "role": "room",
+      "category": "Super Deluxe Room",
+      "srcDirs": [
+        "301",
+        "302",
+        "303",
+        "304",
+        "305",
+        "307",
+        "308",
+        "309",
+        "310"
+      ],
+      "outDir": "/images/rooms/super-deluxe-room",
+      "outBase": "super-deluxe-room-jodhpur",
+      "count": 8
+    },
+    {
+      "id": "triple-deluxe",
+      "role": "room",
+      "category": "Triple Deluxe Room",
+      "srcDirs": [
+        "201",
+        "206",
+        "209"
+      ],
+      "outDir": "/images/rooms/triple-deluxe-room",
+      "outBase": "triple-deluxe-room-jodhpur",
+      "count": 6
+    },
+    {
+      "id": "family-four-bed",
+      "role": "room",
+      "category": "Family Four Bed Room",
+      "srcDirs": [
+        "306"
+      ],
+      "outDir": "/images/rooms/family-four-bed-room",
+      "outBase": "family-four-bed-room-jodhpur",
+      "count": 4
+    },
+    {
+      "id": "restaurant",
+      "role": "gallery",
+      "category": "Dining",
+      "srcDirs": [
+        "RESTORENT PIC"
+      ],
+      "outDir": "/images/gallery/dining",
+      "outBase": "restaurant",
+      "count": 4
+    },
+    {
+      "id": "property",
+      "role": "gallery",
+      "category": "Property / Amenities",
+      "srcDirs": [
+        "HOTEL OTHORS"
+      ],
+      "outDir": "/images/gallery/property",
+      "outBase": "hotel",
+      "count": 6
+    },
+    {
+      "id": "hero-home",
+      "role": "hero",
+      "srcDirs": [
+        "HOTEL OTHORS"
+      ],
+      "match": "OUTSIDE",
+      "outDir": "/images/hero",
+      "outBase": "hotel-siddhi-vinayak-exterior-jodhpur",
+      "count": 1
+    },
+    {
+      "id": "og",
+      "role": "og",
+      "srcDirs": [
+        "HOTEL OTHORS"
+      ],
+      "match": "OUTSIDE",
+      "outDir": "/",
+      "outBase": "og-image",
+      "count": 1
+    },
+    {
+      "id": "logo",
+      "role": "logo",
+      "srcDirs": [
+        "LOGO FILES"
+      ],
+      "match": "logo",
+      "outDir": "/images/brand",
+      "outBase": "hotel-siddhi-vinayak-logo",
+      "count": 1
+    }
   ]
 }

@@ -4,7 +4,7 @@ export const site = {
   legalName: "Hotel Siddhi Vinayak",
   tagline: "Comfort & Hospitality in the Blue City",
   description:
-    "Hotel Siddhi Vinayak is a comfortable, well-located hotel in Jodhpur, Rajasthan — opposite M.G. Hospital near Jalori Gate — offering clean air-conditioned rooms, warm hospitality and easy access to Mehrangarh Fort and the old city.",
+    "Hotel Siddhi Vinayak is a comfortable, well-located hotel in Jodhpur, Rajasthan — opposite M.G. Hospital near Jalori Gate, about 350 m from Jodhpur Railway Station — offering clean air-conditioned rooms, free Wi-Fi, free parking, a sun terrace, a travel desk and warm hospitality with easy access to Mehrangarh Fort and the old city.",
   // The ONE canonical domain for the entire brand. Drives all SEO: canonical
   // tags, sitemap, robots, OG/Twitter URLs, and JSON-LD @id/url. No other domain
   // is referenced anywhere in this codebase.
