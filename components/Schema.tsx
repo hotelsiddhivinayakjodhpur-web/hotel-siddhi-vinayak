@@ -1,4 +1,4 @@
-import { site } from "@/lib/config";
+import { site, otas } from "@/lib/config";
 import { faqs, rooms, reviews } from "@/lib/data";
 
 function JsonLd({ data }: { data: object }) {
@@ -139,7 +139,7 @@ export function LocalBusinessSchema() {
       opens: "00:00",
       closes: "23:59",
     },
-    sameAs: [site.social.instagram, site.social.facebook, site.social.google].filter(Boolean),
+    sameAs: [site.social.instagram, site.social.facebook, site.social.google, ...otas.map((o) => o.url)].filter(Boolean),
   };
   return <JsonLd data={data} />;
 }

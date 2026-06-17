@@ -42,6 +42,16 @@ export const site = {
   },
 };
 
+// OTA listings (verified to resolve June 2026). Shown in the Book-Direct section
+// and emitted in schema sameAs. Booking direct (Call/WhatsApp) is always primary.
+export const otas = [
+  { name: "MakeMyTrip", url: "https://www.makemytrip.com/hotels/hotel_siddhi_vinayak-details-jodhpur.html" },
+  { name: "Booking.com", url: "https://www.booking.com/hotel/in/siddhi-vinayak-jodhpur.html" },
+  { name: "Agoda", url: "https://www.agoda.com/partners/partnersearch.aspx?hid=52657289" },
+  { name: "Expedia", url: "https://www.expedia.com/h108903246" },
+  { name: "Cleartrip", url: "https://www.cleartrip.com/hotels/4561215" },
+];
+
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Rooms", href: "/rooms" },

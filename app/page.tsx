@@ -7,6 +7,7 @@ import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import TrustStrip from "@/components/TrustStrip";
 import Reviews from "@/components/Reviews";
+import BookDirect from "@/components/BookDirect";
 import HeroVideo from "@/components/HeroVideo";
 import { HotelSchema } from "@/components/Schema";
 import { site, whatsappLink, VIDEO_READY } from "@/lib/config";
@@ -172,6 +173,9 @@ export default function Home() {
 
       {/* Guest reviews — social proof before the booking ask */}
       <Reviews />
+
+      {/* Book direct — OTA trust + commission-free direct CTAs */}
+      <BookDirect />
 
       {/* Inquiry + Map */}
       <section className="py-20 bg-white">
