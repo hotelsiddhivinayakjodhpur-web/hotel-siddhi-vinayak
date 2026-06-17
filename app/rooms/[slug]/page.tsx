@@ -81,14 +81,15 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
             <ArrowLeft size={16} /> All Rooms
           </Link>
 
-          {/* Gallery */}
+          {/* Gallery — full-image framing (no crop): every photo shows the whole
+              room. White mat keeps a consistent grid for portrait + landscape. */}
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="relative h-72 sm:h-[26rem] rounded-2xl overflow-hidden sm:col-span-2">
-              <Image src={gallery[0].src} alt={gallery[0].alt} fill priority className="object-cover" sizes="(max-width:1024px) 100vw, 1024px" />
+            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden bg-white shadow-sm sm:col-span-2">
+              <Image src={gallery[0].src} alt={gallery[0].alt} fill priority className="object-contain" sizes="(max-width:1024px) 100vw, 1024px" />
             </div>
             {gallery.slice(1).map((g, i) => (
-              <div key={i} className="relative h-44 sm:h-56 rounded-xl overflow-hidden">
-                <Image src={g.src} alt={g.alt} fill loading="lazy" className="object-cover" sizes="(max-width:640px) 100vw, 50vw" />
+              <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white shadow-sm">
+                <Image src={g.src} alt={g.alt} fill loading="lazy" className="object-contain" sizes="(max-width:640px) 100vw, 50vw" />
               </div>
             ))}
           </div>

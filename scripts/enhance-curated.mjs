@@ -15,10 +15,12 @@ const OUT = join(ROOT, "public");
 const C = JSON.parse(readFileSync(join(ROOT, "scripts", "curate.json"), "utf8"));
 
 const ROLE = {
-  room:    { w: 1500, h: 1000, q: 82, ext: "webp" },
-  gallery: { w: 1500, h: 1000, q: 82, ext: "webp" },
-  hero:    { w: 1920, h: 1080, q: 82, ext: "webp" },
-  og:      { w: 1200, h: 630,  q: 84, ext: "jpg"  },
+  // Rooms/gallery: NO crop — full room preserved (fit:inside), native aspect,
+  // capped to a max box. Hero/OG: cover (full-bleed background) is fine.
+  room:    { w: 1600, h: 1200, q: 82, ext: "webp", crop: false },
+  gallery: { w: 1600, h: 1200, q: 82, ext: "webp", crop: false },
+  hero:    { w: 1920, h: 1080, q: 82, ext: "webp", crop: true },
+  og:      { w: 1200, h: 630,  q: 84, ext: "jpg",  crop: true },
 };
 const fmtKB = (b) => (b / 1024).toFixed(0) + " KB";
 const pad = (n) => String(n).padStart(2, "0");
@@ -28,8 +30,11 @@ async function edit(file, role, outAbs) {
   const m = s.channels.slice(0, 3).map((c) => c.mean);
   const avg = m.reduce((a, b) => a + b, 0) / 3;
   const wb = m.map((x) => (x > 0 ? Math.max(0.82, Math.min(1.18, avg / x)) : 1));
+  const resize = role.crop
+    ? { width: role.w, height: role.h, fit: "cover", position: "centre" }
+    : { width: role.w, height: role.h, fit: "inside", withoutEnlargement: true };
   let pipe = sharp(file).rotate().removeAlpha()
-    .resize({ width: role.w, height: role.h, fit: "cover", position: "attention" })
+    .resize(resize)
     .linear(wb, [0, 0, 0])                       // white balance
     .normalise()                                 // exposure + contrast
     .linear([1.05, 1.0, 0.95], [4, 2, -2])       // warm luxury tone (lift R, ease B)

@@ -1,12 +1,14 @@
 // Generates lib/images.ts from the actual processed files in public/images/**.
 // Run after enhance-images.mjs so room/gallery galleries reflect whatever count
 // of photos each category ended up with.
+import sharp from "sharp";
 import { readdirSync, existsSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const IMG = join(ROOT, "public", "images");
 const ls = (p) => (existsSync(p) ? readdirSync(p).filter((f) => f.endsWith(".webp")).sort() : []);
+const dims = async (abs) => { const m = await sharp(abs).metadata(); return { width: m.width, height: m.height }; };
 
 const ROOMS = [
   { slug: "deluxe-room", name: "Deluxe Room" },
@@ -14,25 +16,23 @@ const ROOMS = [
   { slug: "triple-deluxe-room", name: "Triple Deluxe Room" },
   { slug: "family-four-bed-room", name: "Family Four Bed Room" },
 ];
-const ROOM_DIM = { w: 1500, h: 1000 };
-const GAL_DIM = { w: 1500, h: 1000 };
 
-function roomImgs(slug, name) {
+async function roomImgs(slug, name) {
   const files = ls(join(IMG, "rooms", slug));
-  return files.map((f, i) => ({
+  return Promise.all(files.map(async (f, i) => ({
     src: `/images/rooms/${slug}/${f}`,
     alt: `${name} at Hotel Siddhi Vinayak, Jodhpur${i ? ` — view ${i + 1}` : ""}`,
-    width: ROOM_DIM.w, height: ROOM_DIM.h,
-  }));
+    ...(await dims(join(IMG, "rooms", slug, f))),
+  })));
 }
-const galImgs = (sub, label) => ls(join(IMG, "gallery", sub)).map((f, i) => ({
+const galImgs = async (sub, label) => Promise.all(ls(join(IMG, "gallery", sub)).map(async (f, i) => ({
   src: `/images/gallery/${sub}/${f}`, alt: `${label} at Hotel Siddhi Vinayak, Jodhpur${i ? ` ${i + 1}` : ""}`,
-  width: GAL_DIM.w, height: GAL_DIM.h,
-}));
+  ...(await dims(join(IMG, "gallery", sub, f))),
+})));
 
-const roomImages = Object.fromEntries(ROOMS.map((r) => [r.slug, roomImgs(r.slug, r.name)]));
-const property = galImgs("property", "Hotel Siddhi Vinayak");
-const dining = galImgs("dining", "Restaurant");
+const roomImages = Object.fromEntries(await Promise.all(ROOMS.map(async (r) => [r.slug, await roomImgs(r.slug, r.name)])));
+const property = await galImgs("property", "Hotel Siddhi Vinayak");
+const dining = await galImgs("dining", "Restaurant");
 const heroExterior = "/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp";
 const galleryRooms = ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 2));
 
