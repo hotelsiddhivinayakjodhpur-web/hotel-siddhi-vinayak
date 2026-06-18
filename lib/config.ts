@@ -37,6 +37,11 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/hotel_siddhi_vinayak_jodhpur/",
     facebook: "https://facebook.com/hotelsiddhivinayak",
+    // ⚠️ Owner has a YouTube channel (hotelsiddhivinayakjodhpur@gmail.com) but the
+    // exact channel URL is not yet confirmed. Leave empty so no broken link ships;
+    // fill in the real channel URL (e.g. https://www.youtube.com/@handle) to enable
+    // the YouTube icon everywhere automatically.
+    youtube: "",
     // Real Google Business Profile (cid) — used for the "read reviews on Google"
     // CTA and schema sameAs.
     google: "https://maps.google.com/maps?cid=4688437108186437899",
@@ -59,6 +64,7 @@ export const nav = [
   { label: "Rooms", href: "/rooms" },
   { label: "Restaurant", href: "/restaurant" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Videos", href: "/videos" },
   { label: "About", href: "/about" },
   { label: "Attractions", href: "/nearby-attractions" },
   { label: "Blog", href: "/blog" },

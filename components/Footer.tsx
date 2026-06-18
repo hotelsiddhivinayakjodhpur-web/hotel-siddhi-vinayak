@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { site, nav } from "@/lib/config";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer() {
   const a = site.address;
@@ -10,10 +11,8 @@ export default function Footer() {
         <div className="md:col-span-1">
           <h3 className="font-serif text-2xl text-gold">{site.name}</h3>
           <p className="mt-3 text-sm leading-relaxed">{site.tagline}</p>
-          <div className="mt-4 flex gap-3">
-            <a href={site.social.instagram} aria-label="Instagram" className="hover:text-gold"><Instagram size={20} /></a>
-            <a href={site.social.facebook} aria-label="Facebook" className="hover:text-gold"><Facebook size={20} /></a>
-          </div>
+          <p className="mt-5 text-gold font-medium uppercase tracking-wider text-xs">Follow Us</p>
+          <SocialLinks className="mt-3" iconSize={20} itemClassName="text-sand/80 hover:text-gold" />
         </div>
 
         <div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { nav, site, callLink } from "@/lib/config";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -49,6 +50,9 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <SocialLinks iconSize={18} itemClassName="text-sand/80 hover:text-gold" />
+          </li>
           <li>
             <a
               href={callLink}
@@ -96,6 +100,9 @@ export default function Navbar() {
                 >
                   <Phone size={16} /> Call Now
                 </a>
+              </li>
+              <li className="pt-2">
+                <SocialLinks className="justify-center" iconSize={22} itemClassName="text-sand/80 hover:text-gold" />
               </li>
             </ul>
           </motion.div>

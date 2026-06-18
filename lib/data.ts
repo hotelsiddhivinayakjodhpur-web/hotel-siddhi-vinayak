@@ -128,22 +128,9 @@ export const faqs: Faq[] = [
   { q: "How can I book a room?", a: "Book instantly via WhatsApp, call us directly, or send an enquiry from the Contact page. We usually reply within minutes." },
 ];
 
-export type Attraction = {
-  name: string;
-  distance: string;
-  image: string;
-  description: string;
-};
-
-export const attractions: Attraction[] = [
-  { name: "Mehrangarh Fort", distance: "5 km", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1000&q=80", description: "One of India's largest forts, towering over the blue city with palaces, museums and panoramic views." },
-  { name: "Jaswant Thada", distance: "5.5 km", image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?auto=format&fit=crop&w=1000&q=80", description: "A serene white-marble cenotaph and garden, often called the 'Taj Mahal of Marwar'." },
-  { name: "Umaid Bhawan Palace", distance: "6 km", image: "/images/instagram/attractions/umaid-bhawan.webp", description: "A grand 20th-century palace, part royal residence, part luxury hotel and museum." },
-  { name: "Clock Tower & Sardar Market", distance: "3 km", image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1000&q=80", description: "The bustling heart of the old city — spices, textiles, handicrafts and authentic street food." },
-  { name: "Mandore Gardens", distance: "9 km", image: "/images/instagram/attractions/mandore.webp", description: "Historic gardens with cenotaphs, temples and the ancient capital of Marwar." },
-  { name: "Kaylana Lake", distance: "11 km", image: "/images/instagram/attractions/kaylana-lake.webp", description: "A serene artificial lake, beautiful at sunset and especially in the monsoon." },
-  { name: "Surpura Safari Park", distance: "20 km", image: "/images/instagram/attractions/surpura.webp", description: "Wildlife, birds and open nature — a refreshing day trip from the city." },
-];
+// Attraction data now lives in lib/attractions.ts with REAL, credited photos
+// (Wikimedia Commons / our own Instagram) and full detail-page content. The old
+// array here used stock Unsplash images and has been removed.
 
 export type Review = {
   author: string;

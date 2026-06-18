@@ -19,6 +19,7 @@ const sans = Inter({
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import StickyMobileBar from "@/components/StickyMobileBar";
+import SocialBar from "@/components/SocialBar";
 import { LocalBusinessSchema } from "@/components/Schema";
 import { site } from "@/lib/config";
 
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <FloatingButtons />
         <StickyMobileBar />
+        <SocialBar />
       </body>
     </html>
   );

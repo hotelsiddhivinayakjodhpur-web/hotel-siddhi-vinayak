@@ -1,0 +1,62 @@
+{
+ "mehrangarh-fort": {
+  "src": "/images/attractions/mehrangarh-fort.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Mehrangarh",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "jaswant-thada": {
+  "src": "/images/attractions/jaswant-thada.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jaswant_Thada",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "mandore-gardens": {
+  "src": "/images/attractions/mandore-gardens.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Mandore",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "kaylana-lake": {
+  "src": "/images/attractions/kaylana-lake.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Kaylana_Lake",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "machiya-safari-park": {
+  "src": "/images/attractions/machiya-safari-park.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Machia_Biological_Park",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "osian": {
+  "src": "/images/attractions/osian.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Osian%2C_Rajasthan",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "umaid-bhawan-palace": {
+  "src": "/images/attractions/umaid-bhawan-palace.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Umaid_Bhawan_Palace",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "rao-jodha-desert-rock-park": {
+  "src": "/images/attractions/rao-jodha-desert-rock-park.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rao_Jodha_Desert_Rock_Park",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "toorji-ka-jhalra": {
+  "src": "/images/attractions/toorji-ka-jhalra.webp",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toorji_Ka_Jhalra_Toorji%27s_Step_Well_Jodhpur_DSCN0671_(1)_03.jpg",
+  "credit": "Dr. Raju Kasambe / CC BY-SA 4.0"
+ },
+ "clock-tower-sardar-market": {
+  "src": "/images/attractions/clock-tower-sardar-market.webp",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jodhpur_Bazaar.jpg",
+  "credit": "Nishant.chawla123 / CC BY-SA 4.0"
+ },
+ "bishnoi-village": {
+  "src": "/images/attractions/bishnoi-village.webp",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bishnoi_Woman.JPG",
+  "credit": "Zenit / CC BY-SA 3.0"
+ },
+ "chamunda-mata-temple": {
+  "src": "/images/attractions/chamunda-mata-temple.webp",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chamunda_Mata_Temple,_Mehrangarh_Fort,_Jodhpur.jpg",
+  "credit": "Srijitakundan / CC BY-SA 4.0"
+ }
+}

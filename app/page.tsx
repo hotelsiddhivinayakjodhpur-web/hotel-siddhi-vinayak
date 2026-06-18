@@ -12,7 +12,8 @@ import InstagramFollow from "@/components/InstagramFollow";
 import HeroVideo from "@/components/HeroVideo";
 import { HotelSchema } from "@/components/Schema";
 import { site, whatsappLink, VIDEO_READY } from "@/lib/config";
-import { rooms, attractions } from "@/lib/data";
+import { rooms } from "@/lib/data";
+import { attractionsData } from "@/lib/attractions";
 
 const features = [
   { icon: Wifi, title: "Free Wi-Fi", desc: "High-speed internet in every room." },
@@ -151,16 +152,16 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionTitle eyebrow="Explore Jodhpur" title="Nearby Attractions" subtitle="The best of the Blue City, just minutes away." />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {attractions.slice(0, 3).map((a, i) => (
-              <Reveal key={a.name} delay={i * 0.1}>
-                <div className="group relative h-64 overflow-hidden rounded-2xl">
-                  <Image src={a.image} alt={a.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+            {attractionsData.slice(0, 3).map((a, i) => (
+              <Reveal key={a.slug} delay={i * 0.1}>
+                <Link href={`/attractions/${a.slug}`} className="group relative block h-64 overflow-hidden rounded-2xl">
+                  <Image src={a.gallery[0].src} alt={a.name} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width:640px) 100vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
                   <div className="absolute bottom-0 p-5 text-sand">
                     <p className="flex items-center gap-1 text-xs text-gold"><MapPin size={13} /> {a.distance}</p>
                     <h3 className="font-serif text-xl">{a.name}</h3>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

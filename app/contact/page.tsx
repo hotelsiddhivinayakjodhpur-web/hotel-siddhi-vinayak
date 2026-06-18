@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import { BreadcrumbSchema } from "@/components/Schema";
+import SocialLinks from "@/components/SocialLinks";
 import { site, whatsappLink, callLink } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -47,6 +48,10 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8">
+              <p className="text-xs uppercase tracking-wider text-ink/50 mb-3">Follow Us</p>
+              <SocialLinks iconSize={24} itemClassName="text-ink/70 hover:text-gold-dark" />
+            </div>
             <div className="mt-8">
               <MapEmbed />
             </div>
