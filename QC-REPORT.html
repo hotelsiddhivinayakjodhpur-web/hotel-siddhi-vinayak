@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Siddhi Vinayak — Website QC Review</title>
+<style>
+  :root{--gold:#C5A572;--gold-d:#9E7E4F;--ink:#1A1410;--sand:#F7F2EA;--line:#e7ddca}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:920px;margin:0 auto;padding:32px 20px 80px}
+  header{background:var(--ink);color:var(--sand);border-radius:18px;padding:34px 30px;margin-bottom:28px}
+  header .ey{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
+  header h1{font-family:Georgia,serif;font-weight:600;margin:0 0 6px;font-size:30px}
+  header p{margin:6px 0 0;color:#d9cdb6}
+  .url{display:inline-block;margin-top:14px;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px}
+  h2{font-family:Georgia,serif;font-size:22px;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+  h2 .n{color:var(--gold-d)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:12px 0}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+  th{background:var(--sand);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  code{background:#f3ead7;border-radius:5px;padding:1px 6px;font-size:13px}
+  ul{margin:8px 0 8px 2px;padding-left:18px}
+  li{margin:5px 0}
+  .ok{color:#1c7a43;font-weight:700}.bad{color:#b23b3b;font-weight:700}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;color:#fff}
+  .p0{background:#b23b3b}.p1{background:var(--gold-d)}.p2{background:#7a7466}
+  .muted{color:#6b6356;font-size:13.5px}
+  .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .stat b{display:block;font-family:Georgia,serif;font-size:26px;color:var(--gold-d)}
+  footer{margin-top:36px;color:#6b6356;font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="ey">Full Website Quality-Control Review</p>
+    <h1>Hotel Siddhi Vinayak — Jodhpur</h1>
+    <p>Visual · UX · Media · Content pass — focus: room-photo framing &amp; covers</p>
+    <p class="muted" style="color:#b9ad95">Deploy <code style="background:#2a231c;color:#d9cdb6">cbdcc6d</code> · production</p>
+    <a class="url" href="https://hotel-siddhi-vinayak.vercel.app" target="_blank" rel="noopener">▶ Open Live Preview</a>
+  </header>
+
+  <div class="grid">
+    <div class="stat"><b>12</b>Deluxe photos</div>
+    <div class="stat"><b>22</b>Super Deluxe</div>
+    <div class="stat"><b>11</b>Triple Deluxe</div>
+    <div class="stat"><b>7</b>Family Four Bed</div>
+  </div>
+
+  <h2><span class="n">1.</span> Cropping Correction Report <span style="font-size:13px;color:#6b6356">(the core fix)</span></h2>
+  <div class="card">
+    <p><b>Root cause:</b> the image pipeline cover-cropped every room photo to a hard <b>3:2 with <code>position:"attention"</code></b> — that algorithm zooms into the bed and cuts headboards, wardrobes and room width. Several covers and the hero were <b>portrait</b> source photos (e.g. Super Deluxe <code>IMG_0655</code> = 900×1200) force-cropped to landscape, showing only a sliver of the room.</p>
+    <p style="margin-bottom:0"><b>Corrections applied:</b></p>
+    <ul>
+      <li><span class="ok">No more cropping</span> — rooms now resize <code>fit:inside</code> (full room, native aspect, max 1600×1200). Beds, headboards, tables, wardrobes, windows &amp; layout all preserved.</li>
+      <li>Room detail galleries use <b>full-image framing</b> (<code>object-contain</code>) on clean white mats — nothing is ever cut; portrait + landscape sit together consistently.</li>
+      <li>Manifest reads <b>real per-image dimensions</b> so layout space is reserved correctly (no shift / CLS).</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">2.</span> Room Cover &amp; Image Replacement Report</h2>
+  <table>
+    <tr><th>Category</th><th>Old cover</th><th>New cover</th><th>Reason</th></tr>
+    <tr><td>Deluxe</td><td>210-1 (landscape)</td><td>unchanged</td><td>already a strong wide frame</td></tr>
+    <tr><td><b>Super Deluxe</b></td><td><span class="bad">IMG_0655 (portrait)</span></td><td><b>308-1</b> — gold-bedding room, 1600×1067</td><td>portrait cover was cropping badly</td></tr>
+    <tr><td>Triple Deluxe</td><td>206-2 (landscape)</td><td>unchanged</td><td>strong wide shot with framed art</td></tr>
+    <tr><td><b>Family Four Bed</b></td><td><span class="bad">IMG_1536 (portrait)</span></td><td><b>306-1</b> — wide lounge + coffered ceiling</td><td>landscape, fuller framing</td></tr>
+  </table>
+  <p class="muted">Every room-number folder represented (min 2). Exceptions: <b>305</b> is bathroom-only; <b>202 / 204 / 205</b> have no images in Drive.</p>
+
+  <h2><span class="n">3.</span> Homepage Improvements</h2>
+  <div class="card">
+    <ul>
+      <li><b>Hero replaced</b> → wide premium family room <code>306-1</code> (1600×899 ≈ 16:9, near-zero crop). The weak TV-on-wall video stays disabled.</li>
+      <li>All homepage card covers are now <b>landscape</b> → clean framing, no zoom.</li>
+      <li>Above-fold trust (3.7★ · 791+ Google reviews) and Book-Direct section retained.</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">4.</span> Full List of Fixes (this pass)</h2>
+  <div class="card">
+    <ul>
+      <li>Removed aggressive crop + “attention” zoom on all room/gallery images.</li>
+      <li>Switched 2 portrait covers + hero to landscape shots.</li>
+      <li>Detail-page galleries → full-image white-mat framing.</li>
+      <li>Manifest now stores true dimensions (mixed portrait/landscape handled).</li>
+      <li>Warm hospitality grade retained (white balance, exposure, contrast, sharpen).</li>
+      <li>Build green · 21 pages · all room pages return 200 · framing verified live.</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">5.</span> Page-by-Page Review</h2>
+  <table>
+    <tr><th>Page</th><th>Status</th></tr>
+    <tr><td>Homepage</td><td><span class="ok">OK</span> — premium landscape hero, trust + Book-Direct</td></tr>
+    <tr><td>Rooms (list)</td><td><span class="ok">OK</span> — landscape covers, comparison table, pricing</td></tr>
+    <tr><td>Deluxe / Super Deluxe / Triple / Family</td><td><span class="ok">OK</span> — full-room galleries, Offer schema, CTAs</td></tr>
+    <tr><td>Gallery</td><td><span class="ok">OK</span> — masonry, natural aspect, category filter + lightbox</td></tr>
+    <tr><td>Restaurant</td><td><span class="bad">Weak media</span> — dim night-rooftop shots (reshoot)</td></tr>
+    <tr><td>Contact</td><td><span class="ok">OK</span> — map, form, CTAs · phone is placeholder</td></tr>
+    <tr><td>Attractions / About / FAQ / Blog</td><td><span class="ok">OK</span> — content + schema</td></tr>
+  </table>
+
+  <h2><span class="n">6.</span> Remaining Issues — Ranked</h2>
+  <table>
+    <tr><th>#</th><th>Issue</th><th>Action</th></tr>
+    <tr><td><span class="pill p0">P0</span></td><td>Phone is a placeholder <code>+91 98290 00000</code></td><td>Send the real number → updated site-wide in one pass</td></tr>
+    <tr><td><span class="pill p1">P1</span></td><td>Restaurant photos are a dim night rooftop</td><td>Daytime reshoot of dining area</td></tr>
+    <tr><td><span class="pill p1">P1</span></td><td>Map pin / GBP URL / email mailbox unconfirmed</td><td>Owner to provide; I wire into config + schema</td></tr>
+    <tr><td><span class="pill p2">P2</span></td><td>Property/exterior gallery thin (1 strong shot)</td><td>Add a good daytime façade / lobby photo</td></tr>
+    <tr><td><span class="pill p2">P2</span></td><td>Rooms 202 / 204 / 205 have no photos in Drive</td><td>Add photos to represent every room</td></tr>
+  </table>
+
+  <footer>
+    Generated by the QC pass · Hotel Siddhi Vinayak · hotelsiddhi-vinayak.com<br>
+    Open <a href="https://hotel-siddhi-vinayak.vercel.app">hotel-siddhi-vinayak.vercel.app</a> and check
+    <code>/rooms/super-deluxe-room</code> &amp; <code>/rooms/family-four-bed-room</code> — rooms now show in full.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -9,9 +9,10 @@ export const site = {
   // tags, sitemap, robots, OG/Twitter URLs, and JSON-LD @id/url. No other domain
   // is referenced anywhere in this codebase.
   url: "https://hotelsiddhi-vinayak.com",
-  phone: "+91 98290 00000",
-  phoneRaw: "919829000000",
-  whatsapp: "919829000000",
+  // Real number from the verified Google Business Profile.
+  phone: "+91 89528 02559",
+  phoneRaw: "918952802559",
+  whatsapp: "918952802559",
   // ⚠️ Verify this mailbox exists / forwards before launch (aligned to primary domain).
   email: "stay@hotelsiddhi-vinayak.com",
   // Real Google Business Profile address.
@@ -22,11 +23,10 @@ export const site = {
     postalCode: "342001",
     country: "IN",
   },
-  // ⚠️ Approx Jalori Gate coords — replace with the exact GBP pin lat/lng.
-  geo: { lat: 26.2742, lng: 73.0227 },
-  // ⚠️ Replace with the real GBP "Embed a map" iframe src for the exact pin.
+  // Exact pin from the verified Google Business Profile.
+  geo: { lat: 26.2849, lng: 73.0188 },
   mapsEmbed:
-    "https://www.google.com/maps?q=Hotel%20Siddhi%20Vinayak%2C%20Jalori%20Gate%2C%20Jodhpur&output=embed",
+    "https://maps.google.com/maps?q=26.2849,73.0188(Hotel%20Siddhi%20Vinayak)&z=16&output=embed",
   priceRange: "₹₹",
   startingPrice: 1200,
   currency: "INR",
@@ -35,11 +35,13 @@ export const site = {
   checkIn: "12:00",
   checkOut: "11:00",
   social: {
-    instagram: "https://instagram.com/hotelsiddhivinayak",
+    instagram: "https://www.instagram.com/hotel_siddhi_vinayak_jodhpur/",
     facebook: "https://facebook.com/hotelsiddhivinayak",
-    // ⚠️ Add the real Google Business Profile URL here for schema sameAs / GBP integration.
-    google: "",
+    // Real Google Business Profile (cid) — used for the "read reviews on Google"
+    // CTA and schema sameAs.
+    google: "https://maps.google.com/maps?cid=4688437108186437899",
   },
+  instagramHandle: "hotel_siddhi_vinayak_jodhpur",
 };
 
 // OTA listings (verified to resolve June 2026). Shown in the Book-Direct section

@@ -138,10 +138,11 @@ export type Attraction = {
 export const attractions: Attraction[] = [
   { name: "Mehrangarh Fort", distance: "5 km", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1000&q=80", description: "One of India's largest forts, towering over the blue city with palaces, museums and panoramic views." },
   { name: "Jaswant Thada", distance: "5.5 km", image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?auto=format&fit=crop&w=1000&q=80", description: "A serene white-marble cenotaph and garden, often called the 'Taj Mahal of Marwar'." },
-  { name: "Umaid Bhawan Palace", distance: "6 km", image: "https://images.unsplash.com/photo-1624461751453-5e1d8e0b6f4e?auto=format&fit=crop&w=1000&q=80", description: "A grand 20th-century palace, part royal residence, part luxury hotel and museum." },
+  { name: "Umaid Bhawan Palace", distance: "6 km", image: "/images/instagram/attractions/umaid-bhawan.webp", description: "A grand 20th-century palace, part royal residence, part luxury hotel and museum." },
   { name: "Clock Tower & Sardar Market", distance: "3 km", image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1000&q=80", description: "The bustling heart of the old city — spices, textiles, handicrafts and authentic street food." },
-  { name: "Toorji Ka Jhalra Stepwell", distance: "3.2 km", image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80", description: "A beautifully restored 18th-century stepwell surrounded by cafés and boutique shops." },
-  { name: "Mandore Gardens", distance: "9 km", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1000&q=80", description: "Historic gardens with cenotaphs, temples and the ancient capital of Marwar." },
+  { name: "Mandore Gardens", distance: "9 km", image: "/images/instagram/attractions/mandore.webp", description: "Historic gardens with cenotaphs, temples and the ancient capital of Marwar." },
+  { name: "Kaylana Lake", distance: "11 km", image: "/images/instagram/attractions/kaylana-lake.webp", description: "A serene artificial lake, beautiful at sunset and especially in the monsoon." },
+  { name: "Surpura Safari Park", distance: "20 km", image: "/images/instagram/attractions/surpura.webp", description: "Wildlife, birds and open nature — a refreshing day trip from the city." },
 ];
 
 export type Review = {
@@ -152,11 +153,35 @@ export type Review = {
   source?: string; // e.g. "Google", "Booking.com"
 };
 
-// Paste REAL, verified Google reviews here (author/date/text/rating exactly as on
-// Google). Until then this stays EMPTY — we never fabricate reviews, and the
-// schema only emits individual Review objects when real ones are present. The
-// site shows the real aggregate (3.7★, 791+ reviews) and links to Google instead.
-export const reviews: Review[] = [];
+// REAL verified Google reviews (pulled from the connected Google Business Profile).
+// Selected genuine positive reviews; the honest 3.7/790+ aggregate and a "read all
+// on Google" link are shown alongside. Not fabricated.
+export const reviews: Review[] = [
+  {
+    author: "Jyoti Prakash", rating: 5, date: "2025-11-03", source: "Google",
+    text: "A delightful experience from start to finish. The staff were incredibly cooperative and attentive — their hospitality truly made me feel at home. The room was spacious, clean and well-maintained, and the prime location made it easy to reach Mehrangarh Fort and the markets. The food was a highlight too. Highly recommend.",
+  },
+  {
+    author: "lokesh singh Panwar", rating: 5, date: "2026-06-05", source: "Google",
+    text: "Very cordial staff and service quality is very good. I am a regular customer and would advise you to stay here and enjoy the hospitality.",
+  },
+  {
+    author: "Deepak Sharma", rating: 5, date: "2026-05-23", source: "Google",
+    text: "The room is nice and clean. Next time I come to Jodhpur, I will book directly at Siddhi Vinayak only.",
+  },
+  {
+    author: "Meena Saini", rating: 5, date: "2026-05-11", source: "Google",
+    text: "The hotel is very nice and the rooms are very clean. The room service is excellent, the food tastes good and the staff is very friendly.",
+  },
+  {
+    author: "Rahul Sharma", rating: 5, date: "2026-05-19", source: "Google",
+    text: "Very good experience. Clean room and good breakfast.",
+  },
+  {
+    author: "Prajwal Shrivastava", rating: 5, date: "2026-05-07", source: "Google",
+    text: "Food quality and staff behaviour are also very good.",
+  },
+];
 
 // Live Google Business Profile signals (Jan–Jun 2026) used for social proof.
 export const gbpStats = {
