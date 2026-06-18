@@ -177,53 +177,7 @@ export const gbpStats = {
   interactions: 4055, // profile interactions in the period
 };
 
-export type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  content: string[];
-};
-
-export const posts: Post[] = [
-  {
-    slug: "top-things-to-do-in-jodhpur",
-    title: "Top 10 Things To Do in Jodhpur",
-    date: "2025-01-15",
-    excerpt: "From the mighty Mehrangarh Fort to hidden stepwells and street food, here's how to make the most of the Blue City.",
-    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
-    content: [
-      "Jodhpur, the Blue City of Rajasthan, blends royal heritage with vibrant local life. Whether you have a weekend or a week, there is plenty to explore within minutes of Hotel Siddhi Vinayak.",
-      "Start with Mehrangarh Fort, one of the most magnificent forts in India. Spend a morning exploring its palaces and museums before the afternoon heat sets in.",
-      "Wander through the Clock Tower and Sardar Market for spices, textiles and authentic Marwari snacks. Don't miss the famous mirchi vada and makhaniya lassi.",
-      "End your day at the restored Toorji Ka Jhalra stepwell, surrounded by charming cafés — a perfect spot to relax after a day of sightseeing.",
-    ],
-  },
-  {
-    slug: "best-time-to-visit-jodhpur",
-    title: "Best Time to Visit Jodhpur",
-    date: "2025-02-02",
-    excerpt: "Planning your trip to the Blue City? Here's a month-by-month guide to weather, festivals and crowds.",
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
-    content: [
-      "The best time to visit Jodhpur is between October and March, when the desert climate is pleasant and ideal for sightseeing.",
-      "Winter (November to February) offers cool, comfortable days perfect for exploring forts and markets. This is peak tourist season, so book your stay early.",
-      "If you enjoy festivals, time your visit with the Marwar Festival or Rajasthan International Folk Festival, usually held around October.",
-      "Summers (April to June) are hot, but you'll find fewer crowds and better room rates. Whenever you visit, Hotel Siddhi Vinayak offers a comfortable, air-conditioned retreat.",
-    ],
-  },
-  {
-    slug: "how-to-reach-hotel-siddhi-vinayak",
-    title: "How to Reach Hotel Siddhi Vinayak",
-    date: "2025-03-10",
-    excerpt: "Arriving by train, bus, or flight? Here's the easiest way to reach our hotel in the heart of Jodhpur.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
-    content: [
-      "Hotel Siddhi Vinayak is conveniently located near Jodhpur Railway Station, making it easy to reach by any mode of transport.",
-      "By Train: We are just a short ride from the railway station. Auto-rickshaws and taxis are readily available outside.",
-      "By Air: Jodhpur Airport is about 5 km away, roughly a 20-minute drive. We can arrange a pickup on request.",
-      "By Road: Jodhpur is well connected by state and private buses. The central bus stand is close by. Share your arrival details with us on WhatsApp and we'll guide you in.",
-    ],
-  },
-];
+// Blog posts now live in lib/blog.ts as rich, long-form posts with REAL Jodhpur
+// images, FAQs, related attractions and full SEO metadata. The old 3-post array
+// here used stock Unsplash images (incl. a Jaipur Hawa Mahal shot and a resort
+// pool) and has been removed.

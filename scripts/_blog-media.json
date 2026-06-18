@@ -1,0 +1,17 @@
+{
+ "jodhpur-blue-city": {
+  "src": "/images/blog/jodhpur-blue-city.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jodhpur",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "jodhpur-railway-station": {
+  "src": "/images/blog/jodhpur-railway-station.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jodhpur_railway_station",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ },
+ "jodhpur-airport": {
+  "src": "/images/blog/jodhpur-airport.webp",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jodhpur_Airport",
+  "credit": "Wikimedia Commons (CC BY-SA)"
+ }
+}

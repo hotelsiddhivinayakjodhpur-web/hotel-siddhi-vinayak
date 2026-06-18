@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/config";
-import { posts, rooms } from "@/lib/data";
+import { rooms } from "@/lib/data";
+import { posts } from "@/lib/blog";
 import { attractionsData } from "@/lib/attractions";
 
 export default function sitemap(): MetadataRoute.Sitemap {
