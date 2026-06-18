@@ -14,6 +14,14 @@ export default function InquiryForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // 1) Save the lead + trigger AiSensy WhatsApp (guest thank-you + hotel alert).
+    //    Fire-and-forget so the UX is instant; failures are handled server-side.
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ kind: "booking", source: "inquiry-form", ...form, roomType: form.room }),
+    }).catch(() => {});
+    // 2) Also open the guest's own WhatsApp chat (guest-initiated message).
     const msg = `New Booking Inquiry — Hotel Siddhi Vinayak%0A%0AName: ${form.name}%0APhone: ${form.phone}%0ACheck-in: ${form.checkin}%0ACheck-out: ${form.checkout}%0AGuests: ${form.guests}%0ARoom: ${form.room}%0AMessage: ${form.message}`;
     window.open(whatsappLink(decodeURIComponent(msg)), "_blank");
     setSent(true);
