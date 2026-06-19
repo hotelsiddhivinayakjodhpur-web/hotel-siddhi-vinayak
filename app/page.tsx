@@ -33,9 +33,9 @@ export default function Home() {
         {/* Mobile: static image = fast LCP. Desktop: ambient hero video. */}
         <Image
           src="/images/hero/super-deluxe-310-hero.webp"
-          alt="Bright, warm Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur"
+          alt="Premium Super Deluxe Room 310 at Hotel Siddhi Vinayak, Jodhpur — full room with bed, wardrobe, curtains and seating"
           fill priority sizes="100vw"
-          className={`object-cover ${VIDEO_READY ? "md:hidden" : ""}`}
+          className={`object-cover object-center ${VIDEO_READY ? "md:hidden" : ""}`}
         />
         {VIDEO_READY && (
           <div className="absolute inset-0 hidden md:block">
