@@ -56,7 +56,7 @@ export default function Navbar() {
           <li>
             <a
               href={callLink}
-              className="flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink transition hover:bg-gold-light"
+              className="btn-gold flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
             >
               <Phone size={15} /> Call Now
             </a>
@@ -96,7 +96,7 @@ export default function Navbar() {
               <li>
                 <a
                   href={callLink}
-                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-gold px-4 py-2 font-medium text-ink"
+                  className="btn-gold mt-2 flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold"
                 >
                   <Phone size={16} /> Call Now
                 </a>

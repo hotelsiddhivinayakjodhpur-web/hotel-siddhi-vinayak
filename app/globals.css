@@ -7,13 +7,128 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #F7F2EA;
-  color: #1A1410;
+  background: #F8F4EE; /* Soft Ivory */
+  color: #1F1611;      /* Deep Espresso */
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: #C5A572; color: #1A1410; }
+::selection { background: #C8A56A; color: #1F1611; }
 
-.hero-overlay {
-  background: linear-gradient(to bottom, rgba(26,20,16,0.55), rgba(26,20,16,0.75));
+/* Luxury serif headings — tighter tracking, refined weight */
+h1, h2, h3 { letter-spacing: -0.01em; }
+
+@layer components {
+  /* Dark luxury hero overlay with a soft vignette for strong text contrast */
+  .hero-overlay {
+    background:
+      radial-gradient(120% 120% at 50% 28%, rgba(31,22,17,0.30) 0%, rgba(31,22,17,0.72) 72%, rgba(31,22,17,0.86) 100%),
+      linear-gradient(to bottom, rgba(31,22,17,0.45), rgba(31,22,17,0.80));
+  }
+
+  /* Glassmorphism — for hero chips/cards over imagery */
+  .glass {
+    background: rgba(31, 22, 17, 0.34);
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    border: 1px solid rgba(232, 216, 181, 0.28);
+  }
+  .glass-light {
+    background: rgba(248, 244, 238, 0.14);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(232, 216, 181, 0.30);
+  }
+
+  /* Primary gold-gradient CTA with a sweeping shine on hover */
+  .btn-gold {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, #C8A56A 0%, #D4AF37 100%);
+    color: #1F1611;
+    box-shadow: 0 10px 28px -10px rgba(200, 165, 106, 0.55);
+    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px -10px rgba(212, 175, 55, 0.62);
+    filter: brightness(1.04);
+  }
+  .btn-gold::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -120%;
+    width: 55%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s ease;
+  }
+  .btn-gold:hover::after { left: 140%; }
+
+  /* Outline / ghost luxury button */
+  .btn-outline-lux {
+    border: 1px solid rgba(232, 216, 181, 0.6);
+    color: #F8F4EE;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+  }
+  .btn-outline-lux:hover {
+    background: #F8F4EE;
+    color: #1F1611;
+    transform: translateY(-2px);
+  }
+
+  /* Premium card lift + depth */
+  .card-lux {
+    transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease, border-color .4s ease;
+    box-shadow: 0 12px 36px -18px rgba(31,22,17,0.30);
+  }
+  .card-lux:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 56px -24px rgba(31,22,17,0.45);
+  }
+
+  /* Gold border accent for important sections/cards */
+  .gold-frame {
+    border: 1px solid rgba(200, 165, 106, 0.45);
+    box-shadow: inset 0 0 0 1px rgba(232, 216, 181, 0.22), 0 14px 44px -20px rgba(31,22,17,0.30);
+  }
+
+  /* Luxury centered divider with a gold diamond */
+  .lux-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+  .lux-divider::before,
+  .lux-divider::after {
+    content: "";
+    height: 1px;
+    width: 3.25rem;
+    background: linear-gradient(to right, transparent, #C8A56A);
+  }
+  .lux-divider::after { background: linear-gradient(to left, transparent, #C8A56A); }
+  .lux-diamond {
+    width: 9px; height: 9px;
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #E8D8B5, #C8A56A);
+    box-shadow: 0 0 0 3px rgba(200,165,106,0.18);
+  }
+
+  /* Gold gradient text for accents */
+  .text-gold-gradient {
+    background: linear-gradient(120deg, #E8D8B5, #C8A56A 45%, #D4AF37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  /* Image zoom-on-hover helper (apply to the <img> with group on parent) */
+  .img-zoom { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  .group:hover .img-zoom { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-gold::after, .card-lux, .img-zoom { transition: none; }
 }

@@ -24,7 +24,7 @@ export default function FloatingButtons() {
         transition={{ delay: 0.55, type: "spring" }}
         href={callLink}
         aria-label="Call hotel"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-ink shadow-lg hover:scale-110 transition"
+        className="btn-gold flex h-14 w-14 items-center justify-center rounded-full text-ink"
       >
         <Phone size={24} />
       </motion.a>

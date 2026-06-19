@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Wifi, Car, Coffee, ShieldCheck, MapPin, Star, ArrowRight } from "lucide-react";
+import { Wifi, Car, Coffee, ShieldCheck, MapPin, Star, ArrowRight, Users } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import TrustStrip from "@/components/TrustStrip";
+import Counters from "@/components/Counters";
 import Reviews from "@/components/Reviews";
 import BookDirect from "@/components/BookDirect";
 import InstagramFollow from "@/components/InstagramFollow";
@@ -47,13 +48,13 @@ export default function Home() {
         )}
         <div className="absolute inset-0 hero-overlay" />
         <Reveal className="relative z-10 px-6">
-          <p className="text-gold uppercase tracking-[0.35em] text-sm mb-4">Welcome to Jodhpur</p>
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight">
+          <p className="text-gold-gradient uppercase tracking-[0.35em] text-sm mb-4 font-semibold">Welcome to Jodhpur</p>
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]">
             {site.name}
           </h1>
-          <p className="mt-5 text-sand/85 text-lg max-w-xl mx-auto">{site.tagline}</p>
-          {/* Above-the-fold social proof — real Google numbers */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-sand">
+          <p className="mt-5 text-sand/90 text-lg max-w-xl mx-auto">{site.tagline}</p>
+          {/* Above-the-fold social proof — real Google numbers, on a glass chip */}
+          <div className="mt-7 inline-flex items-center gap-2 rounded-full glass px-5 py-2 text-sand">
             <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
             <span className="text-sm">
               <strong className="font-semibold">{site.rating.value}</strong>/5 · <strong className="font-semibold">{site.rating.count}+</strong> Google reviews
@@ -61,27 +62,30 @@ export default function Home() {
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
-              className="rounded-full bg-gold px-8 py-3.5 font-medium text-ink transition hover:bg-gold-light">
+              className="btn-gold rounded-full px-8 py-3.5 font-semibold">
               Book Direct on WhatsApp
             </a>
             <Link href="/rooms"
-              className="rounded-full border border-sand/50 px-8 py-3.5 font-medium text-sand transition hover:bg-sand hover:text-ink">
+              className="btn-outline-lux rounded-full px-8 py-3.5 font-medium">
               View Rooms &amp; Rates
             </Link>
           </div>
-          <p className="mt-4 text-xs text-sand/70">Best rate guaranteed · No booking fees · Instant confirmation on WhatsApp</p>
+          <p className="mt-4 text-xs text-sand/75">Best rate guaranteed · No booking fees · Instant confirmation on WhatsApp</p>
         </Reveal>
       </section>
 
       {/* Trust strip — why book direct */}
       <TrustStrip />
 
+      {/* Animated stats */}
+      <Counters />
+
       {/* Features */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.1} className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-sand text-gold-dark">
+              <div className="group mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold-sheen text-ink shadow-gold transition-transform duration-300 hover:scale-110">
                 <f.icon size={28} />
               </div>
               <h3 className="font-serif text-xl text-ink">{f.title}</h3>
@@ -98,17 +102,21 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {rooms.map((r, i) => (
               <Reveal key={r.slug} delay={i * 0.1}>
-                <Link href={`/rooms/${r.slug}`} className="group block overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl">
+                <Link href={`/rooms/${r.slug}`} className="card-lux group block h-full overflow-hidden rounded-2xl bg-white gold-frame">
                   <div className="relative h-60 overflow-hidden">
-                    <Image src={r.image} alt={`${r.name} at Hotel Siddhi Vinayak, Jodhpur`} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                    <span className="absolute top-4 right-4 rounded-full bg-gold px-3 py-1 text-xs font-medium text-ink">
-                      {r.occupancy}
+                    <Image src={r.image} alt={`${r.name} at Hotel Siddhi Vinayak, Jodhpur`} fill className="object-cover img-zoom" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full bg-gold-cta px-3 py-1 text-xs font-semibold text-ink shadow-gold">
+                      <Users size={12} /> {r.occupancy}
+                    </span>
+                    <span className="absolute bottom-4 left-4 rounded-full glass px-3 py-1 text-xs font-medium text-sand">
+                      From ₹{r.price.toLocaleString("en-IN")}/night
                     </span>
                   </div>
                   <div className="p-6">
                     <h3 className="font-serif text-2xl text-ink">{r.name}</h3>
                     <p className="mt-2 text-sm text-ink/60 line-clamp-2">{r.description}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-gold-dark font-medium group-hover:gap-2 transition-all">
+                    <span className="mt-4 inline-flex items-center gap-1 text-gold-dark font-semibold group-hover:gap-2 transition-all">
                       View room <ArrowRight size={16} />
                     </span>
                   </div>
