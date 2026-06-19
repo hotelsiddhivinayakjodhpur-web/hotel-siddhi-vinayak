@@ -15,9 +15,11 @@ const OUT = join(ROOT, "public");
 const C = JSON.parse(readFileSync(join(ROOT, "scripts", "curate.json"), "utf8"));
 
 const ROLE = {
-  // Rooms/gallery: NO crop — full room preserved (fit:inside), native aspect,
-  // capped to a max box. Hero/OG: cover (full-bleed background) is fine.
-  room:    { w: 1600, h: 1200, q: 82, ext: "webp", crop: false },
+  // Rooms: 3:2 centre-cover so every image FILLS its frame — trims dead
+  // ceiling/floor, keeps the bed centred, consistent aspect, no blank space.
+  // Gallery (exterior/dining): NO crop (fit:inside) so the portrait building
+  // shot isn't cropped. Hero/OG: cover full-bleed.
+  room:    { w: 1600, h: 1067, q: 82, ext: "webp", crop: true },
   gallery: { w: 1600, h: 1200, q: 82, ext: "webp", crop: false },
   hero:    { w: 1920, h: 1080, q: 82, ext: "webp", crop: true },
   og:      { w: 1200, h: 630,  q: 84, ext: "jpg",  crop: true },

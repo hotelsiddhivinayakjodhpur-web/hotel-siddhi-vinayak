@@ -26,10 +26,12 @@ export default function RoomsPage() {
         <div className="mx-auto max-w-6xl px-6 space-y-12">
           {rooms.map((r, i) => (
             <Reveal key={r.slug} delay={i * 0.05}>
-              <article id={r.slug} className={`scroll-mt-28 grid gap-8 rounded-2xl bg-white p-5 shadow-md lg:grid-cols-2 ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
+              <article id={r.slug} className={`card-lux gold-frame scroll-mt-28 grid gap-8 rounded-2xl bg-white p-5 lg:grid-cols-2 ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
                 <Link href={`/rooms/${r.slug}`} className="relative block h-72 lg:h-full min-h-[280px] rounded-xl overflow-hidden group">
-                  <Image src={r.image} alt={`${r.name} at Hotel Siddhi Vinayak, Jodhpur`} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                  <span className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-sand">{r.count} {r.count > 1 ? "rooms" : "room"} available</span>
+                  <Image src={r.image} alt={`${r.name} at Hotel Siddhi Vinayak, Jodhpur`} fill className="object-cover img-zoom" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full glass px-3 py-1 text-xs text-sand">{r.count} {r.count > 1 ? "rooms" : "room"} available</span>
+                  <span className="absolute bottom-4 left-4 inline-flex items-center gap-1 rounded-full bg-gold-cta px-3 py-1 text-xs font-semibold text-ink shadow-gold"><Users size={12} /> {r.occupancy}</span>
                 </Link>
                 <div className="p-3 lg:p-6">
                   <div className="flex items-center gap-3">
@@ -58,7 +60,7 @@ export default function RoomsPage() {
                       className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 font-medium text-white transition hover:opacity-90">
                       <MessageCircle size={17} /> WhatsApp
                     </a>
-                    <a href={callLink} className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 font-medium text-ink transition hover:bg-gold-dark hover:text-white">
+                    <a href={callLink} className="btn-gold inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold">
                       <Phone size={16} /> Call Now
                     </a>
                     <Link href={`/rooms/${r.slug}`} className="inline-flex items-center gap-1 px-2 py-3 font-medium text-gold-dark hover:gap-2 transition-all">

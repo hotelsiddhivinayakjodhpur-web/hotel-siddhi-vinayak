@@ -81,15 +81,15 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
             <ArrowLeft size={16} /> All Rooms
           </Link>
 
-          {/* Gallery — full-image framing (no crop): every photo shows the whole
-              room. White mat keeps a consistent grid for portrait + landscape. */}
+          {/* Gallery — full-frame coverage: masters are 3:2 centre-cropped so each
+              photo fills its card (no blank space), bed centred, consistent ratio. */}
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden bg-white shadow-sm sm:col-span-2">
-              <Image src={gallery[0].src} alt={gallery[0].alt} fill priority className="object-contain" sizes="(max-width:1024px) 100vw, 1024px" />
+            <div className="group relative aspect-[3/2] rounded-2xl overflow-hidden gold-frame sm:col-span-2">
+              <Image src={gallery[0].src} alt={gallery[0].alt} fill priority className="object-cover img-zoom" sizes="(max-width:1024px) 100vw, 1024px" />
             </div>
             {gallery.slice(1).map((g, i) => (
-              <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white shadow-sm">
-                <Image src={g.src} alt={g.alt} fill loading="lazy" className="object-contain" sizes="(max-width:640px) 100vw, 50vw" />
+              <div key={i} className="group relative aspect-[3/2] rounded-xl overflow-hidden shadow-luxe">
+                <Image src={g.src} alt={g.alt} fill loading="lazy" className="object-cover img-zoom" sizes="(max-width:640px) 100vw, 50vw" />
               </div>
             ))}
           </div>
@@ -129,7 +129,7 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
                 <a href={enquiry} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition hover:opacity-90">
                   <MessageCircle size={18} /> Enquire on WhatsApp
                 </a>
-                <a href={callLink} className="mt-3 flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-medium text-ink transition hover:bg-gold-dark hover:text-white">
+                <a href={callLink} className="btn-gold mt-3 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold">
                   <Phone size={17} /> Call Now
                 </a>
                 <Link href="/contact" className="mt-3 flex items-center justify-center gap-2 rounded-full border border-ink/15 px-6 py-3 font-medium text-ink transition hover:bg-sand">
