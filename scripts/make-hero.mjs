@@ -9,7 +9,8 @@ const out = join(ROOT, "public", "images", "hero", "super-deluxe-310-hero.webp")
 
 const { data, info } = await sharp(src)
   .rotate()
-  .resize({ width: 2000, height: 1125, fit: "cover", position: "centre" }) // 16:9, full room
+  .resize({ width: 2200, withoutEnlargement: true }) // NATIVE wide frame — no pre-crop,
+                                                      // so CSS object-cover crops only once.
   .linear([1.06, 1.0, 0.94], [6, 3, -3])         // warm golden tone (lift R, ease B)
   .normalise()
   .modulate({ brightness: 1.1, saturation: 1.08 }) // bright & welcoming
