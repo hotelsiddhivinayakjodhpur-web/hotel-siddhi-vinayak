@@ -158,42 +158,6 @@ export const roomImages: Record<string, Img[]> = {
       "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 12",
       "width": 1600,
       "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-13.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 13",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-14.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 14",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-15.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 15",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-16.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 16",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-17.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 17",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-18.webp",
-      "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 18",
-      "width": 1600,
-      "height": 1067
     }
   ],
   "triple-deluxe-room": [
