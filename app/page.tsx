@@ -48,20 +48,13 @@ export default function Home() {
         )}
         <div className="absolute inset-0 hero-overlay-home" />
         <Reveal className="relative z-10 px-6">
-          <p className="text-gold-gradient uppercase tracking-[0.35em] text-sm mb-4 font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">Welcome to Jodhpur</p>
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight [text-shadow:0_3px_22px_rgba(0,0,0,0.6)]">
+          <p className="text-gold-gradient uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">Best Budget Hotel Near Jodhpur Railway Station</p>
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight [text-shadow:0_3px_22px_rgba(0,0,0,0.65)]">
             Comfortable Stay in the Heart of Jodhpur
           </h1>
-          <p className="mt-5 text-sand text-lg max-w-2xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]">
-            Just minutes from Jodhpur Railway Station, Mehrangarh Fort and Umaid Bhawan Palace.
+          <p className="mt-5 text-sand text-base sm:text-lg max-w-2xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.65)]">
+            Clean Rooms • Family Friendly • Free Wi-Fi • Walking Distance from Railway Station
           </p>
-          {/* Above-the-fold social proof — real Google numbers, on a glass chip */}
-          <div className="mt-7 inline-flex items-center gap-2 rounded-full glass px-5 py-2 text-sand">
-            <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
-            <span className="text-sm">
-              <strong className="font-semibold">{site.rating.value}</strong>/5 · <strong className="font-semibold">{site.rating.count}+</strong> Google reviews
-            </span>
-          </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
               className="btn-gold rounded-full px-8 py-3.5 font-semibold">
@@ -72,7 +65,14 @@ export default function Home() {
               View Rooms &amp; Rates
             </Link>
           </div>
-          <p className="mt-4 text-xs text-sand/75">Best rate guaranteed · No booking fees · Instant confirmation on WhatsApp</p>
+          <p className="mt-6 text-sm text-sand [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
+            Trusted by Guests on Booking.com, MakeMyTrip, Agoda &amp; Expedia
+          </p>
+          <a href={site.social.google} target="_blank" rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 rounded-full glass px-5 py-2 text-sand transition hover:bg-ink/50">
+            <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
+            <span className="text-sm font-medium">Read All {site.rating.count}+ Reviews on Google</span>
+          </a>
         </Reveal>
       </section>
 

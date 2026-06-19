@@ -29,9 +29,9 @@ h1, h2, h3 { letter-spacing: -0.01em; }
      subtle premium gold gradient. A focused centre scrim keeps text readable. */
   .hero-overlay-home {
     background:
-      radial-gradient(75% 65% at 50% 52%, rgba(31,22,17,0.46) 0%, rgba(31,22,17,0.12) 60%, transparent 100%),
-      radial-gradient(120% 120% at 50% 30%, rgba(31,22,17,0.16) 0%, rgba(31,22,17,0.42) 72%, rgba(31,22,17,0.58) 100%),
-      linear-gradient(115deg, rgba(212,175,55,0.14) 0%, transparent 42%, rgba(200,165,106,0.16) 100%);
+      radial-gradient(75% 65% at 50% 52%, rgba(31,22,17,0.41) 0%, rgba(31,22,17,0.11) 60%, transparent 100%),
+      radial-gradient(120% 120% at 50% 30%, rgba(31,22,17,0.14) 0%, rgba(31,22,17,0.38) 72%, rgba(31,22,17,0.52) 100%),
+      linear-gradient(115deg, rgba(212,175,55,0.17) 0%, transparent 42%, rgba(200,165,106,0.20) 100%);
   }
 
   /* Glassmorphism — for hero chips/cards over imagery */
