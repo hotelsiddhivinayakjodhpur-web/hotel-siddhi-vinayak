@@ -32,8 +32,8 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-center">
         {/* Mobile: static image = fast LCP. Desktop: ambient hero video. */}
         <Image
-          src="/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp"
-          alt="Premium guest room at Hotel Siddhi Vinayak, Jodhpur"
+          src="/images/hero/super-deluxe-310-hero.webp"
+          alt="Bright, warm Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur"
           fill priority sizes="100vw"
           className={`object-cover ${VIDEO_READY ? "md:hidden" : ""}`}
         />
@@ -46,13 +46,15 @@ export default function Home() {
             />
           </div>
         )}
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 hero-overlay-home" />
         <Reveal className="relative z-10 px-6">
-          <p className="text-gold-gradient uppercase tracking-[0.35em] text-sm mb-4 font-semibold">Welcome to Jodhpur</p>
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]">
-            {site.name}
+          <p className="text-gold-gradient uppercase tracking-[0.35em] text-sm mb-4 font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">Welcome to Jodhpur</p>
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight [text-shadow:0_3px_22px_rgba(0,0,0,0.6)]">
+            Comfortable Stay in the Heart of Jodhpur
           </h1>
-          <p className="mt-5 text-sand/90 text-lg max-w-xl mx-auto">{site.tagline}</p>
+          <p className="mt-5 text-sand text-lg max-w-2xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]">
+            Just minutes from Jodhpur Railway Station, Mehrangarh Fort and Umaid Bhawan Palace.
+          </p>
           {/* Above-the-fold social proof — real Google numbers, on a glass chip */}
           <div className="mt-7 inline-flex items-center gap-2 rounded-full glass px-5 py-2 text-sand">
             <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
