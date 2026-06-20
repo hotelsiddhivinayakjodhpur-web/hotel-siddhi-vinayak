@@ -25,8 +25,8 @@ async function edit(file) {
 
 const PLAN = {
   deluxe: { dir: "rooms/deluxe-room", base: "deluxe-room-jodhpur", files: [
-    "dlx-202-1.jpg","dlx-207-2.jpg","dlx-210-1.jpg","dlx-202-8.jpg","dlx-207-1.jpg","dlx-208-3.jpg",
-    "dlx-202-9.jpg","dlx-210-7.jpg","dlx-207-3.jpg","dlx-202-6.jpg","dlx-208-4.jpg","dlx-202-7.jpg","dlx-210-3.jpg",
+    "dlx-207-3.jpg","dlx-202-1.jpg","dlx-210-1.jpg","dlx-202-8.jpg","dlx-207-2.jpg","dlx-208-3.jpg",
+    "dlx-202-9.jpg","dlx-210-7.jpg","dlx-207-1.jpg","dlx-202-6.jpg","dlx-208-4.jpg","dlx-202-7.jpg","dlx-210-3.jpg",
   ] },
   super: { dir: "rooms/super-deluxe-room", base: "super-deluxe-room-jodhpur", files: [
     "sd-310-dsc54.jpg","sd-310-dsc59.jpg","sd-309-dsc48.jpg","sd-309-dsc50.jpg","sd-301-A.jpg","sd-308-dsc.jpg",
