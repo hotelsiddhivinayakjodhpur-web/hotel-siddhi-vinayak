@@ -6,7 +6,7 @@ import { rooms } from "@/lib/data";
 
 export default function InquiryForm() {
   const [form, setForm] = useState({
-    name: "", phone: "", checkin: "", checkout: "", guests: "2", room: "Deluxe Room", message: "",
+    name: "", phone: "", email: "", checkin: "", checkout: "", guests: "2", room: "Deluxe Room", message: "",
   });
   const [sent, setSent] = useState(false);
 
@@ -22,7 +22,7 @@ export default function InquiryForm() {
       body: JSON.stringify({ kind: "booking", source: "inquiry-form", ...form, roomType: form.room }),
     }).catch(() => {});
     // 2) Also open the guest's own WhatsApp chat (guest-initiated message).
-    const msg = `New Booking Inquiry — Hotel Siddhi Vinayak%0A%0AName: ${form.name}%0APhone: ${form.phone}%0ACheck-in: ${form.checkin}%0ACheck-out: ${form.checkout}%0AGuests: ${form.guests}%0ARoom: ${form.room}%0AMessage: ${form.message}`;
+    const msg = `New Booking Inquiry — Hotel Siddhi Vinayak%0A%0AName: ${form.name}%0APhone: ${form.phone}%0AEmail: ${form.email}%0ACheck-in: ${form.checkin}%0ACheck-out: ${form.checkout}%0AGuests: ${form.guests}%0ARoom: ${form.room}%0AMessage: ${form.message}`;
     window.open(whatsappLink(decodeURIComponent(msg)), "_blank");
     setSent(true);
   };
@@ -44,8 +44,12 @@ export default function InquiryForm() {
           <input id="iq-name" name="name" autoComplete="name" required placeholder="Your name" value={form.name} onChange={(e) => update("name", e.target.value)} className={field} />
         </div>
         <div>
-          <label htmlFor="iq-phone" className="block text-xs text-ink/60 mb-1">Phone Number <span className="text-gold-dark">*</span></label>
+          <label htmlFor="iq-phone" className="block text-xs text-ink/60 mb-1">Mobile Number <span className="text-gold-dark">*</span></label>
           <input id="iq-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder="+91 …" value={form.phone} onChange={(e) => update("phone", e.target.value)} className={field} />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="iq-email" className="block text-xs text-ink/60 mb-1">Email <span className="text-gold-dark">*</span></label>
+          <input id="iq-email" name="email" type="email" inputMode="email" autoComplete="email" required placeholder="you@example.com" value={form.email} onChange={(e) => update("email", e.target.value)} className={field} />
         </div>
         <div>
           <label htmlFor="iq-checkin" className="block text-xs text-ink/60 mb-1">Check-in <span className="text-gold-dark">*</span></label>

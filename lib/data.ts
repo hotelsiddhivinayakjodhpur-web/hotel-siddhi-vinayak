@@ -111,21 +111,43 @@ export const galleryImages: GalleryImage[] = [
   { src: "/images/rooms/deluxe-room/deluxe-room-jodhpur-06.webp", alt: "Deluxe Room detail", category: "Rooms" },
 ];
 
-export type Faq = { q: string; a: string };
+export type Faq = { q: string; a: string; category: string };
 
 export const faqs: Faq[] = [
-  { q: "Where is Hotel Siddhi Vinayak located in Jodhpur?", a: "We are on MG Hospital Road, Medical Market, opposite M.G. Hospital near Jalori Gate (Rawaton Ka Bass), Jodhpur — a central location close to the railway station, bus stand and the old city." },
-  { q: "What are the check-in and check-out times?", a: "Check-in is from 12:00 PM and check-out is by 11:00 AM. Early check-in and late check-out can be arranged on request, subject to availability." },
-  { q: "What room types and tariffs do you offer?", a: "We offer four room categories on an EP (room-only) plan: Deluxe Room from ₹1200/night, Super Deluxe Room from ₹1350/night, Triple Deluxe Room from ₹1400/night, and Family Four Bed Room from ₹1800/night. Contact us for the best available rate on your dates." },
-  { q: "How do I get the best price?", a: "Always book direct with us by Call or WhatsApp — you get our best available rate with no third-party commission or booking fees, which is usually better than online travel agency (OTA) prices." },
-  { q: "Do you have a restaurant?", a: "Yes, the hotel has an in-house restaurant serving vegetarian Indian meals, plus room service to your door." },
-  { q: "Do you provide free Wi-Fi and parking?", a: "Yes — complimentary high-speed Wi-Fi in all rooms and common areas, and free on-site parking for guests travelling by car. We also have an EV charging point." },
-  { q: "What facilities does the hotel offer?", a: "Free Wi-Fi, free parking with EV charging, a 24-hour front desk, a sun terrace, a travel/tour desk, room service and an in-house vegetarian restaurant. Airport and railway pickup can be arranged on request." },
-  { q: "How far is the hotel from Jodhpur Railway Station?", a: "We are about 350 metres from Jodhpur Railway Station — just a few minutes away — and close to the bus stand and the old city." },
-  { q: "How far is Mehrangarh Fort from the hotel?", a: "Mehrangarh Fort is roughly 3-4 km away, about a 10-15 minute drive. The Clock Tower and Sardar Market are even closer." },
-  { q: "Do you offer airport or station pickup?", a: "Yes, we can arrange paid pickup and drop. Please share your arrival details via WhatsApp or call us in advance." },
-  { q: "Is the room rate inclusive of breakfast?", a: "Our standard tariff is EP (room only). Breakfast and meal packages can be added — ask us on WhatsApp for current options." },
-  { q: "How can I book a room?", a: "Book instantly via WhatsApp, call us directly, or send an enquiry from the Contact page. We usually reply within minutes." },
+  // ── Booking & Check-in ──
+  { category: "Booking & Check-in", q: "What are the check-in and check-out timings?", a: "Check-in is from 12:00 PM (noon) and check-out is by 11:00 AM. Our front desk is staffed 24 hours, so arrivals at any hour are no problem." },
+  { category: "Booking & Check-in", q: "Is early check-in available?", a: "Yes, early check-in can be arranged subject to room availability on the day. Message us on WhatsApp with your arrival time and we'll do our best to have your room ready." },
+  { category: "Booking & Check-in", q: "Is late check-out available?", a: "Yes, late check-out is offered on request, subject to availability. Let the front desk know the evening before and we'll try to accommodate you." },
+  { category: "Booking & Check-in", q: "Do you accept walk-in bookings?", a: "Yes, walk-in guests are welcome subject to availability. During peak season (Oct–Mar) we recommend calling or messaging ahead on WhatsApp to confirm a room." },
+  { category: "Booking & Check-in", q: "How do I get the best price?", a: "Always book direct with us by Call or WhatsApp — you get our best available rate with no third-party commission or booking fees, usually better than online travel agency (OTA) prices." },
+
+  // ── Location ──
+  { category: "Location", q: "How far is Hotel Siddhi Vinayak from Jodhpur Railway Station?", a: "About 350 metres — a 5-minute walk or a 2-minute auto-rickshaw ride from Jodhpur Junction. It's one of the most convenient hotels for train travellers." },
+  { category: "Location", q: "How far is the hotel from Jodhpur Airport?", a: "Jodhpur Airport (JDH) is about 5 km away, roughly a 20-minute drive. We can arrange an airport pickup on request." },
+  { category: "Location", q: "What tourist attractions are nearby?", a: "Mehrangarh Fort (≈ 4 km), Jaswant Thada (≈ 4.5 km), Umaid Bhawan Palace (≈ 6 km), the Clock Tower & Sardar Market (≈ 3 km) and the Toorji Ka Jhalra stepwell are all close by. Our travel desk can plan your sightseeing." },
+  { category: "Location", q: "Where exactly is the hotel located?", a: "On MG Hospital Road, Medical Market, opposite M.G. Hospital near Jalori Gate (Rawaton Ka Bass), Jodhpur — central, near the railway station, bus stand and old city." },
+
+  // ── Rooms ──
+  { category: "Rooms", q: "Which room category is best for families?", a: "The Family Four Bed Room is ideal for families, with space and four-bed comfort. For three guests, the Triple Deluxe Room (one double + one single bed) is a great fit." },
+  { category: "Rooms", q: "Do all rooms have air conditioning?", a: "Yes, every room is air-conditioned, with free Wi-Fi, an LED/Smart TV and a clean private bathroom." },
+  { category: "Rooms", q: "Is hot water available 24 hours?", a: "Yes, hot water is available round the clock in all rooms." },
+  { category: "Rooms", q: "Is daily housekeeping included?", a: "Yes, daily housekeeping is included with every stay, and fresh linens and towels are provided." },
+  { category: "Rooms", q: "What room types and tariffs do you offer?", a: "Four room categories on an EP (room-only) plan: Deluxe from ₹1200/night, Super Deluxe from ₹1350/night, Triple Deluxe from ₹1400/night, and Family Four Bed from ₹1800/night. Contact us for the best available rate on your dates." },
+
+  // ── Parking & Transport ──
+  { category: "Parking & Transport", q: "Is free parking available?", a: "Yes, free on-site parking is available for guests travelling by car, and we also have an EV charging point." },
+  { category: "Parking & Transport", q: "Can you arrange local sightseeing or taxi services?", a: "Yes — our travel desk can arrange taxis, day trips and guided sightseeing to Mehrangarh, the Bishnoi villages, Osian and more. Just ask at the front desk or on WhatsApp." },
+  { category: "Parking & Transport", q: "Do you offer airport or station pickup?", a: "Yes, we can arrange paid pickup and drop for the airport or railway station. Please share your arrival details via WhatsApp or call us in advance." },
+
+  // ── Food ──
+  { category: "Food", q: "Does the hotel have a restaurant?", a: "Yes, the hotel has an in-house restaurant serving freshly prepared vegetarian Indian meals, including local Marwari favourites." },
+  { category: "Food", q: "Is breakfast available?", a: "Yes. Our standard tariff is room-only (EP), and breakfast or meal packages can be added — ask us on WhatsApp for current options." },
+  { category: "Food", q: "Can food be served to the room?", a: "Yes, room service brings meals and refreshments to your door through the day." },
+
+  // ── Policies ──
+  { category: "Policies", q: "Are unmarried couples allowed?", a: "Yes, couples are welcome. As per standard policy, all guests must present a valid government-issued photo ID (Aadhaar, passport, driving licence, voter ID, etc.) at check-in." },
+  { category: "Policies", q: "Are pets allowed?", a: "We are unable to accommodate pets at this time, so that we can maintain a comfortable, allergy-free environment for all guests." },
+  { category: "Policies", q: "What payment methods are accepted?", a: "We accept cash, UPI (Google Pay, PhonePe, Paytm) and major debit/credit cards. You can also pay by UPI on WhatsApp in advance to confirm your booking." },
 ];
 
 // Attraction data now lives in lib/attractions.ts with REAL, credited photos
