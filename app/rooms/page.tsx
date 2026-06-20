@@ -21,7 +21,7 @@ export default function RoomsPage() {
     <>
       <RoomsSchema />
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Rooms", path: "/rooms" }]} />
-      <PageHero title="Rooms & Suites" subtitle="Four room categories, comfortable and well-appointed for every traveller." image="/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp" />
+      <PageHero title="Rooms & Suites" subtitle="Four room categories, comfortable and well-appointed for every traveller." image="/images/rooms/covers/rooms-hero.webp" />
       <section className="py-20 bg-sand">
         <div className="mx-auto max-w-6xl px-6 space-y-12">
           {rooms.map((r, i) => (

@@ -28,10 +28,7 @@ export const rooms: Room[] = [
     size: "220 sq ft",
     occupancy: "2 Guests",
     bed: "1 Double Bed",
-    // Card cover: premium wide-angle room shot (bed + seating + TV + mirror +
-    // wooden interior) for stronger conversion. Stable copy in /covers so it
-    // does not enter the Deluxe gallery manifest.
-    image: "/images/rooms/covers/deluxe-card.webp",
+    image: "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",
     description:
       "A cosy, air-conditioned room with a comfortable double bed, modern bathroom and all essentials for a restful stay in the heart of Jodhpur.",
     amenities: ["Air Conditioning", "Free Wi-Fi", "LED TV", "Hot Water", "Daily Housekeeping", "Room Service"],
