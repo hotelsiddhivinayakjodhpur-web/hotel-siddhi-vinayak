@@ -30,9 +30,19 @@ const galImgs = async (sub, label) => Promise.all(ls(join(IMG, "gallery", sub)).
   ...(await dims(join(IMG, "gallery", sub, f))),
 })));
 
+// Gallery categories built from real folders (SIDDHI PHOTOS INSIGE set).
+const GAL = [
+  { sub: "exterior", cat: "Exterior", label: "Hotel exterior" },
+  { sub: "reception", cat: "Reception & Lobby", label: "Reception and lobby" },
+  { sub: "dining", cat: "Restaurant", label: "Rooftop restaurant" },
+  { sub: "common", cat: "Common Areas", label: "Common areas" },
+];
+
 const roomImages = Object.fromEntries(await Promise.all(ROOMS.map(async (r) => [r.slug, await roomImgs(r.slug, r.name)])));
+const galCats = Object.fromEntries(await Promise.all(GAL.map(async (g) => [g.cat, await galImgs(g.sub, g.label)])));
 const property = await galImgs("property", "Hotel Siddhi Vinayak");
-const dining = await galImgs("dining", "Restaurant");
+const dining = galCats["Restaurant"];
+const exterior = galCats["Exterior"];
 const heroExterior = "/images/hero/hotel-siddhi-vinayak-exterior-jodhpur.webp";
 const galleryRooms = ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 2));
 
@@ -49,27 +59,27 @@ export const ogImage = "/og-image.jpg";
 export const hero = {
   home: { src: "${heroExterior}", alt: "Hotel Siddhi Vinayak exterior in Jodhpur, Rajasthan", width: 1920, height: 1080 },
   rooms: ${j(roomImages["super-deluxe-room"][0] || { src: heroExterior, alt: "Hotel Siddhi Vinayak", width: 1500, height: 1000 })},
-  gallery: ${j(property[0] || { src: heroExterior, alt: "Hotel Siddhi Vinayak", width: 1500, height: 1000 })},
-  about: ${j(property[1] || property[0] || { src: heroExterior, alt: "Hotel Siddhi Vinayak", width: 1500, height: 1000 })},
+  gallery: ${j(exterior[0] || property[0] || { src: heroExterior, alt: "Hotel Siddhi Vinayak", width: 1500, height: 1000 })},
+  about: ${j(roomImages["super-deluxe-room"][0] || property[0] || { src: heroExterior, alt: "Hotel Siddhi Vinayak", width: 1500, height: 1000 })},
   restaurant: ${j(dining[0] || { src: heroExterior, alt: "Restaurant", width: 1500, height: 1000 })},
 } satisfies Record<string, Img>;
 
 export const roomImages: Record<string, Img[]> = ${j(roomImages)};
 
-export type GalleryCat = "Rooms" | "Property" | "Dining";
-export const galleryByCategory: Record<GalleryCat, Img[]> = ${j({ Rooms: galleryRooms, Property: property, Dining: dining })};
+export type GalleryCat = string;
+export const galleryByCategory: Record<string, Img[]> = ${j({ Rooms: galleryRooms, ...galCats })};
 
-export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
-export type GalleryImage = Img & { category: "Rooms" | "Property" | "Dining" };
+export const galleryCategories = ${j(["All", "Rooms", ...GAL.map((g) => g.cat)])} as const;
+export type GalleryImage = Img & { category: string };
 export const galleryImages: GalleryImage[] = ${j(
   (() => {
-    const interleave = ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 4).map((im) => ({ ...im, category: "Rooms" })));
-    const prop = property.map((im) => ({ ...im, category: "Property" }));
-    const din = dining.map((im) => ({ ...im, category: "Dining" }));
-    // weave categories for a balanced grid
+    const lists = [
+      ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 4).map((im) => ({ ...im, category: "Rooms" }))),
+      ...GAL.map((g) => galCats[g.cat].map((im) => ({ ...im, category: g.cat }))),
+    ];
+    // weave categories for a balanced masonry grid
     const out = [];
-    const lists = [interleave, prop, din];
-    let n = Math.max(...lists.map((l) => l.length));
+    const n = Math.max(...lists.map((l) => l.length));
     for (let i = 0; i < n; i++) for (const l of lists) if (l[i]) out.push(l[i]);
     return out;
   })()

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/restaurant" },
 };
 
-const photos = galleryByCategory.Dining;
+const photos = galleryByCategory.Restaurant;
 
 const features = [
   { icon: Utensils, title: "Vegetarian Cuisine", desc: "Freshly prepared Indian vegetarian meals." },

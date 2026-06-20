@@ -16,22 +16,22 @@ export const hero = {
   "height": 1067
 },
   gallery: {
-  "src": "/images/gallery/property/hotel-01.webp",
-  "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
+  "src": "/images/gallery/exterior/exterior-01.webp",
+  "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur",
   "width": 800,
   "height": 1200
 },
   about: {
-  "src": "/images/gallery/property/hotel-01.webp",
-  "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
-  "width": 800,
-  "height": 1200
+  "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp",
+  "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur",
+  "width": 1600,
+  "height": 1067
 },
   restaurant: {
   "src": "/images/gallery/dining/restaurant-01.webp",
-  "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur",
-  "width": 1040,
-  "height": 780
+  "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur",
+  "width": 1600,
+  "height": 1200
 },
 } satisfies Record<string, Img>;
 
@@ -226,30 +226,6 @@ export const roomImages: Record<string, Img[]> = {
       "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 11",
       "width": 1600,
       "height": 1067
-    },
-    {
-      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-12.webp",
-      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 12",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-13.webp",
-      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 13",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-14.webp",
-      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 14",
-      "width": 1600,
-      "height": 1067
-    },
-    {
-      "src": "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-15.webp",
-      "alt": "Triple Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 15",
-      "width": 1600,
-      "height": 1067
     }
   ],
   "family-four-bed-room": [
@@ -294,12 +270,24 @@ export const roomImages: Record<string, Img[]> = {
       "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 7",
       "width": 1600,
       "height": 1067
+    },
+    {
+      "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-08.webp",
+      "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 8",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-09.webp",
+      "alt": "Family Four Bed Room at Hotel Siddhi Vinayak, Jodhpur — view 9",
+      "width": 1600,
+      "height": 1067
     }
   ]
 };
 
-export type GalleryCat = "Rooms" | "Property" | "Dining";
-export const galleryByCategory: Record<GalleryCat, Img[]> = {
+export type GalleryCat = string;
+export const galleryByCategory: Record<string, Img[]> = {
   "Rooms": [
     {
       "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",
@@ -350,32 +338,133 @@ export const galleryByCategory: Record<GalleryCat, Img[]> = {
       "height": 1067
     }
   ],
-  "Property": [
+  "Exterior": [
     {
-      "src": "/images/gallery/property/hotel-01.webp",
-      "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
+      "src": "/images/gallery/exterior/exterior-01.webp",
+      "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/exterior/exterior-02.webp",
+      "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur 2",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/exterior/exterior-03.webp",
+      "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur 3",
       "width": 800,
       "height": 1200
     }
   ],
-  "Dining": [
+  "Reception & Lobby": [
+    {
+      "src": "/images/gallery/reception/reception-01.webp",
+      "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/reception/reception-02.webp",
+      "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 2",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/reception/reception-03.webp",
+      "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 3",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/reception/reception-04.webp",
+      "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 4",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/reception/reception-05.webp",
+      "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 5",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "Restaurant": [
     {
       "src": "/images/gallery/dining/restaurant-01.webp",
-      "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur",
-      "width": 1040,
-      "height": 780
+      "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur",
+      "width": 1600,
+      "height": 1200
     },
     {
       "src": "/images/gallery/dining/restaurant-02.webp",
-      "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur 2",
-      "width": 1040,
-      "height": 780
+      "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 2",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/dining/restaurant-03.webp",
+      "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 3",
+      "width": 568,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/dining/restaurant-04.webp",
+      "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 4",
+      "width": 710,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/dining/restaurant-05.webp",
+      "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 5",
+      "width": 567,
+      "height": 1200
+    }
+  ],
+  "Common Areas": [
+    {
+      "src": "/images/gallery/common/common-01.webp",
+      "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur",
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "/images/gallery/common/common-02.webp",
+      "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 2",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/common/common-03.webp",
+      "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 3",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/common/common-04.webp",
+      "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 4",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/common/common-05.webp",
+      "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 5",
+      "width": 800,
+      "height": 1200
     }
   ]
 };
 
-export const galleryCategories = ["All", "Rooms", "Property", "Dining"] as const;
-export type GalleryImage = Img & { category: "Rooms" | "Property" | "Dining" };
+export const galleryCategories = [
+  "All",
+  "Rooms",
+  "Exterior",
+  "Reception & Lobby",
+  "Restaurant",
+  "Common Areas"
+] as const;
+export type GalleryImage = Img & { category: string };
 export const galleryImages: GalleryImage[] = [
   {
     "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-01.webp",
@@ -385,18 +474,32 @@ export const galleryImages: GalleryImage[] = [
     "category": "Rooms"
   },
   {
-    "src": "/images/gallery/property/hotel-01.webp",
-    "alt": "Hotel Siddhi Vinayak at Hotel Siddhi Vinayak, Jodhpur",
+    "src": "/images/gallery/exterior/exterior-01.webp",
+    "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur",
     "width": 800,
     "height": 1200,
-    "category": "Property"
+    "category": "Exterior"
+  },
+  {
+    "src": "/images/gallery/reception/reception-01.webp",
+    "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1600,
+    "height": 1067,
+    "category": "Reception & Lobby"
   },
   {
     "src": "/images/gallery/dining/restaurant-01.webp",
-    "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur",
-    "width": 1040,
-    "height": 780,
-    "category": "Dining"
+    "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 1600,
+    "height": 1200,
+    "category": "Restaurant"
+  },
+  {
+    "src": "/images/gallery/common/common-01.webp",
+    "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur",
+    "width": 800,
+    "height": 1200,
+    "category": "Common Areas"
   },
   {
     "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-02.webp",
@@ -406,11 +509,32 @@ export const galleryImages: GalleryImage[] = [
     "category": "Rooms"
   },
   {
+    "src": "/images/gallery/exterior/exterior-02.webp",
+    "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur 2",
+    "width": 800,
+    "height": 1200,
+    "category": "Exterior"
+  },
+  {
+    "src": "/images/gallery/reception/reception-02.webp",
+    "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 2",
+    "width": 1600,
+    "height": 1067,
+    "category": "Reception & Lobby"
+  },
+  {
     "src": "/images/gallery/dining/restaurant-02.webp",
-    "alt": "Restaurant at Hotel Siddhi Vinayak, Jodhpur 2",
-    "width": 1040,
-    "height": 780,
-    "category": "Dining"
+    "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 2",
+    "width": 1600,
+    "height": 1200,
+    "category": "Restaurant"
+  },
+  {
+    "src": "/images/gallery/common/common-02.webp",
+    "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 2",
+    "width": 1600,
+    "height": 1067,
+    "category": "Common Areas"
   },
   {
     "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-03.webp",
@@ -420,6 +544,34 @@ export const galleryImages: GalleryImage[] = [
     "category": "Rooms"
   },
   {
+    "src": "/images/gallery/exterior/exterior-03.webp",
+    "alt": "Hotel exterior at Hotel Siddhi Vinayak, Jodhpur 3",
+    "width": 800,
+    "height": 1200,
+    "category": "Exterior"
+  },
+  {
+    "src": "/images/gallery/reception/reception-03.webp",
+    "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 3",
+    "width": 1600,
+    "height": 1067,
+    "category": "Reception & Lobby"
+  },
+  {
+    "src": "/images/gallery/dining/restaurant-03.webp",
+    "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 3",
+    "width": 568,
+    "height": 1200,
+    "category": "Restaurant"
+  },
+  {
+    "src": "/images/gallery/common/common-03.webp",
+    "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 3",
+    "width": 1600,
+    "height": 1067,
+    "category": "Common Areas"
+  },
+  {
     "src": "/images/rooms/deluxe-room/deluxe-room-jodhpur-04.webp",
     "alt": "Deluxe Room at Hotel Siddhi Vinayak, Jodhpur — view 4",
     "width": 1600,
@@ -427,11 +579,53 @@ export const galleryImages: GalleryImage[] = [
     "category": "Rooms"
   },
   {
+    "src": "/images/gallery/reception/reception-04.webp",
+    "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 4",
+    "width": 800,
+    "height": 1200,
+    "category": "Reception & Lobby"
+  },
+  {
+    "src": "/images/gallery/dining/restaurant-04.webp",
+    "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 4",
+    "width": 710,
+    "height": 1200,
+    "category": "Restaurant"
+  },
+  {
+    "src": "/images/gallery/common/common-04.webp",
+    "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 4",
+    "width": 1600,
+    "height": 1067,
+    "category": "Common Areas"
+  },
+  {
     "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp",
     "alt": "Super Deluxe Room at Hotel Siddhi Vinayak, Jodhpur",
     "width": 1600,
     "height": 1067,
     "category": "Rooms"
+  },
+  {
+    "src": "/images/gallery/reception/reception-05.webp",
+    "alt": "Reception and lobby at Hotel Siddhi Vinayak, Jodhpur 5",
+    "width": 1600,
+    "height": 1067,
+    "category": "Reception & Lobby"
+  },
+  {
+    "src": "/images/gallery/dining/restaurant-05.webp",
+    "alt": "Rooftop restaurant at Hotel Siddhi Vinayak, Jodhpur 5",
+    "width": 567,
+    "height": 1200,
+    "category": "Restaurant"
+  },
+  {
+    "src": "/images/gallery/common/common-05.webp",
+    "alt": "Common areas at Hotel Siddhi Vinayak, Jodhpur 5",
+    "width": 800,
+    "height": 1200,
+    "category": "Common Areas"
   },
   {
     "src": "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-02.webp",
