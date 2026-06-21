@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import GalleryGrid from "@/components/GalleryGrid";
 import { BreadcrumbSchema } from "@/components/Schema";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Photo Gallery",
-  description: "Browse photos of Hotel Siddhi Vinayak, Jodhpur — rooms, lobby, dining and more.",
-  alternates: { canonical: "/gallery" },
-};
+  description: "Browse photos of Hotel Siddhi Vinayak, Jodhpur — rooms, reception & lobby, rooftop restaurant, exterior and common areas.",
+  path: "/gallery",
+});
 
 export default function GalleryPage() {
   return (

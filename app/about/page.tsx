@@ -11,13 +11,14 @@ import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { site, otas, whatsappLink, callLink } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "About Us",
   description:
     "About Hotel Siddhi Vinayak — a clean, comfortable, family-friendly hotel in the heart of Jodhpur, about 350 m from the railway station. Warm hospitality, prime location and great value near Mehrangarh Fort and the Blue City.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const whyChooseUs = [
   { icon: Sparkles, title: "Clean Rooms", desc: "Spotless, air-conditioned rooms maintained and sanitised daily by our housekeeping team." },
@@ -231,12 +232,10 @@ export default function AboutPage() {
             <Reveal>
               <div className="flex h-full flex-col justify-center rounded-2xl bg-white p-8 text-center shadow-sm">
                 <div className="flex items-center justify-center gap-1 text-gold">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={26} className={i < Math.round(site.rating.value) ? "fill-gold" : "fill-gold/20"} />
-                  ))}
+                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={26} className="fill-gold" />)}
                 </div>
-                <p className="mt-4 font-serif text-5xl text-ink">{site.rating.value}</p>
-                <p className="mt-1 text-ink/60">based on <strong>{site.rating.count}+</strong> Google reviews</p>
+                <p className="mt-4 font-serif text-5xl text-ink">{site.rating.count}+</p>
+                <p className="mt-1 text-ink/60">Guest Reviews across Booking.com, MakeMyTrip, Agoda, Tripadvisor &amp; Google</p>
                 <a href={site.social.google} target="_blank" rel="noopener noreferrer" className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-sand">
                   Read our Google reviews <ArrowRight size={15} />
                 </a>

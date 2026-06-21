@@ -54,7 +54,7 @@ export default function Home() {
             Comfortable Stay in the Heart of Jodhpur
           </h1>
           <p className="mt-5 text-sand text-base sm:text-lg max-w-2xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.65)]">
-            Clean Rooms • Family Friendly • Free Wi-Fi • Walking Distance from Railway Station
+            Clean Rooms • Family Friendly • Free Wi-Fi • 350 m from Railway Station
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
@@ -148,8 +148,8 @@ export default function Home() {
             </p>
             <div className="mt-6 flex items-center gap-2 text-ink">
               <Star className="fill-gold text-gold" size={20} />
-              <span className="font-medium">{site.rating.value}</span>
-              <span className="text-ink/50 text-sm">from {site.rating.count} guest reviews</span>
+              <span className="font-medium">{site.rating.count}+ Guest Reviews</span>
+              <span className="text-ink/50 text-sm">across Booking.com, MakeMyTrip, Agoda, Tripadvisor &amp; Google</span>
             </div>
             <Link href="/about" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sand transition hover:bg-gold hover:text-ink">
               Learn More <ArrowRight size={16} />

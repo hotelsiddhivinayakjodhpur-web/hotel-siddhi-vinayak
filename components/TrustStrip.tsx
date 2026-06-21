@@ -5,8 +5,8 @@ const items = [
   { icon: Car, label: "Free Parking" },
   { icon: Wifi, label: "Free High-Speed Wi-Fi" },
   { icon: Clock, label: "24×7 Front Desk" },
-  { icon: TrainFront, label: "Near Railway Station" },
-  { icon: ShieldCheck, label: "Free Cancellation*" },
+  { icon: TrainFront, label: "350 m from Station" },
+  { icon: ShieldCheck, label: "Free Cancellation" }, // VERIFY policy
 ];
 
 // Compact trust band placed directly under the hero — surfaces the reasons to

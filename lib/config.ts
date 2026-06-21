@@ -89,7 +89,7 @@ export const whatsappLink = (msg?: string) =>
     msg || "Hi! I would like to enquire about a room at Hotel Siddhi Vinayak."
   )}`;
 
-export const callLink = `tel:${site.phoneRaw}`;
+export const callLink = `tel:+${site.phoneRaw}`;
 
 // Rates are not published — every room shows this until prices are finalized.
 export const RATE_LABEL = "Contact for Best Available Rate";

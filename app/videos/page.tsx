@@ -7,12 +7,13 @@ import VideoGallery from "@/components/VideoGallery";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { instagramFeed } from "@/lib/instagram";
 import { site } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Videos & Experiences",
   description: "Watch reels and videos from Hotel Siddhi Vinayak, Jodhpur — the hotel, the Blue City, Mehrangarh Fort, Umaid Bhawan, Mandore, Kaylana Lake and more.",
-  alternates: { canonical: "/videos" },
-};
+  path: "/videos",
+});
 
 // VideoObject list helps the page surface in video-rich search results.
 const videoSchema = {

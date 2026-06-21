@@ -8,13 +8,14 @@ import { rooms } from "@/lib/data";
 import { whatsappLink, callLink } from "@/lib/config";
 import { RoomsSchema, BreadcrumbSchema } from "@/components/Schema";
 import RoomComparison from "@/components/RoomComparison";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Rooms & Suites",
   description:
     "Deluxe, Super Deluxe, Triple Deluxe and Family Four Bed rooms at Hotel Siddhi Vinayak, Jodhpur — clean, air-conditioned rooms with free Wi-Fi and free parking. Contact us for the best available rate.",
-  alternates: { canonical: "/rooms" },
-};
+  path: "/rooms",
+});
 
 export default function RoomsPage() {
   return (

@@ -30,25 +30,22 @@ export default function Reviews() {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionTitle eyebrow="Guest Reviews" title="Trusted by Thousands of Guests" subtitle="Real ratings from real stays — see why travellers choose us in Jodhpur." />
+        <SectionTitle eyebrow="Guest Reviews" title="Trusted by Thousands of Guests" subtitle="791+ guest reviews from real stays — see why travellers choose us in Jodhpur." />
 
-        {/* Credibility stats from Google Business Profile */}
+        {/* Credibility — review VOLUME and multi-platform presence (rating de-emphasised) */}
         <div className="grid gap-5 sm:grid-cols-3">
           <Reveal>
-            <div className="flex h-full flex-col items-center rounded-2xl bg-sand p-7 text-center">
-              <div className="flex items-baseline gap-1">
-                <span className="font-serif text-5xl text-ink">{gbpStats.ratingValue}</span>
-                <span className="text-ink/50">/5</span>
-              </div>
-              <div className="mt-2"><Stars value={gbpStats.ratingValue} /></div>
-              <p className="mt-2 text-sm text-ink/60">Google rating</p>
+            <div className="flex h-full flex-col items-center justify-center rounded-2xl bg-sand p-7 text-center">
+              <MessageSquare className="text-gold-dark" size={26} />
+              <span className="mt-2 font-serif text-4xl text-ink">{gbpStats.reviewCount.toLocaleString("en-IN")}+</span>
+              <p className="mt-1 text-sm text-ink/60">Guest Reviews</p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex h-full flex-col items-center justify-center rounded-2xl bg-sand p-7 text-center">
-              <MessageSquare className="text-gold-dark" size={26} />
-              <span className="mt-2 font-serif text-4xl text-ink">{gbpStats.reviewCount.toLocaleString("en-IN")}+</span>
-              <p className="mt-1 text-sm text-ink/60">Guest reviews on Google</p>
+              <BadgeCheck className="text-gold-dark" size={26} />
+              <span className="mt-2 font-serif text-2xl text-ink leading-tight">Rated across<br />6 platforms</span>
+              <p className="mt-1 text-sm text-ink/60">Booking.com, MakeMyTrip, Agoda, Tripadvisor & Google</p>
             </div>
           </Reveal>
           <Reveal delay={0.2}>

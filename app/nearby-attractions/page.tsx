@@ -8,12 +8,13 @@ import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { attractionsData } from "@/lib/attractions";
 import { site } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Nearby Attractions in Jodhpur",
   description: "Discover top attractions near Hotel Siddhi Vinayak — Mehrangarh Fort, Jaswant Thada, Umaid Bhawan Palace, Toorji Ka Jhalra, Clock Tower and more in Jodhpur, Rajasthan, with distances, timings and visitor tips.",
-  alternates: { canonical: "/nearby-attractions" },
-};
+  path: "/nearby-attractions",
+});
 
 const attractionsSchema = {
   "@context": "https://schema.org",

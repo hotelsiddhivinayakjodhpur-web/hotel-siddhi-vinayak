@@ -57,6 +57,22 @@ export function HotelSchema() {
       "Free Wi-Fi", "Air Conditioning", "Free Parking", "EV Charging", "Room Service",
       "24-hour Front Desk", "Sun Terrace", "Travel Desk", "In-house Restaurant", "Airport/Railway Pickup",
     ].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
+    // The 4 room types as priced offers / contained places (Rich Results eligible).
+    containsPlace: rooms.map((r) => ({
+      "@type": "HotelRoom",
+      name: r.name,
+      bed: r.bed,
+      occupancy: { "@type": "QuantitativeValue", maxValue: parseInt(r.occupancy, 10) || undefined, unitText: "Guests" },
+      url: `${site.url}/rooms/${r.slug}`,
+    })),
+    makesOffer: rooms.map((r) => ({
+      "@type": "Offer",
+      name: `${r.name} — per night (room only)`,
+      price: r.price,
+      priceCurrency: site.currency,
+      availability: "https://schema.org/InStock",
+      url: `${site.url}/rooms/${r.slug}`,
+    })),
   };
   return <JsonLd data={data} />;
 }

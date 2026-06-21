@@ -7,13 +7,14 @@ import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { galleryByCategory } from "@/lib/images";
 import { whatsappLink, callLink } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Restaurant & Dining",
   description:
     "Dine at Hotel Siddhi Vinayak's in-house restaurant in Jodhpur — vegetarian Indian cuisine and 24-hour room service. Opposite M.G. Hospital, near Jalori Gate.",
-  alternates: { canonical: "/restaurant" },
-};
+  path: "/restaurant",
+});
 
 const photos = galleryByCategory.Restaurant;
 

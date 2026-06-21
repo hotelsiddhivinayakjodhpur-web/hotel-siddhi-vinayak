@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} | Best Hotel in Jodhpur`,
     description: site.description,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: site.name }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hotel Siddhi Vinayak — budget hotel near Jodhpur Railway Station" }],
   },
   twitter: {
     card: "summary_large_image",

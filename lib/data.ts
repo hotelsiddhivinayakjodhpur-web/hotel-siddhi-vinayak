@@ -44,7 +44,7 @@ export const rooms: Room[] = [
     count: 9,
     size: "300 sq ft",
     occupancy: "2-3 Guests",
-    bed: "1 King Bed",
+    bed: "1 King Bed", // VERIFY: king bed + sitting area (per description)
     image: "/images/rooms/super-deluxe-room/super-deluxe-room-jodhpur-01.webp",
     description:
       "A spacious, premium room with upgraded furnishings and a private sitting area — our best value for couples and business travellers.",
@@ -61,7 +61,7 @@ export const rooms: Room[] = [
     count: 3,
     size: "320 sq ft",
     occupancy: "3 Guests",
-    bed: "3 Single Beds / 1 Double + 1 Single",
+    bed: "1 Double Bed + 1 Single Bed", // VERIFY: matches the room photos (double + single)
     image: "/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp",
     description:
       "A roomy, air-conditioned room comfortably sleeping three — ideal for friends and small families travelling together.",
@@ -78,7 +78,7 @@ export const rooms: Room[] = [
     count: 1,
     size: "450 sq ft",
     occupancy: "4 Guests",
-    bed: "2 Double Beds",
+    bed: "2 Double Beds", // VERIFY: 4-bed sleeping arrangement (2 doubles vs 4 singles)
     image: "/images/rooms/family-four-bed-room/family-four-bed-room-jodhpur-01.webp",
     description:
       "Our largest room with four-bed comfort and extra space — the perfect choice for families exploring the Blue City together.",

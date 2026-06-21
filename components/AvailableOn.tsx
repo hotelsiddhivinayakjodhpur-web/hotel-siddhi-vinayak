@@ -28,11 +28,11 @@ export default function AvailableOn() {
           {google && (
             <a href={google.url} target="_blank" rel="noopener noreferrer" className="card-lux gold-frame flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center">
               <span className="font-semibold tracking-wide" style={{ color: google.brand }}>Google</span>
-              <p className="mt-2 font-serif text-5xl text-ink">{site.rating.value}<span className="text-2xl text-ink/40">/5</span></p>
-              <div className="mt-2 flex items-center justify-center gap-1 text-gold">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={18} className={i < Math.round(site.rating.value) ? "fill-gold" : "fill-gold/20"} />)}
+              <p className="mt-2 font-serif text-5xl text-ink">{site.rating.count}+</p>
+              <div className="mt-2 flex items-center justify-center gap-1 text-gold" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={18} className="fill-gold" />)}
               </div>
-              <p className="mt-2 text-sm text-ink/60">{site.rating.count}+ verified reviews</p>
+              <p className="mt-2 text-sm text-ink/60">verified guest reviews</p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-gold-dark">Read on Google <ArrowRight size={14} /></span>
             </a>
           )}

@@ -7,12 +7,13 @@ import Reveal from "@/components/Reveal";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { posts, readingTime } from "@/lib/blog";
 import { site } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Jodhpur Travel Blog",
   description: "Jodhpur travel guides, itineraries, food, shopping and seasonal tips from the local team at Hotel Siddhi Vinayak — everything you need to plan a perfect Blue City trip.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 const fmt = (d: string) => new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 

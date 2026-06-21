@@ -5,7 +5,6 @@ import { ChevronDown, MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { FaqSchema } from "@/components/Schema";
 import { faqs } from "@/lib/data";
 import { whatsappLink, callLink } from "@/lib/config";
 
@@ -21,7 +20,6 @@ export default function FaqPage() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <>
-      <FaqSchema />
       <PageHero title="Frequently Asked Questions" subtitle="Everything you need to know before you stay." image="/images/rooms/triple-deluxe-room/triple-deluxe-room-jodhpur-01.webp" />
       <section className="py-16 sm:py-20 bg-sand">
         <div className="mx-auto max-w-3xl px-6 space-y-10">

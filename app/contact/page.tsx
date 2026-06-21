@@ -9,12 +9,13 @@ import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import SocialLinks from "@/components/SocialLinks";
 import { site, whatsappLink, callLink } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Contact & Booking",
   description: "Contact Hotel Siddhi Vinayak, Jodhpur. Call, WhatsApp or email to book direct for the best rates. About 350 m from Jodhpur Railway Station, near Jalori Gate.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const a = site.address;
 const addressLine = `${a.street}, ${a.locality}, ${a.region} ${a.postalCode}`;
@@ -74,7 +75,7 @@ export default function ContactPage() {
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
             <a href={site.social.google} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sand/85 hover:text-gold">
-              <Star size={16} className="fill-gold text-gold" /> <strong>{site.rating.value}</strong>/5 · {site.rating.count}+ Google reviews
+              <Star size={16} className="fill-gold text-gold" /> <strong>{site.rating.count}+</strong> Guest Reviews on Google
             </a>
             <span className="flex items-center gap-2 text-sand/85"><ShieldCheck size={16} className="text-gold" /> Secure direct booking</span>
             <span className="flex items-center gap-2 text-sand/85"><Zap size={16} className="text-gold" /> Instant WhatsApp confirmation</span>
