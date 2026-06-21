@@ -45,11 +45,9 @@ const distances = [
   { icon: Landmark, place: "Umaid Bhawan Palace", dist: "≈ 6 km", time: "20 min" },
 ];
 
-// OTA presence (verified links from config + Goibibo, part of the MakeMyTrip group).
-const otaBadges = [
-  ...otas.filter((o) => ["Booking.com", "Agoda", "Expedia", "MakeMyTrip", "Cleartrip"].includes(o.name)),
-  { name: "Goibibo", url: "https://www.goibibo.com/hotels/" },
-];
+// OTA presence — all verified property-page links from config (no generic OTA
+// homepages). Booking.com, MakeMyTrip, Agoda, Expedia, Cleartrip, Tripadvisor, etc.
+const otaBadges = otas.filter((o) => o.name !== "Google");
 
 export default function AboutPage() {
   return (

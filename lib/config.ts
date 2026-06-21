@@ -51,12 +51,24 @@ export const site = {
 
 // OTA listings (verified to resolve June 2026). Shown in the Book-Direct section
 // and emitted in schema sameAs. Booking direct (Call/WhatsApp) is always primary.
-export const otas = [
-  { name: "MakeMyTrip", url: "https://www.makemytrip.com/hotels/hotel_siddhi_vinayak-details-jodhpur.html" },
-  { name: "Booking.com", url: "https://www.booking.com/hotel/in/siddhi-vinayak-jodhpur.html" },
-  { name: "Agoda", url: "https://www.agoda.com/partners/partnersearch.aspx?hid=52657289" },
-  { name: "Expedia", url: "https://www.expedia.com/h108903246" },
-  { name: "Cleartrip", url: "https://www.cleartrip.com/hotels/4561215" },
+// Verified Hotel Siddhi Vinayak PROPERTY pages (not OTA homepages). Each opens in
+// a new tab. `brand` drives the wordmark chip colour. `rating`/`reviews` shown only
+// where independently verifiable (Google = live GBP data). Others are link-only.
+export type Ota = { name: string; url: string; brand: string; rating?: number; reviews?: number };
+
+export const otas: Ota[] = [
+  { name: "Google", url: site.social.google, brand: "#4285F4", rating: 3.7, reviews: 791 },
+  { name: "Booking.com", url: "https://www.booking.com/hotel/in/siddhi-vinayak-jodhpur.html", brand: "#003580" },
+  { name: "MakeMyTrip", url: "https://www.makemytrip.com/hotels/hotel_siddhi_vinayak-details-jodhpur.html", brand: "#EB2026" },
+  { name: "Agoda", url: "https://www.agoda.com/hotel-siddhi-vinayak-h52657289/hotel/jodhpur-in.html", brand: "#5C2D91" },
+  { name: "Expedia", url: "https://www.expedia.com/h108903246", brand: "#1668E3" },
+  { name: "Cleartrip", url: "https://www.cleartrip.com/hotels/details/4561215", brand: "#F47521" },
+  { name: "Tripadvisor", url: "https://www.tripadvisor.in/HotelHighlight-g297668-d3173616-Reviews-Hotel_Siddhi_Vinayak-Jodhpur_Jodhpur_District_Rajasthan.html", brand: "#00AF87" },
+  { name: "Hotels.com", url: "https://in.hotels.com/ho3485903872/hotel-siddhi-vinayak/", brand: "#D32F2F" },
+  { name: "Trivago", url: "https://www.trivago.in/en-IN/lm/hotel-siddhi-vinayak-jodhpur", brand: "#E6492D" },
+  { name: "ZenHotels", url: "https://www.zenhotels.com/hotel/en-us/india/jodhpur/mid10368493/hotel_siddhi_vinayak_4/", brand: "#1FB6A8" },
+  { name: "Vio.com", url: "https://www.vio.com/Hotel/Search?hotelId=7433129", brand: "#2B6CF6" },
+  { name: "Justdial", url: "https://www.justdial.com/Jodhpur/Hotel-Siddhi-Vinayak-Opposite-Pratap-School-Jalori-Gate/0291PX291-X291-110310093543-M4L2_BZDET", brand: "#1A8917" },
 ];
 
 export const nav = [

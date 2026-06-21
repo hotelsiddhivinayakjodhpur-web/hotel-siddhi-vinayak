@@ -1,6 +1,6 @@
 import { Phone, MessageCircle, BadgeIndianRupee, ShieldCheck } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
-import { otas, whatsappLink, callLink } from "@/lib/config";
+import { whatsappLink, callLink } from "@/lib/config";
 
 // "Book Direct" trust section: shows the hotel is on every major OTA (credibility)
 // while steering to commission-free direct booking via Call / WhatsApp.
@@ -42,20 +42,9 @@ export default function BookDirect() {
           </a>
         </div>
 
-        {/* OTA availability */}
-        <p className="mt-10 text-sm text-sand/70">Also available on</p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          {otas.map((o) => (
-            <a key={o.name} href={o.url} target="_blank" rel="noopener noreferrer"
-              className="rounded-full border border-sand/25 px-5 py-2 text-sm text-sand/90 transition hover:border-gold hover:text-gold">
-              {o.name}
-            </a>
-          ))}
-        </div>
-
         <p className="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-sand/55">
-          Hotel Siddhi Vinayak is available across major travel platforms including MakeMyTrip,
-          Booking.com, Agoda, Expedia and Cleartrip, while offering direct booking support via phone and WhatsApp.
+          Hotel Siddhi Vinayak is listed across every major travel platform — see them all below —
+          while offering direct booking support via phone and WhatsApp for the best available rate.
         </p>
       </div>
     </section>

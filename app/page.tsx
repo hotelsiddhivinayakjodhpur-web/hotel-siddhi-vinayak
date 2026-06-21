@@ -9,6 +9,7 @@ import TrustStrip from "@/components/TrustStrip";
 import Counters from "@/components/Counters";
 import Reviews from "@/components/Reviews";
 import BookDirect from "@/components/BookDirect";
+import AvailableOn from "@/components/AvailableOn";
 import InstagramFollow from "@/components/InstagramFollow";
 import HeroVideo from "@/components/HeroVideo";
 import { HotelSchema } from "@/components/Schema";
@@ -188,6 +189,9 @@ export default function Home() {
 
       {/* Book direct — OTA trust + commission-free direct CTAs */}
       <BookDirect />
+
+      {/* Ratings + Available On — verified property links across every OTA */}
+      <AvailableOn />
 
       {/* Instagram — authentic social proof + follow */}
       <InstagramFollow />
