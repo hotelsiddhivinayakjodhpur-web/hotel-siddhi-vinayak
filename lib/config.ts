@@ -98,7 +98,8 @@ export const RATE_LABEL = "Contact for Best Available Rate";
 // local WebP galleries.
 export const PHOTOS_READY = true;
 
-// The only available walkthrough clip is a low-quality phone video (TV-on-wall),
-// not premium enough for a hero. Disabled in favour of a luxury hero image until
-// professional video footage is available.
-export const VIDEO_READY = false;
+// Hero video enabled (desktop only — mobile keeps the static luxury image for a
+// fast LCP). Source is a phone walkthrough (best.mp4) optimized via FFmpeg into
+// hero.webm/.mp4 (~2 MB). NOTE: footage is amateur, not professional — review the
+// look before promoting to production; revert to `false` to fall back to the image.
+export const VIDEO_READY = true;

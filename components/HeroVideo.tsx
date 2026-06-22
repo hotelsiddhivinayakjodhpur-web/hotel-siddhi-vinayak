@@ -45,6 +45,8 @@ export default function HeroVideo({
       preload="metadata"
       aria-label={alt}
     >
+      {/* VP9 WebM first (smaller); browsers without it fall back to H.264 MP4. */}
+      <source src={src.replace(/\.mp4$/, ".webm")} type="video/webm" />
       <source src={src} type="video/mp4" />
     </video>
   );
