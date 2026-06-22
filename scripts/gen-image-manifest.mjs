@@ -74,7 +74,7 @@ export type GalleryImage = Img & { category: string };
 export const galleryImages: GalleryImage[] = ${j(
   (() => {
     const lists = [
-      ROOMS.flatMap((r) => roomImages[r.slug].slice(0, 4).map((im) => ({ ...im, category: "Rooms" }))),
+      ROOMS.flatMap((r) => roomImages[r.slug].map((im) => ({ ...im, category: "Rooms" }))),
       ...GAL.map((g) => galCats[g.cat].map((im) => ({ ...im, category: g.cat }))),
     ];
     // weave categories for a balanced masonry grid

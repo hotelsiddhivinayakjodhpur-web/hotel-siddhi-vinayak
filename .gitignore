@@ -22,3 +22,8 @@ psi-*.json
 _review/
 
 _raw2/
+_raw3/
+_contact/
+scripts/_dlmap.json
+scripts/_decode3.mjs
+scripts/_contact.mjs
