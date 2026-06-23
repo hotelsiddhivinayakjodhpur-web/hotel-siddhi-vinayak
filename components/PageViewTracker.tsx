@@ -21,6 +21,8 @@ export default function PageViewTracker() {
       page_location: window.location.href,
       page_title: document.title,
     });
+    // Meta Pixel SPA page view (the initial view is sent by the pixel base code).
+    window.fbq?.("track", "PageView");
   }, [pathname, searchParams]);
 
   return null;

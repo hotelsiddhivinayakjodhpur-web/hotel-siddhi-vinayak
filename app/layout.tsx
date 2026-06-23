@@ -22,6 +22,7 @@ import StickyMobileBar from "@/components/StickyMobileBar";
 import SocialBar from "@/components/SocialBar";
 import { LocalBusinessSchema } from "@/components/Schema";
 import Analytics from "@/components/Analytics";
+import MetaPixel from "@/components/MetaPixel";
 import PageViewTracker from "@/components/PageViewTracker";
 import { Suspense } from "react";
 import { site } from "@/lib/config";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>
         <Analytics />
+        <MetaPixel />
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
