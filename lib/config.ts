@@ -114,4 +114,7 @@ export const PHOTOS_READY = true;
 // fast LCP). Source is a phone walkthrough (best.mp4) optimized via FFmpeg into
 // hero.webm/.mp4 (~2 MB). NOTE: footage is amateur, not professional — review the
 // look before promoting to production; revert to `false` to fall back to the image.
-export const VIDEO_READY = true;
+// Homepage hero shows the best Super Deluxe room photo (Room 310) on every device
+// — a static, fast-loading image converts better for a room-booking site than the
+// mixed promo reel. Set true only to restore the autoplay video hero.
+export const VIDEO_READY = false;
