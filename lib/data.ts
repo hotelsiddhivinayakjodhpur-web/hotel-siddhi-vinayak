@@ -120,6 +120,8 @@ export const faqs: Faq[] = [
   { category: "Booking & Check-in", q: "Is late check-out available?", a: "Yes, late check-out is offered on request, subject to availability. Let the front desk know the evening before and we'll try to accommodate you." },
   { category: "Booking & Check-in", q: "Do you accept walk-in bookings?", a: "Yes, walk-in guests are welcome subject to availability. During peak season (Oct–Mar) we recommend calling or messaging ahead on WhatsApp to confirm a room." },
   { category: "Booking & Check-in", q: "How do I get the best price?", a: "Always book direct with us by Call or WhatsApp — you get our best available rate with no third-party commission or booking fees, usually better than online travel agency (OTA) prices." },
+  { category: "Booking & Check-in", q: "Are room rates updated live?", a: "Yes. Rates and inventory are synchronized through Stayflexi Channel Manager across direct bookings and online travel agencies, so the availability and price you see when booking direct are always current." },
+  { category: "Booking & Check-in", q: "Will I receive instant confirmation?", a: "Yes. All confirmed bookings receive instant confirmation. Booking direct on our website uses the Stayflexi booking engine with secure online payment and a real-time confirmation." },
 
   // ── Location ──
   { category: "Location", q: "How far is Hotel Siddhi Vinayak from Jodhpur Railway Station?", a: "About 350 metres — a 5-minute walk or a 2-minute auto-rickshaw ride from Jodhpur Junction. It's one of the most convenient hotels for train travellers." },

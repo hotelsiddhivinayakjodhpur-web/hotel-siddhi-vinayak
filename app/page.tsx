@@ -9,6 +9,7 @@ import TrustStrip from "@/components/TrustStrip";
 import Counters from "@/components/Counters";
 import Reviews from "@/components/Reviews";
 import BookDirect from "@/components/BookDirect";
+import RealTimeAvailability from "@/components/RealTimeAvailability";
 import AvailableOn from "@/components/AvailableOn";
 import InstagramFollow from "@/components/InstagramFollow";
 import HeroVideo from "@/components/HeroVideo";
@@ -82,6 +83,9 @@ export default function Home() {
 
       {/* Animated stats */}
       <Counters />
+
+      {/* Real-time availability + booking engine */}
+      <RealTimeAvailability />
 
       {/* Features */}
       <section className="py-20 bg-white">

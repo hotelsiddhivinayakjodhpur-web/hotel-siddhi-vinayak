@@ -1,6 +1,6 @@
-import { Phone, MessageCircle, BadgeIndianRupee, ShieldCheck } from "lucide-react";
+import { Phone, MessageCircle, BadgeIndianRupee, ShieldCheck, CalendarCheck } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
-import { whatsappLink, callLink } from "@/lib/config";
+import { whatsappLink, callLink, bookingLink } from "@/lib/config";
 
 // "Book Direct" trust section: shows the hotel is on every major OTA (credibility)
 // while steering to commission-free direct booking via Call / WhatsApp.
@@ -32,15 +32,20 @@ export default function BookDirect() {
 
         {/* Primary direct CTAs */}
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href={bookingLink} target="_blank" rel="noopener noreferrer"
+            className="btn-gold inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-semibold">
+            <CalendarCheck size={18} /> Check Availability &amp; Book
+          </a>
           <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3.5 font-medium text-white transition hover:opacity-90">
-            <MessageCircle size={18} /> Book Direct on WhatsApp
+            <MessageCircle size={18} /> Book on WhatsApp
           </a>
           <a href={callLink}
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 font-medium text-ink transition hover:bg-gold-light">
+            className="inline-flex items-center gap-2 rounded-full border border-sand/30 px-8 py-3.5 font-medium text-sand transition hover:bg-white/10">
             <Phone size={17} /> Call to Book
           </a>
         </div>
+        <p className="mt-4 text-xs text-sand/55">Real-time availability &amp; instant confirmation · Powered by Stayflexi</p>
 
         <p className="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-sand/55">
           Hotel Siddhi Vinayak is listed across every major travel platform — see them all below —

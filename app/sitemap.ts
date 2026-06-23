@@ -7,12 +7,12 @@ import { attractionsData } from "@/lib/attractions";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
   const staticRoutes = [
-    "", "/rooms", "/restaurant", "/gallery", "/videos", "/about", "/contact", "/faq", "/blog", "/nearby-attractions",
+    "", "/booking", "/rooms", "/restaurant", "/gallery", "/videos", "/about", "/contact", "/faq", "/blog", "/nearby-attractions",
   ].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : path === "/rooms" ? 0.9 : 0.8,
+    priority: path === "" ? 1 : path === "/booking" || path === "/rooms" ? 0.9 : 0.8,
   }));
 
   const roomRoutes = rooms.map((r) => ({

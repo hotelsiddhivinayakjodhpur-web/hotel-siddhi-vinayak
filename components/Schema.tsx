@@ -1,4 +1,4 @@
-import { site, otas } from "@/lib/config";
+import { site, otas, bookingLink } from "@/lib/config";
 import { faqs, rooms, reviews } from "@/lib/data";
 
 function JsonLd({ data }: { data: object }) {
@@ -73,6 +73,21 @@ export function HotelSchema() {
       availability: "https://schema.org/InStock",
       url: `${site.url}/rooms/${r.slug}`,
     })),
+    // Direct online booking via the Stayflexi booking engine (real-time availability).
+    potentialAction: {
+      "@type": "ReserveAction",
+      name: "Book a room — real-time availability",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: bookingLink,
+        inLanguage: "en",
+        actionPlatform: [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: { "@type": "LodgingReservation", name: "Hotel Siddhi Vinayak room reservation" },
+    },
   };
   return <JsonLd data={data} />;
 }

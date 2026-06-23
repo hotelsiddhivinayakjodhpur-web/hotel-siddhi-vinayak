@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowLeft } from "lucide-react";
+import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowLeft, CalendarCheck } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { rooms } from "@/lib/data";
 import { roomImages } from "@/lib/images";
-import { site, whatsappLink, callLink, PHOTOS_READY } from "@/lib/config";
+import { site, whatsappLink, callLink, bookingLink, PHOTOS_READY } from "@/lib/config";
 
 export function generateStaticParams() {
   return rooms.map((r) => ({ slug: r.slug }));
@@ -126,7 +126,11 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
                 <p className="mt-1 text-sm text-ink/60">{r.count} {r.count > 1 ? "rooms" : "room"} of this type</p>
                 <p className="mt-4"><span className="font-serif text-3xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span><span className="text-sm text-ink/55">/night</span></p>
                 <p className="mt-1 text-xs text-ink/55">Best rate guaranteed when you book direct — no OTA commission.</p>
-                <a href={enquiry} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition hover:opacity-90">
+                <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-gold mt-5 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold">
+                  <CalendarCheck size={18} /> Check Availability &amp; Book
+                </a>
+                <p className="mt-2 text-center text-[11px] text-ink/45">Real-time availability · Powered by Stayflexi</p>
+                <a href={enquiry} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition hover:opacity-90">
                   <MessageCircle size={18} /> Enquire on WhatsApp
                 </a>
                 <a href={callLink} className="btn-gold mt-3 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold">

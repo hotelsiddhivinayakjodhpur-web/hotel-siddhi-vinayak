@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, CalendarCheck } from "lucide-react";
 import { nav, site, callLink } from "@/lib/config";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -54,11 +54,20 @@ export default function Navbar() {
             <SocialLinks iconSize={18} itemClassName="text-sand/80 hover:text-gold" />
           </li>
           <li>
-            <a
-              href={callLink}
+            <Link
+              href="/booking"
               className="btn-gold flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
             >
-              <Phone size={15} /> Call Now
+              <CalendarCheck size={15} /> Book Now
+            </Link>
+          </li>
+          <li>
+            <a
+              href={callLink}
+              aria-label="Call the hotel"
+              className="flex items-center gap-2 rounded-full border border-gold/40 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/10"
+            >
+              <Phone size={15} /> Call
             </a>
           </li>
         </ul>
@@ -94,9 +103,17 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
+                <Link
+                  href="/booking"
+                  className="btn-gold mt-2 flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold"
+                >
+                  <CalendarCheck size={16} /> Book Now
+                </Link>
+              </li>
+              <li>
                 <a
                   href={callLink}
-                  className="btn-gold mt-2 flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold"
+                  className="flex w-full items-center justify-center gap-2 rounded-full border border-gold/40 px-4 py-2 font-semibold text-gold"
                 >
                   <Phone size={16} /> Call Now
                 </a>
