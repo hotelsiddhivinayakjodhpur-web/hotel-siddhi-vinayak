@@ -51,19 +51,19 @@ export default function Home() {
         <div className="absolute inset-0 hero-overlay-home" />
         <Reveal className="relative z-10 px-6">
           <p className="text-gold-gradient uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">Best Budget Hotel Near Jodhpur Railway Station</p>
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto leading-tight [text-shadow:0_3px_22px_rgba(0,0,0,0.65)]">
+          <h1 className="font-serif text-[2.75rem] sm:text-6xl lg:text-7xl text-sand max-w-4xl mx-auto [text-shadow:0_2px_4px_rgba(0,0,0,0.5),0_10px_34px_rgba(0,0,0,0.6)]">
             Comfortable Stay in the Heart of Jodhpur
           </h1>
-          <p className="mt-5 text-sand text-base sm:text-lg max-w-2xl mx-auto [text-shadow:0_2px_14px_rgba(0,0,0,0.65)]">
+          <p className="mt-5 text-sand/95 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">
             Clean Rooms • Family Friendly • Free Wi-Fi • 350 m from Railway Station
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"
-              className="btn-gold rounded-full px-8 py-3.5 font-semibold">
+              className="btn-gold rounded-full px-8 py-4 text-[15px] font-semibold tracking-wide">
               Book Direct on WhatsApp
             </a>
             <Link href="/rooms"
-              className="btn-outline-lux rounded-full px-8 py-3.5 font-medium">
+              className="btn-outline-lux rounded-full px-8 py-4 text-[15px] font-semibold tracking-wide">
               View Rooms &amp; Rates
             </Link>
           </div>

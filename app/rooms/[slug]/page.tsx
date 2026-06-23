@@ -99,17 +99,17 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
             <div className="lg:col-span-2">
               <div className="flex flex-wrap items-center gap-3">
                 <h1 className="font-serif text-4xl text-ink">{r.name}</h1>
-                <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-medium text-gold-dark">{r.highlight}</span>
+                <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold-dark">{r.highlight}</span>
               </div>
-              <p className="mt-2 text-ink">
-                <span className="font-serif text-3xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
+              <p className="mt-3 flex items-baseline gap-2 text-ink">
+                <span className="font-serif text-4xl font-bold text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
                 <span className="text-sm text-ink/55"> / night · room only (EP)</span>
               </p>
               <p className="mt-4 text-ink/75 leading-relaxed text-lg">{r.description}</p>
-              <div className="mt-6 flex flex-wrap gap-6 text-ink/70">
-                <span className="flex items-center gap-2"><Maximize size={18} className="text-gold" /> {r.size}</span>
-                <span className="flex items-center gap-2"><Users size={18} className="text-gold" /> {r.occupancy}</span>
-                <span className="flex items-center gap-2"><BedDouble size={18} className="text-gold" /> {r.bed}</span>
+              <div className="mt-6 flex flex-wrap gap-2.5 text-sm font-medium">
+                <span className="inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2 text-ink/75"><Maximize size={16} className="text-gold-dark" /> {r.size}</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2 text-ink/75"><Users size={16} className="text-gold-dark" /> {r.occupancy}</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2 text-ink/75"><BedDouble size={16} className="text-gold-dark" /> {r.bed}</span>
               </div>
               <h2 className="mt-8 font-serif text-2xl text-ink">Room Amenities</h2>
               <ul className="mt-4 grid grid-cols-2 gap-3 text-ink/75 sm:grid-cols-3">

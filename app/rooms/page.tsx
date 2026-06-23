@@ -35,20 +35,20 @@ export default function RoomsPage() {
                   <span className="absolute bottom-4 left-4 inline-flex items-center gap-1 rounded-full bg-gold-cta px-3 py-1 text-xs font-semibold text-ink shadow-gold"><Users size={12} /> {r.occupancy}</span>
                 </Link>
                 <div className="p-3 lg:p-6">
-                  <div className="flex items-center gap-3">
-                    <h2 className="font-serif text-3xl text-ink">{r.name}</h2>
-                    <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-medium text-gold-dark">{r.highlight}</span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h2 className="font-serif text-3xl sm:text-4xl text-ink">{r.name}</h2>
+                    <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold-dark">{r.highlight}</span>
                   </div>
-                  <p className="mt-1 text-ink">
-                    <span className="text-sm text-ink/55">Starting from </span>
-                    <span className="font-serif text-2xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
-                    <span className="text-sm text-ink/55">/night</span>
-                  </p>
-                  <p className="mt-3 text-ink/70 leading-relaxed">{r.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-5 text-sm text-ink/70">
-                    <span className="flex items-center gap-2"><Maximize size={16} className="text-gold" /> {r.size}</span>
-                    <span className="flex items-center gap-2"><Users size={16} className="text-gold" /> {r.occupancy}</span>
-                    <span className="flex items-center gap-2"><BedDouble size={16} className="text-gold" /> {r.bed}</span>
+                  <div className="mt-2 flex items-baseline gap-2">
+                    <span className="text-xs uppercase tracking-wider text-ink/45">From</span>
+                    <span className="font-serif text-4xl font-bold text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
+                    <span className="text-sm text-ink/55">/ night</span>
+                  </div>
+                  <p className="mt-4 text-ink/75 leading-relaxed">{r.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2.5 text-sm font-medium">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-sand px-3.5 py-1.5 text-ink/75"><Maximize size={15} className="text-gold-dark" /> {r.size}</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-sand px-3.5 py-1.5 text-ink/75"><Users size={15} className="text-gold-dark" /> {r.occupancy}</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-sand px-3.5 py-1.5 text-ink/75"><BedDouble size={15} className="text-gold-dark" /> {r.bed}</span>
                   </div>
                   <ul className="mt-5 grid grid-cols-2 gap-2 text-sm text-ink/70">
                     {r.amenities.map((a) => (

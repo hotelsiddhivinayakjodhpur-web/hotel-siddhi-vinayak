@@ -53,8 +53,9 @@ export default function Navbar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`text-[13px] uppercase tracking-wide transition-colors hover:text-gold ${
-                  pathname === item.href ? "text-gold" : "text-sand/90"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`nav-link text-[13px] font-medium uppercase tracking-[0.14em] transition-colors hover:text-gold ${
+                  pathname === item.href ? "text-gold" : "text-sand/85"
                 }`}
               >
                 {item.label}

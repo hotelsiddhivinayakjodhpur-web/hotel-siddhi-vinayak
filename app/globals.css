@@ -14,8 +14,17 @@ body {
 
 ::selection { background: #C8A56A; color: #1F1611; }
 
-/* Luxury serif headings — tighter tracking, refined weight */
-h1, h2, h3 { letter-spacing: -0.01em; }
+/* Luxury serif headings — stronger weight + refined tracking for a clear,
+   high-contrast hierarchy. Cormorant Garamond defaults to 400, which reads too
+   thin/weak at display sizes; these weights give H1 real presence and keep H2/H3
+   distinct from body copy. */
+h1 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+h2 { font-weight: 600; letter-spacing: -0.015em; line-height: 1.15; }
+h3 { font-weight: 600; letter-spacing: -0.01em; }
+h4 { font-weight: 600; }
+/* Comfortable body rhythm for readability */
+body { line-height: 1.6; }
+p { text-wrap: pretty; }
 
 @layer components {
   /* Dark luxury hero overlay with a soft vignette for strong text contrast */
@@ -29,9 +38,9 @@ h1, h2, h3 { letter-spacing: -0.01em; }
      subtle premium gold gradient. A focused centre scrim keeps text readable. */
   .hero-overlay-home {
     background:
-      radial-gradient(75% 65% at 50% 52%, rgba(31,22,17,0.41) 0%, rgba(31,22,17,0.11) 60%, transparent 100%),
-      radial-gradient(120% 120% at 50% 30%, rgba(31,22,17,0.14) 0%, rgba(31,22,17,0.38) 72%, rgba(31,22,17,0.52) 100%),
-      linear-gradient(115deg, rgba(212,175,55,0.17) 0%, transparent 42%, rgba(200,165,106,0.20) 100%);
+      radial-gradient(78% 68% at 50% 50%, rgba(31,22,17,0.56) 0%, rgba(31,22,17,0.26) 58%, rgba(31,22,17,0.06) 100%),
+      radial-gradient(120% 120% at 50% 30%, rgba(31,22,17,0.18) 0%, rgba(31,22,17,0.44) 72%, rgba(31,22,17,0.58) 100%),
+      linear-gradient(115deg, rgba(212,175,55,0.15) 0%, transparent 42%, rgba(200,165,106,0.18) 100%);
   }
 
   /* Glassmorphism — for hero chips/cards over imagery */
@@ -136,6 +145,26 @@ h1, h2, h3 { letter-spacing: -0.01em; }
   /* Image zoom-on-hover helper (apply to the <img> with group on parent) */
   .img-zoom { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
   .group:hover .img-zoom { transform: scale(1.08); }
+
+  /* Premium nav link — animated gold underline grows from the left on hover /
+     active. Pair with aria-current="page" on the active link. */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -6px;
+    height: 1.5px;
+    background: linear-gradient(to right, #C8A56A, #D4AF37);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after { transition: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
