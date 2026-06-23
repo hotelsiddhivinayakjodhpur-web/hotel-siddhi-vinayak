@@ -25,36 +25,79 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur shadow-lg py-2.5" : "bg-transparent py-3.5"
+        scrolled || open ? "bg-ink/95 backdrop-blur shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-        <Link href="/" aria-label={`${site.name} — home`} className="flex items-center gap-2 sm:gap-2.5">
+      {/* ── TOP ROW · Brand zone (left) + Actions zone (right) ── */}
+      <div
+        className={`mx-auto flex max-w-[1760px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-12 transition-all duration-300 ${
+          scrolled ? "py-1.5" : "py-2.5"
+        }`}
+      >
+        {/* Branding zone */}
+        <Link href="/" aria-label={`${site.name} — home`} className="flex shrink-0 items-center gap-3">
           <Image
             src="/images/brand/sv-logo.png"
             alt={`${site.name} logo`}
             width={385}
             height={512}
             priority
-            className="h-8 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] sm:h-9"
+            className="h-9 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] sm:h-10 lg:h-11"
           />
           <span className="flex flex-col leading-none">
-            <span className="whitespace-nowrap font-serif text-base text-gold tracking-wide sm:text-lg lg:text-xl">
+            <span className="whitespace-nowrap font-serif text-lg text-gold tracking-wide sm:text-xl lg:text-2xl">
               {site.name}
             </span>
-            <span className="mt-0.5 text-[9px] uppercase tracking-[0.22em] text-sand/60 sm:text-[10px]">
+            <span className="mt-1 text-[9px] uppercase tracking-[0.22em] text-sand/60 sm:text-[10px]">
               Jodhpur · Rajasthan
             </span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-5 xl:flex">
+        {/* Actions zone — social · Call · Book Now (desktop) */}
+        <div className="hidden shrink-0 items-center gap-4 lg:flex">
+          <SocialLinks iconSize={17} itemClassName="text-sand/75 hover:text-gold" />
+          <span className="h-5 w-px bg-sand/20" aria-hidden="true" />
+          <a
+            href={callLink}
+            aria-label="Call the hotel"
+            className="flex items-center gap-1.5 rounded-full border border-gold/40 px-4 py-2 text-[13px] font-semibold text-gold transition hover:bg-gold/10"
+          >
+            <Phone size={15} /> Call
+          </a>
+          <a
+            href={bookingLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-semibold"
+          >
+            <CalendarCheck size={15} /> Book Now
+          </a>
+        </div>
+
+        {/* Hamburger (mobile + tablet) */}
+        <button
+          className="text-sand lg:hidden"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
+      </div>
+
+      {/* ── NAV ROW · centered navigation (desktop only) ── */}
+      <div className="hidden border-t border-sand/10 lg:block">
+        <ul
+          className={`mx-auto flex max-w-[1760px] items-center justify-center gap-x-7 px-5 xl:gap-x-9 transition-all duration-300 ${
+            scrolled ? "py-1.5" : "py-2"
+          }`}
+        >
           {nav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className={`nav-link text-[13px] font-medium uppercase tracking-[0.14em] transition-colors hover:text-gold ${
+                className={`nav-link text-[13px] font-medium uppercase tracking-[0.15em] transition-colors hover:text-gold ${
                   pathname === item.href ? "text-gold" : "text-sand/85"
                 }`}
               >
@@ -62,35 +105,8 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="ml-1">
-            <a
-              href={bookingLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-semibold"
-            >
-              <CalendarCheck size={15} /> Book Now
-            </a>
-          </li>
-          <li>
-            <a
-              href={callLink}
-              aria-label="Call the hotel"
-              className="flex items-center gap-1.5 rounded-full border border-gold/40 px-3.5 py-2 text-[13px] font-semibold text-gold hover:bg-gold/10"
-            >
-              <Phone size={15} /> Call
-            </a>
-          </li>
         </ul>
-
-        <button
-          className="text-sand xl:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
-      </nav>
+      </div>
 
       <AnimatePresence>
         {open && (
@@ -98,7 +114,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden bg-ink/98 xl:hidden"
+            className="overflow-hidden bg-ink/98 lg:hidden"
           >
             <ul className="px-6 py-4 space-y-3">
               {nav.map((item) => (
