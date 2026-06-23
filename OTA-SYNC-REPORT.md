@@ -39,7 +39,7 @@ no-commission messaging; OTA names are shown as trust/availability signals.
 | Item | Website value | Status |
 |------|---------------|--------|
 | Phone / WhatsApp | +91 98290 00000 | ⚠️ **placeholder — owner must replace** with the real GBP/OTA number |
-| Email | stay@hotelsiddhi-vinayak.com | ⚠️ confirm mailbox is live |
+| Email | hotelsiddhivinayakjodhpur@gmail.com | ⚠️ confirm mailbox is live |
 | Address | as above | ✅ (confirm exact landmark) |
 | Map pin | approx Jalori Gate | ⚠️ set exact GBP pin lat/lng |
 

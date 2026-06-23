@@ -119,7 +119,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 - [ ] Create **`public/og-image.jpg`** (1200×630) — currently referenced but missing → social/share cards 404. (§8)
 - [ ] Replace **stock Unsplash images** with real hotel photos (`lib/data.ts`, page heroes).
 - [ ] Replace placeholder **phone** `+91 98290 00000` with the real number (`lib/config.ts`).
-- [ ] Confirm **email** `stay@hotelsiddhi-vinayak.com` mailbox exists/forwards.
+- [ ] Confirm **email** `hotelsiddhivinayakjodhpur@gmail.com` mailbox exists/forwards.
 - [ ] Replace seeded **reviews** with real verified guest reviews (`lib/data.ts`).
 - [ ] Set exact **geo + map embed** (`site.geo`, `site.mapsEmbed`).
 

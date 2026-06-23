@@ -13,8 +13,8 @@ export const site = {
   phone: "+91 89528 02559",
   phoneRaw: "918952802559",
   whatsapp: "918952802559",
-  // ⚠️ Verify this mailbox exists / forwards before launch (aligned to primary domain).
-  email: "stay@hotelsiddhi-vinayak.com",
+  // Official hotel inbox (Google Business Profile contact email).
+  email: "hotelsiddhivinayakjodhpur@gmail.com",
   // Real Google Business Profile address.
   address: {
     street: "MG Hospital Road, Medical Market, Opposite M.G. Hospital, Jalori Gate, Rawaton Ka Bass",
