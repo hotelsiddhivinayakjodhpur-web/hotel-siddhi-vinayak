@@ -12,7 +12,7 @@ export default function Footer() {
           <h3 className="font-serif text-2xl text-gold">{site.name}</h3>
           <p className="mt-3 text-sm leading-relaxed">{site.tagline}</p>
           <p className="mt-5 text-gold font-medium uppercase tracking-wider text-xs">Follow Us</p>
-          <SocialLinks className="mt-3" iconSize={20} itemClassName="text-sand/80 hover:text-gold" />
+          <SocialLinks className="mt-3" iconSize={20} showLabels itemClassName="text-sand/80 hover:text-gold" />
         </div>
 
         <div>

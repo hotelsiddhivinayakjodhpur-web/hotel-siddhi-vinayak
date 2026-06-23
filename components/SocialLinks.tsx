@@ -14,11 +14,13 @@ type Props = {
   iconSize?: number;
   /** Extra classes applied to each icon link (for hover colour etc.) */
   itemClassName?: string;
+  /** Show the platform name beside each icon (Instagram / Facebook / YouTube). */
+  showLabels?: boolean;
 };
 
-export default function SocialLinks({ className = "", iconSize = 20, itemClassName = "" }: Props) {
+export default function SocialLinks({ className = "", iconSize = 20, itemClassName = "", showLabels = false }: Props) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       {socialProfiles.map(({ key, label, href, Icon }) => (
         <a
           key={key}
@@ -27,9 +29,10 @@ export default function SocialLinks({ className = "", iconSize = 20, itemClassNa
           rel="noopener noreferrer"
           aria-label={`Follow Hotel Siddhi Vinayak on ${label}`}
           title={`Follow us on ${label}`}
-          className={`transition-colors ${itemClassName}`}
+          className={`inline-flex items-center gap-2 transition-colors ${itemClassName}`}
         >
           <Icon size={iconSize} />
+          {showLabels && <span className="text-sm font-medium">{label}</span>}
         </a>
       ))}
     </div>

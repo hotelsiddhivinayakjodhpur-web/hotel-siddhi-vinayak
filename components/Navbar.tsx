@@ -102,7 +102,7 @@ export default function Navbar() {
                 </a>
               </li>
               <li className="pt-2">
-                <SocialLinks className="justify-center" iconSize={22} itemClassName="text-sand/80 hover:text-gold" />
+                <SocialLinks className="justify-center" iconSize={22} showLabels itemClassName="text-sand/80 hover:text-gold" />
               </li>
             </ul>
           </motion.div>

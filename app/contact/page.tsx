@@ -93,9 +93,14 @@ export default function ContactPage() {
               <li className="flex gap-4"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-gold-dark shadow-sm"><Phone size={20} /></div><div><p className="text-xs uppercase tracking-wider text-ink/50">Phone</p><a href={callLink} className="text-ink hover:text-gold-dark">{site.phone}</a></div></li>
               <li className="flex gap-4"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-gold-dark shadow-sm"><Mail size={20} /></div><div><p className="text-xs uppercase tracking-wider text-ink/50">Email</p><a href={`mailto:${site.email}`} className="text-ink hover:text-gold-dark">{site.email}</a></div></li>
             </ul>
-            <div className="mt-8">
+            <div className="mt-8 rounded-2xl border border-gold/20 bg-white p-5">
               <p className="text-xs uppercase tracking-wider text-ink/50 mb-3">Follow Us</p>
-              <SocialLinks iconSize={24} itemClassName="text-ink/70 hover:text-gold-dark" />
+              <SocialLinks
+                className="gap-x-5 gap-y-2"
+                iconSize={24}
+                showLabels
+                itemClassName="rounded-full border border-gold/20 px-3 py-1.5 text-ink/75 hover:border-gold-dark hover:text-gold-dark"
+              />
             </div>
             <div className="mt-8">
               <MapEmbed />

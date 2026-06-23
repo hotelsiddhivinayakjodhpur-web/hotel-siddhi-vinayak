@@ -35,13 +35,14 @@ export const site = {
   checkIn: "12:00",
   checkOut: "11:00",
   social: {
+    // All three verified June 2026 (browser screenshot + WebFetch + hotel's own site).
     instagram: "https://www.instagram.com/hotel_siddhi_vinayak_jodhpur/",
-    facebook: "https://facebook.com/hotelsiddhivinayak",
-    // ⚠️ Owner has a YouTube channel (hotelsiddhivinayakjodhpur@gmail.com) but the
-    // exact channel URL is not yet confirmed. Leave empty so no broken link ships;
-    // fill in the real channel URL (e.g. https://www.youtube.com/@handle) to enable
-    // the YouTube icon everywhere automatically.
-    youtube: "",
+    // Official page "Hotel Siddhi Vinayak Jodhpur" (SV logo + real room cover, owner
+    // is admin). Replaces facebook.com/hotelsiddhivinayak which showed
+    // "This content isn't available right now".
+    facebook: "https://www.facebook.com/people/Hotel-Siddhi-Vinayak-Jodhpur/61556092217218/",
+    // Official channel "HOTEL SIDDHI VINAYAK JODHPUR" (has live videos).
+    youtube: "https://www.youtube.com/@HOTELSIDDHIVINAYAKJODHPUR",
     // Real Google Business Profile (cid) — used for the "read reviews on Google"
     // CTA and schema sameAs.
     google: "https://maps.google.com/maps?cid=4688437108186437899",
