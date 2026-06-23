@@ -129,7 +129,7 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
                 <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-gold mt-5 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold">
                   <CalendarCheck size={18} /> Check Availability &amp; Book
                 </a>
-                <p className="mt-2 text-center text-[11px] text-ink/45">Real-time availability · Powered by Stayflexi</p>
+                <p className="mt-2 text-center text-[11px] text-ink/45">Real-time rates &amp; availability · Secure booking powered by Stayflexi</p>
                 <a href={enquiry} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition hover:opacity-90">
                   <MessageCircle size={18} /> Enquire on WhatsApp
                 </a>

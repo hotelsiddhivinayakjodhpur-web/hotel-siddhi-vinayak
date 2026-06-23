@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
-import { site, nav, callLink } from "@/lib/config";
+import { MapPin, Phone, Mail, MessageCircle, Navigation, CalendarCheck } from "lucide-react";
+import { site, nav, callLink, whatsappLink, bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 import SocialLinks from "@/components/SocialLinks";
+
+const directionsLink = `https://www.google.com/maps/dir/?api=1&destination=${site.geo.lat},${site.geo.lng}`;
 
 export default function Footer() {
   const a = site.address;
@@ -11,6 +13,15 @@ export default function Footer() {
         <div className="md:col-span-1">
           <h3 className="font-serif text-2xl text-gold">{site.name}</h3>
           <p className="mt-3 text-sm leading-relaxed">{site.tagline}</p>
+          <a
+            href={bookingLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold"
+          >
+            <CalendarCheck size={16} /> Book Now
+          </a>
+          <p className="mt-2 text-[11px] text-sand/55">{BOOKING_TAGLINE} · {BOOKING_SECURE}</p>
           <p className="mt-5 text-gold font-medium uppercase tracking-wider text-xs">Follow Us</p>
           <SocialLinks className="mt-3" iconSize={20} showLabels itemClassName="text-sand/80 hover:text-gold" />
         </div>
@@ -31,7 +42,9 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex gap-2"><MapPin size={18} className="shrink-0 text-gold" /><span>{a.street}, {a.locality}, {a.region} {a.postalCode}</span></li>
             <li className="flex gap-2"><Phone size={18} className="shrink-0 text-gold" /><a href={callLink} className="hover:text-gold">{site.phone}</a></li>
+            <li className="flex gap-2"><MessageCircle size={18} className="shrink-0 text-gold" /><a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-gold">WhatsApp Booking</a></li>
             <li className="flex gap-2"><Mail size={18} className="shrink-0 text-gold" /><a href={`mailto:${site.email}`} className="hover:text-gold">{site.email}</a></li>
+            <li className="flex gap-2"><Navigation size={18} className="shrink-0 text-gold" /><a href={directionsLink} target="_blank" rel="noopener noreferrer" className="hover:text-gold">Get Directions</a></li>
           </ul>
         </div>
 

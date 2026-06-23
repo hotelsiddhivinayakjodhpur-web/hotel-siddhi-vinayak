@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { Phone, MessageCircle, BedDouble } from "lucide-react";
-import { whatsappLink, callLink } from "@/lib/config";
+import { Phone, MessageCircle, CalendarCheck } from "lucide-react";
+import { whatsappLink, callLink, bookingLink } from "@/lib/config";
 
 // Persistent bottom action bar on mobile — keeps Call / WhatsApp / View Rooms
 // one tap away on every screen. Hidden on >=sm where the floating buttons +
@@ -25,10 +24,10 @@ export default function StickyMobileBar() {
         <MessageCircle size={20} />
         <span className="text-[11px] font-medium">WhatsApp</span>
       </a>
-      <Link href="/rooms" aria-label="View rooms and rates" className="flex min-h-[56px] flex-col items-center justify-center gap-0.5 text-ink">
-        <BedDouble size={20} className="text-gold-dark" />
-        <span className="text-[11px] font-medium">View Rooms</span>
-      </Link>
+      <a href={bookingLink} target="_blank" rel="noopener noreferrer" aria-label="Book now — real-time availability" className="flex min-h-[56px] flex-col items-center justify-center gap-0.5 text-ink">
+        <CalendarCheck size={20} className="text-gold-dark" />
+        <span className="text-[11px] font-medium">Book Now</span>
+      </a>
     </nav>
   );
 }

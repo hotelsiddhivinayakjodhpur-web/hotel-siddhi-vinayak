@@ -1,6 +1,6 @@
 import { CalendarCheck, ShieldCheck, RefreshCw, BadgePercent, Tag, ArrowRight } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
-import { bookingLink } from "@/lib/config";
+import { bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 
 // Trust badges requested by the property.
 const badges = [
@@ -53,7 +53,7 @@ export default function RealTimeAvailability({ light = false }: { light?: boolea
             Check Availability &amp; Book <ArrowRight size={18} />
           </a>
           <p className={`text-xs ${light ? "text-sand/55" : "text-ink/45"}`}>
-            Powered by Stayflexi · secure real-time booking
+            {BOOKING_TAGLINE} · {BOOKING_SECURE}
           </p>
         </div>
 

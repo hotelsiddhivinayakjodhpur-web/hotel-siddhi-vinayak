@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, CalendarCheck } from "lucide-react";
-import { nav, site, callLink } from "@/lib/config";
+import { nav, site, callLink, bookingLink } from "@/lib/config";
 import SocialLinks from "@/components/SocialLinks";
 
 export default function Navbar() {
@@ -54,12 +54,14 @@ export default function Navbar() {
             <SocialLinks iconSize={18} itemClassName="text-sand/80 hover:text-gold" />
           </li>
           <li>
-            <Link
-              href="/booking"
+            <a
+              href={bookingLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-gold flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
             >
               <CalendarCheck size={15} /> Book Now
-            </Link>
+            </a>
           </li>
           <li>
             <a
@@ -103,12 +105,14 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="/booking"
+                <a
+                  href={bookingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-gold mt-2 flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold"
                 >
                   <CalendarCheck size={16} /> Book Now
-                </Link>
+                </a>
               </li>
               <li>
                 <a

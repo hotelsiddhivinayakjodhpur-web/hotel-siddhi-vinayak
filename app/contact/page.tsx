@@ -8,7 +8,8 @@ import MapEmbed from "@/components/MapEmbed";
 import SectionTitle from "@/components/SectionTitle";
 import { BreadcrumbSchema } from "@/components/Schema";
 import SocialLinks from "@/components/SocialLinks";
-import { site, whatsappLink, callLink } from "@/lib/config";
+import { CalendarCheck } from "lucide-react";
+import { site, whatsappLink, callLink, bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -67,12 +68,14 @@ export default function ContactPage() {
       {/* Booking CTA + trust */}
       <section className="bg-ink py-12">
         <div className="mx-auto max-w-5xl px-6 text-center text-sand">
-          <h2 className="font-serif text-2xl sm:text-3xl text-gold">Book Direct on WhatsApp for Best Rates</h2>
-          <p className="mx-auto mt-2 max-w-xl text-sand/80">No booking fees, no OTA commission — just our best available rate and an instant reply.</p>
+          <h2 className="font-serif text-2xl sm:text-3xl text-gold">Book Direct for the Best Rate</h2>
+          <p className="mx-auto mt-2 max-w-xl text-sand/80">No booking fees, no OTA commission — just our best available rate, {BOOKING_TAGLINE.toLowerCase()} and instant confirmation.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-gold flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold"><CalendarCheck size={19} /> Check Availability &amp; Book</a>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 font-semibold text-white transition hover:opacity-90"><MessageCircle size={19} /> Book on WhatsApp</a>
-            <a href={callLink} className="btn-gold flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold"><Phone size={18} /> Call to Book</a>
+            <a href={callLink} className="flex items-center gap-2 rounded-full border border-sand/30 px-7 py-3.5 font-semibold text-sand transition hover:bg-sand/10"><Phone size={18} /> Call to Book</a>
           </div>
+          <p className="mt-3 text-xs text-sand/55">{BOOKING_SECURE}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
             <a href={site.social.google} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sand/85 hover:text-gold">
               <Star size={16} className="fill-gold text-gold" /> <strong>{site.rating.count}+</strong> Guest Reviews on Google

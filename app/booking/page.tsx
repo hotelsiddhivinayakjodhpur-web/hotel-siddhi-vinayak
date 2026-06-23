@@ -18,8 +18,8 @@ export default function BookingPage() {
   return (
     <>
       {/* Warm up the connection to the booking engine so it opens faster (React hoists these to <head>). */}
-      <link rel="preconnect" href="https://book.stayflexi.com" />
-      <link rel="dns-prefetch" href="https://book.stayflexi.com" />
+      <link rel="preconnect" href="https://bookingengine.stayflexi.com" />
+      <link rel="dns-prefetch" href="https://bookingengine.stayflexi.com" />
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Book Now", path: "/booking" }]} />
       <PageHero
         title="Book Your Stay"
@@ -48,7 +48,7 @@ export default function BookingPage() {
             >
               <CalendarCheck size={20} /> Check Availability &amp; Book <ArrowRight size={18} />
             </a>
-            <p className="text-xs text-ink/45">Powered by Stayflexi · secure real-time booking</p>
+            <p className="text-xs text-ink/45">Real-time rates &amp; availability · Secure booking powered by Stayflexi</p>
           </div>
 
           {/* Direct alternatives */}

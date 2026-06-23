@@ -92,12 +92,16 @@ export const whatsappLink = (msg?: string) =>
 
 export const callLink = `tel:+${site.phoneRaw}`;
 
-// Stayflexi booking engine — GUEST-FACING booking link only. Never expose admin,
-// PMS, channel-manager or dashboard URLs publicly; Stayflexi is referenced only as
-// the booking technology. book.stayflexi.com auto-redirects mobile users to the
-// mobile engine, so this one link works on every device.
+// Stayflexi booking engine — GUEST-FACING direct booking link only. Never expose
+// admin, PMS, channel-manager or dashboard URLs publicly; Stayflexi is referenced
+// only as the booking technology. This is the official direct-booking engine URL
+// and is responsive across desktop + mobile. Every "Book Now" CTA opens it in a
+// new tab.
 export const STAYFLEXI_HOTEL_ID = "29355";
-export const bookingLink = `https://book.stayflexi.com/?hotel_id=${STAYFLEXI_HOTEL_ID}`;
+export const bookingLink = `https://bookingengine.stayflexi.com/?hotel_id=${STAYFLEXI_HOTEL_ID}`;
+// Short reassurance lines shown beside booking CTAs.
+export const BOOKING_TAGLINE = "Real-time rates & availability";
+export const BOOKING_SECURE = "Secure booking powered by Stayflexi";
 
 // Rates are not published — every room shows this until prices are finalized.
 export const RATE_LABEL = "Contact for Best Available Rate";

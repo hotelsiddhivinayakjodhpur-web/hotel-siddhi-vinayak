@@ -1,6 +1,6 @@
 import { Phone, MessageCircle, BadgeIndianRupee, ShieldCheck, CalendarCheck } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
-import { whatsappLink, callLink, bookingLink } from "@/lib/config";
+import { whatsappLink, callLink, bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 
 // "Book Direct" trust section: shows the hotel is on every major OTA (credibility)
 // while steering to commission-free direct booking via Call / WhatsApp.
@@ -45,7 +45,7 @@ export default function BookDirect() {
             <Phone size={17} /> Call to Book
           </a>
         </div>
-        <p className="mt-4 text-xs text-sand/55">Real-time availability &amp; instant confirmation · Powered by Stayflexi</p>
+        <p className="mt-4 text-xs text-sand/55">{BOOKING_TAGLINE} · {BOOKING_SECURE}</p>
 
         <p className="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-sand/55">
           Hotel Siddhi Vinayak is listed across every major travel platform — see them all below —
