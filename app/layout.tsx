@@ -21,6 +21,9 @@ import FloatingButtons from "@/components/FloatingButtons";
 import StickyMobileBar from "@/components/StickyMobileBar";
 import SocialBar from "@/components/SocialBar";
 import { LocalBusinessSchema } from "@/components/Schema";
+import Analytics from "@/components/Analytics";
+import PageViewTracker from "@/components/PageViewTracker";
+import { Suspense } from "react";
 import { site } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -58,6 +61,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>
+        <Analytics />
+        <Suspense fallback={null}>
+          <PageViewTracker />
+        </Suspense>
         <LocalBusinessSchema />
         <Navbar />
         {/* pb on mobile reserves space for the sticky bottom action bar */}
