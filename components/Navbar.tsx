@@ -58,21 +58,24 @@ export default function Navbar() {
         <div className="hidden shrink-0 items-center gap-4 lg:flex">
           <SocialLinks iconSize={17} itemClassName="text-sand/75 hover:text-gold" />
           <span className="h-5 w-px bg-sand/20" aria-hidden="true" />
-          <a
-            href={callLink}
-            aria-label="Call the hotel"
-            className="flex items-center gap-1.5 rounded-full border border-gold/40 px-4 py-2 text-[13px] font-semibold text-gold transition hover:bg-gold/10"
-          >
-            <Phone size={15} /> Call
-          </a>
-          <a
-            href={bookingLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-semibold"
-          >
-            <CalendarCheck size={15} /> Book Now
-          </a>
+          {/* Matched gold CTA pair — equal prominence */}
+          <div className="flex items-center gap-3">
+            <a
+              href={bookingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-semibold"
+            >
+              <CalendarCheck size={15} /> Book Now
+            </a>
+            <a
+              href={callLink}
+              aria-label="Call the hotel"
+              className="btn-gold flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-semibold"
+            >
+              <Phone size={15} /> Call Now
+            </a>
+          </div>
         </div>
 
         {/* Hamburger (mobile + tablet) */}
@@ -129,20 +132,18 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="mt-2 grid grid-cols-2 gap-3">
                 <a
                   href={bookingLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-gold mt-2 flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold"
+                  className="btn-gold flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 font-semibold"
                 >
                   <CalendarCheck size={16} /> Book Now
                 </a>
-              </li>
-              <li>
                 <a
                   href={callLink}
-                  className="flex w-full items-center justify-center gap-2 rounded-full border border-gold/40 px-4 py-2 font-semibold text-gold"
+                  className="btn-gold flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 font-semibold"
                 >
                   <Phone size={16} /> Call Now
                 </a>
