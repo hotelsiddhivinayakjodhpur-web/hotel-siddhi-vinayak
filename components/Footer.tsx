@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, MessageCircle, Navigation, CalendarCheck } from "lucide-react";
 import { site, nav, callLink, whatsappLink, bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 import SocialLinks from "@/components/SocialLinks";
@@ -11,7 +12,10 @@ export default function Footer() {
     <footer className="bg-ink text-sand/80">
       <div className="mx-auto max-w-7xl px-6 py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
-          <h3 className="font-serif text-2xl text-gold">{site.name}</h3>
+          <div className="flex items-center gap-3">
+            <Image src="/images/brand/sv-logo.png" alt={`${site.name} logo`} width={385} height={512} className="h-12 w-auto" />
+            <h3 className="font-serif text-2xl text-gold">{site.name}</h3>
+          </div>
           <p className="mt-3 text-sm leading-relaxed">{site.tagline}</p>
           <a
             href={bookingLink}

@@ -33,6 +33,7 @@ export function HotelSchema() {
     address: postalAddress,
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
     image: `${site.url}/og-image.jpg`,
+    logo: `${site.url}/images/brand/sv-logo-square.png`,
     checkinTime: site.checkIn,
     checkoutTime: site.checkOut,
     aggregateRating: {
@@ -159,6 +160,7 @@ export function LocalBusinessSchema() {
     "@id": `${site.url}/#localbusiness`,
     name: site.name,
     image: `${site.url}/og-image.jpg`,
+    logo: `${site.url}/images/brand/sv-logo-square.png`,
     url: site.url,
     telephone: site.phone,
     priceRange: site.priceRange,

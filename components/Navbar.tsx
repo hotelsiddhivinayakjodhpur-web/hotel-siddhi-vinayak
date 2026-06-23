@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, CalendarCheck } from "lucide-react";
@@ -28,12 +29,22 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-serif text-xl sm:text-2xl text-gold tracking-wide">
-            {site.name}
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-sand/70">
-            Jodhpur · Rajasthan
+        <Link href="/" aria-label={`${site.name} — home`} className="flex items-center gap-2.5">
+          <Image
+            src="/images/brand/sv-logo.png"
+            alt={`${site.name} logo`}
+            width={385}
+            height={512}
+            priority
+            className="h-10 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] sm:h-12"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif text-lg text-gold tracking-wide sm:text-2xl">
+              {site.name}
+            </span>
+            <span className="text-[10px] uppercase tracking-[0.25em] text-sand/70">
+              Jodhpur · Rajasthan
+            </span>
           </span>
         </Link>
 
