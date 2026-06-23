@@ -25,35 +25,35 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur shadow-lg py-3" : "bg-transparent py-5"
+        scrolled ? "bg-ink/95 backdrop-blur shadow-lg py-2.5" : "bg-transparent py-3.5"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-        <Link href="/" aria-label={`${site.name} — home`} className="flex items-center gap-2.5">
+        <Link href="/" aria-label={`${site.name} — home`} className="flex items-center gap-2 sm:gap-2.5">
           <Image
             src="/images/brand/sv-logo.png"
             alt={`${site.name} logo`}
             width={385}
             height={512}
             priority
-            className="h-10 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] sm:h-12"
+            className="h-8 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] sm:h-9"
           />
-          <span className="flex flex-col leading-tight">
-            <span className="font-serif text-lg text-gold tracking-wide sm:text-2xl">
+          <span className="flex flex-col leading-none">
+            <span className="whitespace-nowrap font-serif text-base text-gold tracking-wide sm:text-lg lg:text-xl">
               {site.name}
             </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-sand/70">
+            <span className="mt-0.5 text-[9px] uppercase tracking-[0.22em] text-sand/60 sm:text-[10px]">
               Jodhpur · Rajasthan
             </span>
           </span>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-7">
+        <ul className="hidden items-center gap-5 xl:flex">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`text-sm uppercase tracking-wider transition-colors hover:text-gold ${
+                className={`text-[13px] uppercase tracking-wide transition-colors hover:text-gold ${
                   pathname === item.href ? "text-gold" : "text-sand/90"
                 }`}
               >
@@ -61,15 +61,12 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <SocialLinks iconSize={18} itemClassName="text-sand/80 hover:text-gold" />
-          </li>
-          <li>
+          <li className="ml-1">
             <a
               href={bookingLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+              className="btn-gold flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-semibold"
             >
               <CalendarCheck size={15} /> Book Now
             </a>
@@ -78,7 +75,7 @@ export default function Navbar() {
             <a
               href={callLink}
               aria-label="Call the hotel"
-              className="flex items-center gap-2 rounded-full border border-gold/40 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/10"
+              className="flex items-center gap-1.5 rounded-full border border-gold/40 px-3.5 py-2 text-[13px] font-semibold text-gold hover:bg-gold/10"
             >
               <Phone size={15} /> Call
             </a>
@@ -86,7 +83,7 @@ export default function Navbar() {
         </ul>
 
         <button
-          className="lg:hidden text-sand"
+          className="text-sand xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -100,7 +97,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-ink/98"
+            className="overflow-hidden bg-ink/98 xl:hidden"
           >
             <ul className="px-6 py-4 space-y-3">
               {nav.map((item) => (
