@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { Check, Users, Maximize, BedDouble, Phone, MessageCircle, ArrowRight, CalendarCheck } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { rooms } from "@/lib/data";
-import { whatsappLink, callLink } from "@/lib/config";
+import { whatsappLink, callLink, bookingLink } from "@/lib/config";
 import { RoomsSchema, BreadcrumbSchema } from "@/components/Schema";
 import RoomComparison from "@/components/RoomComparison";
 import { pageMeta } from "@/lib/seo";
@@ -56,12 +56,17 @@ export default function RoomsPage() {
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <a href={bookingLink}
+                      aria-label={`Book the ${r.name} now — real-time availability`}
+                      className="btn-gold inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold">
+                      <CalendarCheck size={17} /> Book Now
+                    </a>
                     <a href={whatsappLink(`Hi! I'd like to enquire about the ${r.name} at Hotel Siddhi Vinayak. Please share the best available rate.`)}
                       target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 font-medium text-white transition hover:opacity-90">
                       <MessageCircle size={17} /> WhatsApp
                     </a>
-                    <a href={callLink} className="btn-gold inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold">
+                    <a href={callLink} className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-3 font-semibold text-gold-dark transition hover:bg-gold/10">
                       <Phone size={16} /> Call Now
                     </a>
                     <Link href={`/rooms/${r.slug}`} className="inline-flex items-center gap-1 px-2 py-3 font-medium text-gold-dark hover:gap-2 transition-all">
