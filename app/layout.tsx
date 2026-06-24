@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import StickyMobileBar from "@/components/StickyMobileBar";
 import SocialBar from "@/components/SocialBar";
-import { LocalBusinessSchema } from "@/components/Schema";
+import { LocalBusinessSchema, OrganizationSchema, WebsiteSchema } from "@/components/Schema";
 import Analytics from "@/components/Analytics";
 import MetaPixel from "@/components/MetaPixel";
 import PageViewTracker from "@/components/PageViewTracker";
@@ -67,6 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
+        <OrganizationSchema />
+        <WebsiteSchema />
         <LocalBusinessSchema />
         <Navbar />
         {/* pb on mobile reserves space for the sticky bottom action bar */}

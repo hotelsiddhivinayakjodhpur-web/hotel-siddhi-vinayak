@@ -189,3 +189,58 @@ export function FaqSchema() {
   };
   return <JsonLd data={data} />;
 }
+
+// Brand entity — feeds the Knowledge Panel and links logo + social profiles.
+export function OrganizationSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    name: site.name,
+    legalName: site.legalName,
+    url: site.url,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.url}/images/brand/sv-logo-square.png`,
+      width: 512,
+      height: 512,
+    },
+    image: `${site.url}/og-image.jpg`,
+    telephone: site.phone,
+    email: site.email,
+    address: postalAddress,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: site.phone,
+        contactType: "reservations",
+        areaServed: "IN",
+        availableLanguage: ["en", "hi"],
+      },
+    ],
+    sameAs: [
+      site.social.instagram,
+      site.social.facebook,
+      site.social.youtube,
+      site.social.google,
+      ...otas.map((o) => o.url),
+    ].filter(Boolean),
+  };
+  return <JsonLd data={data} />;
+}
+
+// Site-level entity; publisher references the Organization @id. No SearchAction
+// (the site has no on-site search, so a sitelinks searchbox would be invalid).
+export function WebsiteSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: site.name,
+    description: site.description,
+    inLanguage: "en-IN",
+    publisher: { "@id": `${site.url}/#organization` },
+  };
+  return <JsonLd data={data} />;
+}
