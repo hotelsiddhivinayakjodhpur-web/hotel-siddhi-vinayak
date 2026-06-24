@@ -66,11 +66,11 @@ export function HotelSchema() {
       occupancy: { "@type": "QuantitativeValue", maxValue: parseInt(r.occupancy, 10) || undefined, unitText: "Guests" },
       url: `${site.url}/rooms/${r.slug}`,
     })),
+    // Room types as offers WITHOUT a fixed price — rates are dynamic via the
+    // Stayflexi booking engine; each links to the live rate/availability.
     makesOffer: rooms.map((r) => ({
       "@type": "Offer",
-      name: `${r.name} — per night (room only)`,
-      price: r.price,
-      priceCurrency: site.currency,
+      name: `${r.name} (room only)`,
       availability: "https://schema.org/InStock",
       url: `${site.url}/rooms/${r.slug}`,
     })),
@@ -126,16 +126,8 @@ export function RoomsSchema() {
         })),
         offers: {
           "@type": "Offer",
-          price: r.price,
-          priceCurrency: site.currency,
           availability: "https://schema.org/InStock",
           url: `${site.url}/rooms/${r.slug}`,
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: r.price,
-            priceCurrency: site.currency,
-            unitText: "per night (room only / EP plan)",
-          },
         },
       },
     })),

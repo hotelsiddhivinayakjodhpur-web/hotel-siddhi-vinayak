@@ -27,8 +27,9 @@ export const site = {
   geo: { lat: 26.2849, lng: 73.0188 },
   mapsEmbed:
     "https://maps.google.com/maps?q=26.2849,73.0188(Hotel%20Siddhi%20Vinayak)&z=16&output=embed",
+  // Relative price band only (Google-style), NOT a fixed rate — actual rates are
+  // dynamic via the Stayflexi booking engine.
   priceRange: "₹₹",
-  startingPrice: 1200,
   currency: "INR",
   // Live Google Business Profile rating (Jan–Jun 2026): 3.7★ from 791+ reviews.
   rating: { value: 3.7, count: 791 },

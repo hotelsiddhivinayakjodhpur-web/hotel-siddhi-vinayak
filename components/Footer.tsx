@@ -58,7 +58,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>Check-in: {site.checkIn} <span className="text-sand/55">(early check-in on request)</span>{/* VERIFY */}</li>
             <li>Check-out: {site.checkOut}</li>
-            <li>From ₹{site.startingPrice} / night</li>
+            <li>Best Available Rate · book direct</li>
             <li>{site.rating.count}+ Guest Reviews</li>
           </ul>
         </div>

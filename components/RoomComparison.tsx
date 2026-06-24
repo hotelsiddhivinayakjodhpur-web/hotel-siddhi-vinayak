@@ -17,7 +17,7 @@ export default function RoomComparison() {
             <thead className="bg-sand text-ink">
               <tr>
                 <th className="p-4 font-medium">Room</th>
-                <th className="p-4 font-medium">From / night</th>
+                <th className="p-4 font-medium">Rate</th>
                 <th className="p-4 font-medium">Sleeps</th>
                 <th className="p-4 font-medium">Beds</th>
                 <th className="p-4 font-medium">Best for</th>
@@ -31,7 +31,7 @@ export default function RoomComparison() {
                     <span className="font-serif text-lg text-ink">{r.name}</span>
                     <span className="ml-2 rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-medium text-gold-dark">{r.highlight}</span>
                   </td>
-                  <td className="p-4 font-semibold text-gold-dark">₹{r.price.toLocaleString("en-IN")}</td>
+                  <td className="p-4 font-semibold text-gold-dark">Live Rate</td>
                   <td className="p-4">{r.occupancy}</td>
                   <td className="p-4">{r.bed}</td>
                   <td className="p-4">{r.bestFor}</td>
@@ -52,7 +52,7 @@ export default function RoomComparison() {
                 <h3 className="font-serif text-xl text-ink">{r.name}</h3>
                 <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-medium text-gold-dark">{r.highlight}</span>
               </div>
-              <p className="mt-1"><span className="font-serif text-xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span><span className="text-xs text-ink/55">/night</span></p>
+              <p className="mt-1"><span className="font-serif text-lg text-gold-dark">Live Rates &amp; Availability</span></p>
               <ul className="mt-3 space-y-1 text-sm text-ink/70">
                 <li className="flex items-center gap-2"><Check size={14} className="text-gold-dark" /> {r.occupancy} · {r.bed}</li>
                 <li className="flex items-center gap-2"><Check size={14} className="text-gold-dark" /> {r.bestFor}</li>

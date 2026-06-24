@@ -44,18 +44,12 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
     bed: r.bed,
     amenityFeature: r.amenities.map((a) => ({ "@type": "LocationFeatureSpecification", name: a, value: true })),
     isPartOf: { "@type": "Hotel", name: site.name, url: site.url },
+    // No fixed price — rates are dynamic via the Stayflexi booking engine. The
+    // Offer points guests to the live engine for today's rate + availability.
     offers: {
       "@type": "Offer",
-      price: r.price,
-      priceCurrency: site.currency,
       availability: "https://schema.org/InStock",
-      url: `${site.url}/rooms/${r.slug}`,
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: r.price,
-        priceCurrency: site.currency,
-        unitText: "per night (room only / EP plan)",
-      },
+      url: bookingLink,
     },
   };
   const breadcrumb = {
@@ -101,9 +95,9 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
                 <h1 className="font-serif text-4xl text-ink">{r.name}</h1>
                 <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold-dark">{r.highlight}</span>
               </div>
-              <p className="mt-3 flex items-baseline gap-2 text-ink">
-                <span className="font-serif text-4xl font-bold text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
-                <span className="text-sm text-ink/55"> / night · room only (EP)</span>
+              <p className="mt-3 text-ink">
+                <span className="font-serif text-3xl font-bold text-gold-dark">Live Rates &amp; Availability</span>
+                <span className="mt-1 block text-sm text-ink/55">Rates update in real time from our booking engine — tap Book Now for today's rate.</span>
               </p>
               <p className="mt-4 text-ink/75 leading-relaxed text-lg">{r.description}</p>
               <div className="mt-6 flex flex-wrap gap-2.5 text-sm font-medium">
@@ -124,7 +118,8 @@ export default async function RoomCategoryPage({ params }: { params: Promise<{ s
               <div className="sticky top-28 rounded-2xl bg-white p-6 shadow-lg">
                 <p className="font-serif text-2xl text-ink">{r.name}</p>
                 <p className="mt-1 text-sm text-ink/60">{r.count} {r.count > 1 ? "rooms" : "room"} of this type</p>
-                <p className="mt-4"><span className="font-serif text-3xl text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span><span className="text-sm text-ink/55">/night</span></p>
+                <p className="mt-4 font-serif text-2xl text-gold-dark">Live Rates &amp; Availability</p>
+                <p className="text-xs text-ink/55">Real-time pricing from our booking engine.</p>
                 <p className="mt-1 text-xs text-ink/55">Best rate guaranteed when you book direct — no OTA commission.</p>
                 <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-gold mt-5 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold">
                   <CalendarCheck size={18} /> Check Availability &amp; Book

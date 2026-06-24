@@ -39,10 +39,9 @@ export default function RoomsPage() {
                     <h2 className="font-serif text-3xl sm:text-4xl text-ink">{r.name}</h2>
                     <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold-dark">{r.highlight}</span>
                   </div>
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className="text-xs uppercase tracking-wider text-ink/45">From</span>
-                    <span className="font-serif text-4xl font-bold text-gold-dark">₹{r.price.toLocaleString("en-IN")}</span>
-                    <span className="text-sm text-ink/55">/ night</span>
+                  <div className="mt-2">
+                    <span className="font-serif text-2xl text-gold-dark">Live Rates &amp; Availability</span>
+                    <p className="text-sm text-ink/55">Rates update in real time from our booking engine.</p>
                   </div>
                   <p className="mt-4 text-ink/75 leading-relaxed">{r.description}</p>
                   <div className="mt-5 flex flex-wrap gap-2.5 text-sm font-medium">

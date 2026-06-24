@@ -1,8 +1,9 @@
 export type Room = {
   slug: string;
   name: string;
-  price: number;          // EP plan, ₹ per night (room only)
-  priceConfirmed: boolean;
+  // Rates are intentionally NOT stored here — pricing is dynamic and owned by the
+  // Stayflexi booking engine (single source of truth). The site never shows a
+  // fixed rate; it links guests to the live engine instead.
   roomNumbers: number[];  // real room folders in Drive that belong to this category
   count: number;          // number of rooms of this type
   size: string;
@@ -21,8 +22,6 @@ export const rooms: Room[] = [
   {
     slug: "deluxe-room",
     name: "Deluxe Room",
-    price: 1200,
-    priceConfirmed: true,
     roomNumbers: [202, 204, 205, 207, 208, 210],
     count: 6,
     size: "220 sq ft",
@@ -38,8 +37,6 @@ export const rooms: Room[] = [
   {
     slug: "super-deluxe-room",
     name: "Super Deluxe Room",
-    price: 1350,
-    priceConfirmed: true,
     roomNumbers: [301, 302, 303, 304, 305, 307, 308, 309, 310],
     count: 9,
     size: "300 sq ft",
@@ -55,8 +52,6 @@ export const rooms: Room[] = [
   {
     slug: "triple-deluxe-room",
     name: "Triple Deluxe Room",
-    price: 1400,
-    priceConfirmed: true,
     roomNumbers: [201, 203, 206, 209],
     count: 4,
     size: "320 sq ft",
@@ -72,8 +67,6 @@ export const rooms: Room[] = [
   {
     slug: "family-four-bed-room",
     name: "Family Four Bed Room",
-    price: 1800,
-    priceConfirmed: true,
     roomNumbers: [306],
     count: 1,
     size: "450 sq ft",
@@ -134,7 +127,7 @@ export const faqs: Faq[] = [
   { category: "Rooms", q: "Do all rooms have air conditioning?", a: "Yes, every room is air-conditioned, with free Wi-Fi, an LED/Smart TV and a clean private bathroom." },
   { category: "Rooms", q: "Is hot water available 24 hours?", a: "Yes, hot water is available round the clock in all rooms." },
   { category: "Rooms", q: "Is daily housekeeping included?", a: "Yes, daily housekeeping is included with every stay, and fresh linens and towels are provided." },
-  { category: "Rooms", q: "What room types and tariffs do you offer?", a: "Four room categories on an EP (room-only) plan: Deluxe from ₹1200/night, Super Deluxe from ₹1350/night, Triple Deluxe from ₹1400/night, and Family Four Bed from ₹1800/night. Contact us for the best available rate on your dates." },
+  { category: "Rooms", q: "What room types do you offer and how are rates decided?", a: "Four room categories on an EP (room-only) plan: Deluxe, Super Deluxe, Triple Deluxe and Family Four Bed. Rates are dynamic and update in real time with demand, season and dates — tap Book Now to see today's live rate and availability for your dates, or message us on WhatsApp for the best available rate." },
 
   // ── Parking & Transport ──
   { category: "Parking & Transport", q: "Is free parking available?", a: "Yes, free on-site parking is available for guests travelling by car, and we also have an EV charging point." },

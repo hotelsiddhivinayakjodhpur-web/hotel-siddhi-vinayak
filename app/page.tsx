@@ -117,7 +117,7 @@ export default function Home() {
                       <Users size={12} /> {r.occupancy}
                     </span>
                     <span className="absolute bottom-4 left-4 rounded-full glass px-3 py-1 text-xs font-medium text-sand">
-                      From ₹{r.price.toLocaleString("en-IN")}/night
+                      Live Rates &amp; Availability
                     </span>
                   </div>
                   <div className="p-6">
