@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, MessageCircle, Navigation, CalendarCheck } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Navigation, CalendarCheck, Train } from "lucide-react";
 import { site, nav, callLink, whatsappLink, bookingLink, BOOKING_TAGLINE, BOOKING_SECURE } from "@/lib/config";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -45,6 +45,7 @@ export default function Footer() {
           <h4 className="text-gold font-medium uppercase tracking-wider text-sm mb-4">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex gap-2"><MapPin size={18} className="shrink-0 text-gold" /><span>{a.street}, {a.locality}, {a.region} {a.postalCode}</span></li>
+            <li className="flex gap-2"><Train size={18} className="shrink-0 text-gold" /><span>350 m from Jodhpur Railway Station</span></li>
             <li className="flex gap-2"><Phone size={18} className="shrink-0 text-gold" /><a href={callLink} className="hover:text-gold">{site.phone}</a></li>
             <li className="flex gap-2"><MessageCircle size={18} className="shrink-0 text-gold" /><a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-gold">WhatsApp Booking</a></li>
             <li className="flex gap-2"><Mail size={18} className="shrink-0 text-gold" /><a href={`mailto:${site.email}`} className="hover:text-gold">{site.email}</a></li>
@@ -64,9 +65,13 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-sand/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-sand/50">
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-sand/50">
           <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
-          <p>Jodhpur, Rajasthan, India</p>
+          <div className="flex items-center gap-4">
+            <Link href="/hotel-policies" className="hover:text-gold">Hotel Policies</Link>
+            <span aria-hidden="true">·</span>
+            <span>Jodhpur, Rajasthan, India</span>
+          </div>
         </div>
       </div>
     </footer>

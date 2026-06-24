@@ -32,7 +32,7 @@ export const site = {
   currency: "INR",
   // Live Google Business Profile rating (Jan–Jun 2026): 3.7★ from 791+ reviews.
   rating: { value: 3.7, count: 791 },
-  checkIn: "12:00",
+  checkIn: "11:00",
   checkOut: "11:00",
   social: {
     // All three verified June 2026 (browser screenshot + WebFetch + hotel's own site).

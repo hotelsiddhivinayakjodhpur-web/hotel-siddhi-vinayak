@@ -89,6 +89,11 @@ export function HotelSchema() {
       },
       result: { "@type": "LodgingReservation", name: "Hotel Siddhi Vinayak room reservation" },
     },
+    // Voice-search / AI-assistant readable summary (hotel overview).
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2"],
+    },
   };
   return <JsonLd data={data} />;
 }
@@ -181,6 +186,7 @@ export function FaqSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    speakable: { "@type": "SpeakableSpecification", cssSelector: [".gold-frame"] },
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.q,

@@ -115,7 +115,7 @@ export type Faq = { q: string; a: string; category: string };
 
 export const faqs: Faq[] = [
   // ── Booking & Check-in ──
-  { category: "Booking & Check-in", q: "What are the check-in and check-out timings?", a: "Check-in is from 12:00 PM (noon) and check-out is by 11:00 AM. Our front desk is staffed 24 hours, so arrivals at any hour are no problem." },
+  { category: "Booking & Check-in", q: "What are the check-in and check-out timings?", a: "Check-in is from 11:00 AM and check-out is by 11:00 AM. Our front desk is staffed 24 hours, so arrivals at any hour are no problem. Early check-in between 9:00 AM and 12:00 noon is complimentary subject to availability; 5:00–9:00 AM is chargeable at 30% of room rent." },
   { category: "Booking & Check-in", q: "Is early check-in available?", a: "Yes, early check-in can be arranged subject to room availability on the day. Message us on WhatsApp with your arrival time and we'll do our best to have your room ready." },
   { category: "Booking & Check-in", q: "Is late check-out available?", a: "Yes, late check-out is offered on request, subject to availability. Let the front desk know the evening before and we'll try to accommodate you." },
   { category: "Booking & Check-in", q: "Do you accept walk-in bookings?", a: "Yes, walk-in guests are welcome subject to availability. During peak season (Oct–Mar) we recommend calling or messaging ahead on WhatsApp to confirm a room." },
