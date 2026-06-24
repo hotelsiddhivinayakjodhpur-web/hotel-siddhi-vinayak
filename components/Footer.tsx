@@ -30,7 +30,7 @@ export default function Footer() {
           <SocialLinks className="mt-3" iconSize={20} showLabels itemClassName="text-sand/80 hover:text-gold" />
         </div>
 
-        <div>
+        <nav aria-label="Footer">
           <h4 className="text-gold font-medium uppercase tracking-wider text-sm mb-4">Explore</h4>
           <ul className="space-y-2 text-sm">
             {nav.map((n) => (
@@ -39,7 +39,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div>
           <h4 className="text-gold font-medium uppercase tracking-wider text-sm mb-4">Contact</h4>

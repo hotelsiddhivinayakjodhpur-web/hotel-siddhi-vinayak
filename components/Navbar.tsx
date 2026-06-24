@@ -89,7 +89,7 @@ export default function Navbar() {
       </div>
 
       {/* ── NAV ROW · centered navigation (desktop only) ── */}
-      <div className="hidden border-t border-sand/10 lg:block">
+      <nav aria-label="Primary" className="hidden border-t border-sand/10 lg:block">
         <ul
           className={`mx-auto flex max-w-[1760px] items-center justify-center gap-x-7 px-5 xl:gap-x-9 transition-all duration-300 ${
             scrolled ? "py-1.5" : "py-2"
@@ -109,11 +109,12 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <motion.nav
+            aria-label="Mobile"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -156,7 +157,7 @@ export default function Navbar() {
                 <SocialLinks className="justify-center" iconSize={22} showLabels itemClassName="text-sand/80 hover:text-gold" />
               </li>
             </ul>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>
