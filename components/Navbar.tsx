@@ -119,15 +119,19 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden bg-ink/98 lg:hidden"
           >
-            <ul className="px-6 py-4 space-y-3">
+            <ul className="px-4 py-4 space-y-1">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`block py-1 text-base ${
-                      pathname === item.href ? "text-gold" : "text-sand/90"
+                    aria-current={pathname === item.href ? "page" : undefined}
+                    className={`flex min-h-[48px] items-center gap-3 rounded-xl px-4 text-base transition-colors ${
+                      pathname === item.href
+                        ? "bg-gold/15 font-medium text-gold"
+                        : "text-sand/90 hover:bg-white/5 hover:text-gold active:bg-white/10"
                     }`}
                   >
+                    <span className={`h-4 w-[3px] rounded-full ${pathname === item.href ? "bg-gold" : "bg-transparent"}`} aria-hidden="true" />
                     {item.label}
                   </Link>
                 </li>
