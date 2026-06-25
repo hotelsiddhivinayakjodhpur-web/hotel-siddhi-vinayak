@@ -89,11 +89,9 @@ export function HotelSchema() {
       },
       result: { "@type": "LodgingReservation", name: "Hotel Siddhi Vinayak room reservation" },
     },
-    // Voice-search / AI-assistant readable summary (hotel overview).
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "h2"],
-    },
+    // NOTE: `speakable` is intentionally NOT on Hotel/LodgingBusiness — per Google
+    // it is only valid on WebPage subtypes. Speakable lives on the FAQPage and the
+    // /hotel-policies WebPage, where it is valid.
   };
   return <JsonLd data={data} />;
 }
